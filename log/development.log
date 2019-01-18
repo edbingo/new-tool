@@ -1,0 +1,837 @@
+Started GET "/" for 127.0.0.1 at 2019-01-18 11:27:01 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/elancaster4/.rvm/gems/ruby-2.5.3/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/elancaster4/.rvm/gems/ruby-2.5.3/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (11.6ms)
+Completed 200 OK in 68ms (Views: 32.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-18 11:27:18 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/elancaster4/.rvm/gems/ruby-2.5.3/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/elancaster4/.rvm/gems/ruby-2.5.3/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (7.1ms)
+Completed 200 OK in 16ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-18 11:28:53 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/elancaster4/.rvm/gems/ruby-2.5.3/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/elancaster4/.rvm/gems/ruby-2.5.3/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (6.0ms)
+Completed 200 OK in 16ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-18 11:29:18 +0000
+  
+NoMethodError (undefined method `to' for #<ActionDispatch::Routing::Mapper:0x00007b4758e874f0>):
+  
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2019-01-18 11:29:24 +0000
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (1.1ms)
+Started PUT "/__web_console/repl_sessions/f7b4dd97e6bc5d0a9b9c06aaeb2dfe61" for 127.0.0.1 at 2019-01-18 11:29:38 +0000
+Started PUT "/__web_console/repl_sessions/f7b4dd97e6bc5d0a9b9c06aaeb2dfe61" for 127.0.0.1 at 2019-01-18 11:29:38 +0000
+Completed 200 OK in 15669ms (Views: 15662.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-18 11:30:31 +0000
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 164ms (Views: 159.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-18 11:30:57 +0000
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 176ms (Views: 172.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/docs/4.2/dist/js/bootstrap.bundle.min.js" for 127.0.0.1 at 2019-01-18 11:30:57 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/docs/4.2/dist/js/bootstrap.bundle.min.js"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-01-18 11:30:59 +0000
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 245ms (Views: 237.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/docs/4.2/dist/js/bootstrap.bundle.min.js" for 127.0.0.1 at 2019-01-18 11:30:59 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/docs/4.2/dist/js/bootstrap.bundle.min.js"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-01-18 11:30:59 +0000
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 251ms (Views: 226.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/docs/4.2/dist/js/bootstrap.bundle.min.js" for 127.0.0.1 at 2019-01-18 11:31:00 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/docs/4.2/dist/js/bootstrap.bundle.min.js"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-01-18 11:31:03 +0000
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 164ms (Views: 160.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-18 11:31:56 +0000
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 6520ms (Views: 6514.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-18 11:36:16 +0000
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.2) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (73.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (53.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAdmins (20190118113610)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "handle" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190118113610_create_admins.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_handle" ON "admins" ("handle")[0m
+  ↳ db/migrate/20190118113610_create_admins.rb:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190118113610"]]
+  ↳ bin/rails:9
+  [1m[35m (59.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-18 11:36:33.875256"], ["updated_at", "2019-01-18 11:36:33.875256"]]
+  ↳ bin/rails:9
+  [1m[35m (61.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2019-01-18 11:36:39 +0000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/elancaster4/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 6586ms (Views: 6581.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins" for 127.0.0.1 at 2019-01-18 11:36:53 +0000
+Processing by AdminsController#index as HTML
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/admin.rb:2:in `<class:Admin>'
+app/models/admin.rb:1:in `<main>'
+app/controllers/admins_controller.rb:7:in `index'
+Started GET "/admins" for 127.0.0.1 at 2019-01-18 11:37:16 +0000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/elancaster4/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.8ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  ↳ app/views/admins/index.html.erb:14
+  Rendered admins/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 1095ms (Views: 1068.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/admins" for 127.0.0.1 at 2019-01-18 11:38:26 +0000
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  ↳ app/views/admins/index.html.erb:14
+  Rendered admins/index.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 203ms (Views: 194.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admins/new" for 127.0.0.1 at 2019-01-18 11:38:57 +0000
+Processing by AdminsController#new as HTML
+  Rendering admins/new.html.erb within layouts/application
+  Rendered admins/_form.html.erb (78.9ms)
+  Rendered admins/new.html.erb within layouts/application (84.0ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 303ms (Views: 255.6ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/admins" for 127.0.0.1 at 2019-01-18 11:39:05 +0000
+Processing by AdminsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MhUjdmzC5LqKy8z5t+gn7rXAuvx+wZI3FWDEDrf5ilxBLtG//brl1Rt+VOjxxy9/KEC6EnyIteTfUMovYQ8gHw==", "admin"=>{"handle"=>"a1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Admin"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins_controller.rb:30
+  [1m[36mAdmin Create (1.7ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["handle", "a1"], ["password_digest", "$2a$10$IdACf/5n7wezd1zJJDsjYu5YMR7y61IREyzIZNYhsKge6h6H6myN."], ["created_at", "2019-01-18 11:39:05.470358"], ["updated_at", "2019-01-18 11:39:05.470358"]]
+  ↳ app/controllers/admins_controller.rb:30
+  [1m[35m (61.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins_controller.rb:30
+Redirected to http://0.0.0.0:3000/admins/1
+Completed 302 Found in 169ms (ActiveRecord: 63.5ms)
+
+
+Started GET "/admins/1" for 127.0.0.1 at 2019-01-18 11:39:05 +0000
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:67
+  Rendering admins/show.html.erb within layouts/application
+  Rendered admins/show.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 194ms (Views: 173.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admins/1" for 127.0.0.1 at 2019-01-18 11:41:07 +0000
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:67
+  Rendering admins/show.html.erb within layouts/application
+  Rendered admins/show.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 8193ms (Views: 8185.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admins" for 127.0.0.1 at 2019-01-18 11:41:21 +0000
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (1.6ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  ↳ app/views/admins/index.html.erb:14
+  Rendered admins/index.html.erb within layouts/application (10.6ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+Completed 200 OK in 276ms (Views: 269.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admins" for 127.0.0.1 at 2019-01-18 11:43:48 +0000
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (1.5ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  ↳ app/views/admins/index.html.erb:14
+  Rendered admins/index.html.erb within layouts/application (11.4ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 200ms (Views: 192.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/admins/new" for 127.0.0.1 at 2019-01-18 11:43:50 +0000
+Processing by AdminsController#new as HTML
+  Rendering admins/new.html.erb within layouts/application
+  Rendered admins/_form.html.erb (11.3ms)
+  Rendered admins/new.html.erb within layouts/application (16.7ms)
+  Rendered layouts/_navbar.html.erb (1.3ms)
+Completed 200 OK in 195ms (Views: 189.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins" for 127.0.0.1 at 2019-01-18 11:43:52 +0000
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.8ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  ↳ app/views/admins/index.html.erb:14
+  Rendered admins/index.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 191ms (Views: 183.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admins" for 127.0.0.1 at 2019-01-18 11:49:34 +0000
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  ↳ app/views/admins/index.html.erb:14
+  Rendered admins/index.html.erb within layouts/application (33.3ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 402ms (Views: 384.8ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-01-18 11:49:38 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1030.2ms)
+Completed 500 Internal Server Error in 1042ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `sessions_path' for #<#<Class:0x00007f956cdf93d8>:0x00007f956cdeef50>
+Did you mean?  sessions_new_path):
+    1: <h1>Login</h1>
+    2: <%= form_tag sessions_path do |form| %>
+    3:   <div class=”field”>
+    4:     <%= label_tag :email %>
+    5:     <%= text_field_tag :email %>
+  
+app/views/sessions/new.html.erb:2:in `_app_views_sessions_new_html_erb__371063051065686314_70139876724480'
+Started GET "/login" for 127.0.0.1 at 2019-01-18 11:50:14 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1050.1ms)
+Completed 500 Internal Server Error in 1065ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `sessions_path' for #<#<Class:0x00007f956cdf93d8>:0x00007f956d36ffb0>
+Did you mean?  sessions_new_path):
+    1: <h1>Login</h1>
+    2: <%= form_tag sessions_path do |form| %>
+    3:   <div class=”field”>
+    4:     <%= label_tag :handle %>
+    5:     <%= text_field_tag :handle %>
+  
+app/views/sessions/new.html.erb:2:in `_app_views_sessions_new_html_erb__371063051065686314_70139879613560'
+Started PUT "/__web_console/repl_sessions/ce17498672bfaa1b8e1e54ebfc071e4b" for 127.0.0.1 at 2019-01-18 11:50:19 +0000
+Started PUT "/__web_console/repl_sessions/ce17498672bfaa1b8e1e54ebfc071e4b" for 127.0.0.1 at 2019-01-18 11:50:21 +0000
+Started GET "/login" for 127.0.0.1 at 2019-01-18 11:50:27 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (978.1ms)
+Completed 500 Internal Server Error in 997ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `“Login”' for #<#<Class:0x00007f956cdf93d8>:0x00007f956d51efc8>):
+     9:     <%= password_field_tag :password %>
+    10:   </div>
+    11:   <div class=”actions”>
+    12:     <%= submit_tag “Login” %>
+    13:   </div>
+    14: <% end %>
+  
+app/views/sessions/new.html.erb:12:in `block in _app_views_sessions_new_html_erb__371063051065686314_70139880471800'
+app/views/sessions/new.html.erb:2:in `_app_views_sessions_new_html_erb__371063051065686314_70139880471800'
+Started GET "/login" for 127.0.0.1 at 2019-01-18 11:50:36 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1253.4ms)
+Completed 500 Internal Server Error in 1269ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `“Login”' for #<#<Class:0x00007f956cdf93d8>:0x00007f958c054be0>):
+     9:     <%= password_field_tag :password %>
+    10:   </div>
+    11:   <div class=”actions”>
+    12:     <%= submit_tag “Login” %>
+    13:   </div>
+    14: <% end %>
+  
+app/views/sessions/new.html.erb:12:in `block in _app_views_sessions_new_html_erb__371063051065686314_70140138007220'
+app/views/sessions/new.html.erb:2:in `_app_views_sessions_new_html_erb__371063051065686314_70140138007220'
+Started GET "/login" for 127.0.0.1 at 2019-01-18 11:50:45 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1033.1ms)
+Completed 500 Internal Server Error in 1046ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `sessions_path' for #<#<Class:0x00007f956cdf93d8>:0x00007f9582b19d50>
+Did you mean?  sessions_new_path):
+    1: <h1>Login</h1>
+    2: <%= form_tag sessions_path do |form| %>
+    3:   <div class=”field”>
+    4:     <%= label_tag :handle %>
+    5:     <%= text_field_tag :handle %>
+  
+app/views/sessions/new.html.erb:2:in `_app_views_sessions_new_html_erb__371063051065686314_70140059767600'
+Started GET "/login" for 127.0.0.1 at 2019-01-18 11:52:14 +0000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/elancaster4/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1106.1ms)
+Completed 500 Internal Server Error in 1132ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `sessions_path' for #<#<Class:0x00005be46c531b80>:0x00005be46c528968>
+Did you mean?  sessions_new_path):
+    1: <h1>Login</h1>
+    2: <%= form_tag sessions_path do |form| %>
+    3:   <div class=”field”>
+    4:     <%= label_tag :handle %>
+    5:     <%= text_field_tag :handle %>
+  
+app/views/sessions/new.html.erb:2:in `_app_views_sessions_new_html_erb__3400157435672087862_50518314032040'
+Started GET "/login" for 127.0.0.1 at 2019-01-18 11:54:16 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (951.6ms)
+Completed 500 Internal Server Error in 965ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `sessions_path' for #<#<Class:0x00005be46b7eaad0>:0x00005be46b6f2f88>
+Did you mean?  sessions_new_path):
+    1: <h1>Login</h1>
+    2: <%= form_tag sessions_path do |form| %>
+    3:   <div class=”field”>
+    4:     <%= label_tag :handle %>
+    5:     <%= text_field_tag :handle %>
+  
+app/views/sessions/new.html.erb:2:in `_app_views_sessions_new_html_erb__3400157435672087862_50518307139100'
+Started PUT "/__web_console/repl_sessions/c7d9b3240bc90d98dc5708fced4037b9" for 127.0.0.1 at 2019-01-18 11:54:21 +0000
+Started PUT "/__web_console/repl_sessions/c7d9b3240bc90d98dc5708fced4037b9" for 127.0.0.1 at 2019-01-18 11:54:22 +0000
+Started PUT "/__web_console/repl_sessions/c7d9b3240bc90d98dc5708fced4037b9" for 127.0.0.1 at 2019-01-18 11:54:29 +0000
+Started PUT "/__web_console/repl_sessions/c7d9b3240bc90d98dc5708fced4037b9" for 127.0.0.1 at 2019-01-18 11:54:33 +0000
+Started GET "/sessions/new" for 127.0.0.1 at 2019-01-18 11:54:41 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (991.1ms)
+Completed 500 Internal Server Error in 1003ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `sessions_path' for #<#<Class:0x00005be46b7eaad0>:0x0000796db153b270>
+Did you mean?  sessions_new_path):
+    1: <h1>Login</h1>
+    2: <%= form_tag sessions_path do |form| %>
+    3:   <div class=”field”>
+    4:     <%= label_tag :handle %>
+    5:     <%= text_field_tag :handle %>
+  
+app/views/sessions/new.html.erb:2:in `_app_views_sessions_new_html_erb__3400157435672087862_66756016725440'
+Started GET "/admins" for 127.0.0.1 at 2019-01-18 11:55:09 +0000
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.8ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  ↳ app/views/admins/index.html.erb:14
+  Rendered admins/index.html.erb within layouts/application (28.7ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 1232ms (Views: 1214.6ms | ActiveRecord: 4.7ms)
+
+
+Started DELETE "/admins/1" for 127.0.0.1 at 2019-01-18 11:55:14 +0000
+Processing by AdminsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"SRIH1lVQdkkCy4QBtCGGlG+Ps6op6Qb2ULVdexsYpOagwSlZMkArzOiSnabzTZmgW4b9caktilg4ZJaSqfwjGA==", "id"=>"1"}
+  [1m[36mAdmin Load (1.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:67
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins_controller.rb:57
+  [1m[36mAdmin Destroy (4.6ms)[0m  [1m[31mDELETE FROM "admins" WHERE "admins"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/admins_controller.rb:57
+  [1m[35m (56.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins_controller.rb:57
+Redirected to http://0.0.0.0:3000/admins
+Completed 302 Found in 87ms (ActiveRecord: 62.7ms)
+
+
+Started GET "/admins" for 127.0.0.1 at 2019-01-18 11:55:14 +0000
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.7ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  ↳ app/views/admins/index.html.erb:14
+  Rendered admins/index.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 220ms (Views: 214.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admins/new" for 127.0.0.1 at 2019-01-18 11:55:18 +0000
+Processing by AdminsController#new as HTML
+  Rendering admins/new.html.erb within layouts/application
+  Rendered admins/_form.html.erb (27.4ms)
+  Rendered admins/new.html.erb within layouts/application (31.9ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 187ms (Views: 182.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins" for 127.0.0.1 at 2019-01-18 11:55:23 +0000
+Processing by AdminsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RP78xVj5uk3dnc1Dk0tIAIfi05MLBd4MBLwRGGpicdg3xQ4MyYG7IkwoVVLVZECRGmLTfQlM+d/OjB85vJTbmw==", "admin"=>{"handle"=>"a1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Admin"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins_controller.rb:30
+  [1m[36mAdmin Create (1.7ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["handle", "a1"], ["password_digest", "$2a$10$YIOW/z7Bhh4uoLQQY5pLQuMSq9RV6DUMBBln5hecO.20O8CGT6xLS"], ["created_at", "2019-01-18 11:55:24.022047"], ["updated_at", "2019-01-18 11:55:24.022047"]]
+  ↳ app/controllers/admins_controller.rb:30
+  [1m[35m (54.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins_controller.rb:30
+Redirected to http://0.0.0.0:3000/admins/2
+Completed 302 Found in 169ms (ActiveRecord: 56.0ms)
+
+
+Started GET "/admins/2" for 127.0.0.1 at 2019-01-18 11:55:24 +0000
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:67
+  Rendering admins/show.html.erb within layouts/application
+  Rendered admins/show.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 178ms (Views: 170.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admins/2" for 127.0.0.1 at 2019-01-18 11:55:28 +0000
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:67
+  Rendering admins/show.html.erb within layouts/application
+  Rendered admins/show.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+Completed 200 OK in 180ms (Views: 172.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admins" for 127.0.0.1 at 2019-01-18 11:55:30 +0000
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  ↳ app/views/admins/index.html.erb:14
+  Rendered admins/index.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 206ms (Views: 201.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admins/2/edit" for 127.0.0.1 at 2019-01-18 11:55:32 +0000
+Processing by AdminsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:67
+  Rendering admins/edit.html.erb within layouts/application
+  Rendered admins/_form.html.erb (9.1ms)
+  Rendered admins/edit.html.erb within layouts/application (13.4ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+Completed 200 OK in 179ms (Views: 172.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admins/2" for 127.0.0.1 at 2019-01-18 11:55:34 +0000
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdmin Load (1.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:67
+  Rendering admins/show.html.erb within layouts/application
+  Rendered admins/show.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 179ms (Views: 167.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admins/2" for 127.0.0.1 at 2019-01-18 11:55:36 +0000
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdmin Load (0.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:67
+  Rendering admins/show.html.erb within layouts/application
+  Rendered admins/show.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 189ms (Views: 181.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admins/2" for 127.0.0.1 at 2019-01-18 11:55:38 +0000
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdmin Load (0.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:67
+  Rendering admins/show.html.erb within layouts/application
+  Rendered admins/show.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 190ms (Views: 180.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admins" for 127.0.0.1 at 2019-01-18 11:55:41 +0000
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  ↳ app/views/admins/index.html.erb:14
+  Rendered admins/index.html.erb within layouts/application (12.7ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 174ms (Views: 165.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admins" for 127.0.0.1 at 2019-01-18 11:55:42 +0000
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  ↳ app/views/admins/index.html.erb:14
+  Rendered admins/index.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 181ms (Views: 175.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-01-18 11:55:44 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (868.9ms)
+Completed 500 Internal Server Error in 879ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `sessions_path' for #<#<Class:0x00005be46b7eaad0>:0x0000796db15e9898>
+Did you mean?  sessions_new_path):
+    1: <h1>Login</h1>
+    2: <%= form_tag sessions_path do |form| %>
+    3:   <div class=”field”>
+    4:     <%= label_tag :handle %>
+    5:     <%= text_field_tag :handle %>
+  
+app/views/sessions/new.html.erb:2:in `_app_views_sessions_new_html_erb__3400157435672087862_66756017108020'
+Started GET "/signuo" for 127.0.0.1 at 2019-01-18 11:55:48 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/signuo"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/signup" for 127.0.0.1 at 2019-01-18 11:55:52 +0000
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `block in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `rescue in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:56:in `load_missing_constant'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/login" for 127.0.0.1 at 2019-01-18 11:55:59 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1032.5ms)
+Completed 500 Internal Server Error in 1044ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `sessions_path' for #<#<Class:0x00005be46b7eaad0>:0x0000796dc1a3e4b0>
+Did you mean?  sessions_new_path):
+    1: <h1>Login</h1>
+    2: <%= form_tag sessions_path do |form| %>
+    3:   <div class=”field”>
+    4:     <%= label_tag :handle %>
+    5:     <%= text_field_tag :handle %>
+  
+app/views/sessions/new.html.erb:2:in `_app_views_sessions_new_html_erb__3400157435672087862_66756153571420'
+Started GET "/login" for 127.0.0.1 at 2019-01-18 11:57:15 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (942.4ms)
+Completed 500 Internal Server Error in 963ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `“Login”' for #<#<Class:0x0000796dc0eb17a0>:0x0000796dc0eaa518>):
+     9:     <%= password_field_tag :password %>
+    10:   </div>
+    11:   <div class=”actions”>
+    12:     <%= submit_tag “Login” %>
+    13:   </div>
+    14: <% end %>
+  
+app/views/sessions/new.html.erb:12:in `block in _app_views_sessions_new_html_erb__3400157435672087862_66756147516360'
+app/views/sessions/new.html.erb:2:in `_app_views_sessions_new_html_erb__3400157435672087862_66756147516360'
+Started GET "/login" for 127.0.0.1 at 2019-01-18 11:57:39 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 186ms (Views: 180.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-01-18 11:57:54 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+Completed 200 OK in 170ms (Views: 165.4ms | ActiveRecord: 0.0ms)
+
+
