@@ -11,6 +11,13 @@
 
   <body>
     <%= render 'layouts/navbar' %>
+    <% if current_page?(list_students_path) || current_page?(list_teachers_path) || current_page?(list_presentations_path) %>
+      <%= render 'shared/js/sorttable' %>
+      <script>
+        $(document).on("page.change", sorttable.init)
+      </script>
+    <% else %>
+    <% end %>
     <% flash.each do |key, value| %>
       <div class="<%= flash_class(key) %> alert-dismissible fade show" role="alert">
         <%= value %>

@@ -1,0 +1,39 @@
+<div class="float-left">
+<% if current_page?(list_teachers_path) %>
+  <ul class="nav nav-pills mb-3">
+    <li class="nav-item">
+      <%= link_to 'Lehrer', list_teachers_path, class: "nav-link active" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Präsentationen', list_presentations_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Schüler', list_students_path, class: "nav-link" %>
+    </li>
+  </ul>
+<% elsif current_page?(list_presentations_path) %>
+<ul class="nav nav-pills mb-3">
+  <li class="nav-item">
+    <%= link_to 'Lehrer', list_teachers_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to 'Präsentationen', list_presentations_path, class: "nav-link active" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to 'Schüler', list_students_path, class: "nav-link" %>
+  </li>
+</ul>
+<% elsif current_page?(list_students_path) %>
+<ul class="nav nav-pills mb-3">
+  <li class="nav-item">
+    <%= link_to 'Lehrer', list_teachers_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to 'Präsentationen', list_presentations_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to 'Schüler', list_students_path, class: "nav-link active" %>
+  </li>
+</ul>
+<% end %>
+</div>

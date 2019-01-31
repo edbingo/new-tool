@@ -1,0 +1,48 @@
+<div class="card">
+  <h5 class="card-header">Warnung</h5>
+  <div class="card-body">
+    <h5 class="card-title">Wollen Sie wirklich die Datenbank zurücksetzen?</h5>
+    <p class="card-text">Alle Schüler, Präsentationen und Lehrer werden entfernt</p>
+    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#resetModal">
+      Datenbank löschen
+    </button>
+  </div>
+</div>
+
+
+<div class="modal fade" id="resetModal" tabindex="-1" role="dialog" aria-labelledby="resetModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title" id="exampleModalLabel">Achtung</h3>
+    </div>
+    <div class="modal-body">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Diese Aktion kann nicht rückgängig gemacht werden.</h5>
+          <p>Voreinstellungen für Admin:</p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nummer</th>
+                <th>Passwort</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>a2</td>
+                <td>hallo123</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p></p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
+      <%= link_to "Datenbank löschen", confirm_path, class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>
+</div>

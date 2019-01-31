@@ -1,0 +1,34 @@
+<%= render 'navlist' %>
+<div class="float-right">
+  <button type="button" name="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newTeacherModal">Hinzufügen</button>
+</div>
+
+<table class="table table-hover sorttable">
+  <thead>
+    <tr class="srt">
+      <th>Vorname</th>
+      <th>Name</th>
+      <th>Mail</th>
+      <th>Nummer</th>
+      <th colspan="3">Aktionen</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @teachers.each do |teac| %>
+        <tr>
+          <td><%= teac.vorname %></td>
+          <td><%= teac.name %></td>
+          <td><%= teac.mail %></td>
+          <td><%= teac.number %></td>
+          <td>
+            <%= link_to "Anschauen", '#', class: "btn btn-secondary", remote: true %>
+          </td>
+          <td><%= link_to "Bearbeiten", '#', class: "btn btn-primary" %></td>
+          <td><%= link_to "Löschen", '#', class: "btn btn-warning" %></td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>
+
+<%= render 'newtemodal', object: "data" %>

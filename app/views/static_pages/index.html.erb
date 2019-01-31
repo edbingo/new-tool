@@ -1,8 +1,15 @@
-<main role="main" class="container">
-
-  <div class="starter-template">
-    <h1>Bootstrap starter template</h1>
-    <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+<div class="card text-center">
+  <div class="card-header">
+    BKS-Tool
   </div>
-
-</main>
+  <div class="card-body">
+    <h5 class="card-title">Willkommen zum neuen BKS Anmelde Tool.</h5>
+    <% if current_admin %>
+      <p class="card-text">Sie sind als Administrator <%= @current_admin.handle %> angemeldet.</p>
+      <%= link_to 'Dashboard', dashboard_path, class: "btn btn-lg btn-primary" %>
+    <% end %>
+  </div>
+  <div class="card-footer text-muted">
+    Erstellt von Edward Lancaster MA18
+  </div>
+</div>

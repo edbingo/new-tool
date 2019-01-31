@@ -1,0 +1,28 @@
+<div class="modal fade" id="newAdminModal" tabindex="-1" role="dialog" aria-labelledby="newAdminLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newAdminModalLabel">Neuer Admin</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= form_for(@admin, url: admin_new_path) do |f| %>
+      <div class="modal-body">
+        <div class="form-new">
+          <%= f.label :handle, 'ID', class: "sr-only" %>
+          <%= f.text_field :handle, class: "form-control", placeholder: "ID", id: "top", required: true %>
+          <%= f.label :password, 'Passwort', class: "sr-only" %>
+          <%= f.password_field :password, class: "form-control", placeholder: "Passwort", id: "mid", required: true %>
+          <%= f.label :password_confirmation,'', class: "sr-only" %>
+          <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Bestätigung", id: "btm", required: true %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
+        <%= f.submit 'Speichern', class: "btn btn-primary btn-block" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

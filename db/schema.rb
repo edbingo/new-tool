@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_18_113610) do
+ActiveRecord::Schema.define(version: 2019_01_31_133221) do
 
   create_table "admins", force: :cascade do |t|
     t.string "handle"
@@ -18,6 +18,56 @@ ActiveRecord::Schema.define(version: 2019_01_18_113610) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["handle"], name: "index_admins_on_handle", unique: true
+  end
+
+  create_table "prefs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "presentations", force: :cascade do |t|
+    t.string "vorname"
+    t.string "name"
+    t.string "klasse"
+    t.string "titel"
+    t.string "fach"
+    t.string "betreuer"
+    t.string "zimmer"
+    t.string "von"
+    t.string "bis"
+    t.integer "frei"
+    t.integer "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "surname"
+    t.string "name"
+    t.string "number"
+    t.string "mail"
+    t.string "klasse"
+    t.string "code"
+    t.string "password_digest"
+    t.boolean "register"
+    t.boolean "rec"
+    t.boolean "login"
+    t.integer "req"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["number"], name: "index_students_on_number", unique: true
+  end
+
+  create_table "teachers", force: :cascade do |t|
+    t.string "vorname"
+    t.string "name"
+    t.string "number"
+    t.string "mail"
+    t.boolean "rec"
+    t.string "nv"
+    t.string "vn"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

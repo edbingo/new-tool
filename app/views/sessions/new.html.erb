@@ -1,14 +1,17 @@
-<h1>Login</h1>
-<%= form_tag sessions_path do |form| %>
-  <div class='field'>
-    <%= label_tag :handle %>
-    <%= text_field_tag :handle %>
+
+
+
+  <div class="card shadow p-3 mb-5 bg-white rounded" style="max-width: 400px; margin: auto">
+    <div class="card-body">
+      <div class="form-signin">
+        <img style="float:right" class="mb-4" src="https://d177g53udii011.cloudfront.net/redesign2016/images/logo.svg" alt="" width="58" height="58">
+        <%= form_tag sessions_path do |form| %>
+        <h1>Anmelden</h1>
+        <%= label_tag :handle, 'ID', class: "sr-only" %>
+        <%= text_field_tag :handle, '', class: "form-control", placeholder: "ID", id: "inputid" %>
+        <%= label_tag :password, 'Passwort', class: "sr-only" %>
+        <%= password_field_tag :password, '', class: "form-control", placeholder: "Passwort", id: "inputPassword" %>
+        <%= submit_tag 'Anmelden', class: "btn btn-lg btn-primary btn-block" %>
+        <% end %>
+    </div>
   </div>
-  <div class='field'>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
-  <div class=”actions”>
-    <%= submit_tag "Login" %>
-  </div>
-<% end %>

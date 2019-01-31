@@ -1,0 +1,35 @@
+<%= render 'navlist' %>
+
+
+<table class="table table-hover sorttable">
+  <thead>
+    <tr class="srt">
+      <th>Vorname</th>
+      <th>Nachname</th>
+      <th>Klasse</th>
+      <th>Titel</th>
+      <th>Fach</th>
+      <th>Betreuer</th>
+      <th>Zimmer</th>
+      <th>Von</th>
+      <th>Bis</th>
+      <th>Frei</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @presentations.each do |pres| %>
+      <tr>
+        <td><%= pres.vorname %></td>
+        <td><%= pres.name %></td>
+        <td><%= pres.klasse %></td>
+        <td><%= pres.titel %></td>
+        <td><%= pres.fach %></td>
+        <td><%= pres.betreuer %></td>
+        <td><%= pres.zimmer %></td>
+        <td><%= pres.von %></td>
+        <td><%= pres.bis %></td>
+        <td><%= pres.frei %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

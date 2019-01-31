@@ -1,0 +1,35 @@
+<%= render 'navlist' %>
+
+
+<table class="table table-hover sorttable">
+  <thead>
+    <tr>
+      <th>Vorname</th>
+      <th>Name</th>
+      <th>Klasse</th>
+      <th>Mail</th>
+      <th>Nummer</th>
+      <th>Passwort</th>
+      <th>Registriert?</th>
+      <th>Bearbeiten</th>
+      <th>Force</th>
+      <th>Entfernen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @students.each do |stud| %>
+      <tr>
+        <td><%= stud.name %></td>
+        <td><%= stud.surname %></td>
+        <td><%= stud.klasse %></td>
+        <td><%= stud.mail %></td>
+        <td><%= stud.number %></td>
+        <td><%= stud.code %></td>
+        <td><%= stud.register %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
