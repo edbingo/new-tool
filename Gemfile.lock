@@ -59,6 +59,9 @@ GEM
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
+    bootstrap-tooltip-rails (0.1)
+      rails (>= 3.1)
+      thor
     builder (3.2.3)
     byebug (10.0.2)
     capybara (3.12.0)
@@ -222,6 +225,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
   bootstrap
+  bootstrap-tooltip-rails
   byebug
   capybara (>= 2.15)
   chromedriver-helper

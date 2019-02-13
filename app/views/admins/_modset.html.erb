@@ -1,0 +1,28 @@
+<div class="modal fade" id="editSettingsModal" tabindex="-1" role="dialog" aria-labelledby="newAdminLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newTeacherModalLabel">Servereinstellungen</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= form_tag settings_update_path do %>
+      <div class="modal-body">
+        <div class="form-new">
+          Verlangte Anmeldungen
+          <%= number_field_tag 'req', Pref.first.req, class: "form-control", min: 1, max: 10, step: 1 %>
+          Verlangte Zeit zwischen Präsentationen in Minuten
+          <%= number_field_tag 'time', Pref.first.time.to_i / 60, class: "form-control", min: 1, max: 60, step: 1 %>
+          Anzahl freie Plätze pro Präsentation
+          <%= number_field_tag 'free', Pref.first.free, class: "form-control", min: 1, max: 10, step: 1 %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
+        <%= submit_tag 'Speichern', class: "btn btn-primary btn-block" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

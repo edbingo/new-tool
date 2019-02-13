@@ -1,10 +1,51 @@
-<div class="card">
-  <div class="card-header success">
-    Anmeldeeinstellungen
+<div class="row">
+  <div class="col-sm">
+    <div class="card mb-3">
+      <div class="card-header success">
+        Einstellungen
+      </div>
+      <div class="card-body">
+        <% if Pref.first.login %>
+          <h5 class="card-title">Status: <span class="text-success font-weight-bold">Online</span></h5>
+          <p class="card-text">Anmeldungen sind aktiviert</p>
+          <%= link_to "Jetzt Deaktivieren", settings_deactivate_path, class: "btn btn-danger" %>
+        <% else %>
+          <h5 class="card-title">Status: <span class="text-danger font-weight-bold">Deaktiviert</span></h5>
+          <p class="card-text">Anmeldungen sind nicht aktiviert</p>
+          <%= link_to "Jetzt Aktivieren", settings_activate_path, class: "btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <div class="card-body">
-    <h5 class="card-title"><strong>Status:</strong> Online</h5>
-    <p class="card-text">Anmeldungen sind aktiviert</p>
-    <a href="#" class="btn btn-danger">Jetzt Deaktivieren</a>
+  <div class="col-sm">
+    <div class="card">
+      <div class="card-header success">
+        Anmeldeeinstellungen
+      </div>
+      <div class="card-body">
+        <table class="table table-sm">
+            <caption>Diese Werte können nicht bearbeitet werden, nachdem die Mails mit den Anmeldedaten verschickt worden sind.</caption>
+          <tbody>
+            <tr>
+              <td>Verlangte Anmeldungen:</td>
+              <td><%= Pref.first.req %></td>
+            </tr>
+            <tr>
+              <td>Zeit zwischen Präsentationen:</td>
+              <td><%= Pref.first.time / 60 %> Minuten</td>
+            </tr>
+            <tr>
+              <td>Freie Plätze pro Präsentation:</td>
+              <td><%= Pref.first.free %></td>
+            </tr>
+          </tbody>
+        </table>
+        <% if Student.first.rec == false %>
+          <button type="button" name="button" class="btn btn-primary" data-toggle="modal" data-target="#editSettingsModal">Bearbeiten</button>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
+
+<%= render 'modset' %>

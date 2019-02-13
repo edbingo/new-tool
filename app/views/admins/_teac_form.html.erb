@@ -1,0 +1,10 @@
+<div class="form-new">
+  <%= form_tag teacher_update_path do %>
+    <%= hidden_field_tag :id, @teacher.id %>
+    <%= text_field_tag :vorname, @teacher.vorname, class: "form-control", placeholder:"Vorname", id: "top" %>
+    <%= text_field_tag :name, @teacher.name, class: "form-control", placeholder:"Name", id: "mid" %>
+    <%= text_field_tag :mail, @teacher.mail, class: "form-control", placeholder:"Mail", id: "mid" %>
+    <%= text_field_tag :number, @teacher.number, class: "form-control", placeholder:"Nummer", id: "btm" %>
+    <%= submit_tag :Speichern, class:"btn btn-lg btn-block btn-primary mt-3" %>
+  <% end %>
+</div>

@@ -7,6 +7,7 @@ ruby '2.5.3'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
+gem 'bootstrap-tooltip-rails'
 
 gem 'responders'
 

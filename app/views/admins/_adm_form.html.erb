@@ -1,0 +1,8 @@
+<div class="form-new">
+  <%= form_with(model: admin, local: true) do |f| %>
+    <%= f.text_field :handle, class: "form-control", placeholder:"Handle", id: "top" %>
+    <%= f.password_field :password, class: "form-control", placeholder: "Passwort", id:"mid" %>
+    <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Bestätigung", id:"btm" %>
+    <%= f.submit :Speichern, class:"btn btn-lg btn-block btn-primary mt-3" %>
+  <% end %>
+</div>

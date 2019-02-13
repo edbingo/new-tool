@@ -1,0 +1,49 @@
+<div class="modal fade" id="newPresentationModal" tabindex="-1" role="dialog" aria-labelledby="newAdminLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newTeacherModalLabel">Neue Präsentation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= form_for(@presentation, url: presentation_new_path) do |f| %>
+      <div class="modal-body">
+        <div class="form-new">
+
+          <%= f.label :vorname, 'Vorname', class: "sr-only" %>
+          <%= f.text_field :vorname, class: "form-control", placeholder: "Vorname", id: "top", required: true %>
+
+          <%= f.label :name, 'Name', class: "sr-only" %>
+          <%= f.text_field :name, class: "form-control", placeholder: "Name", id: "mid", required: true %>
+
+          <%= f.label :klasse, 'Klasse', class: "sr-only" %>
+          <%= f.text_field :klasse, class: "form-control", placeholder: "Klasse", id: "mid", required: true %>
+
+          <%= f.label :titel, 'Titel', class: "sr-only" %>
+          <%= f.text_field :titel, class: "form-control", placeholder: "Titel", id: "mid", required: true %>
+
+          <%= f.label :fach, 'Fach', class: "sr-only" %>
+          <%= f.text_field :fach, class: "form-control", placeholder: "Fach", id: "mid", required: true %>
+
+          <%= f.label :betreuer, 'Betreuer', class: "sr-only" %>
+          <%= f.text_field :betreuer, class: "form-control", placeholder: "Betreuer", id: "mid", required: true %>
+
+          <%= f.label :zimmer, 'Zimmer', class: "sr-only" %>
+          <%= f.text_field :zimmer, class: "form-control", placeholder: "Zimmer", id: "mid", required: true %>
+
+          <%= f.label :von, 'Von', class: "sr-only" %>
+          <%= f.text_field :von, class: "form-control", placeholder: "Von", id: "mid", required: true %>
+
+          <%= f.label :bis, 'Bis', class: "sr-only" %>
+          <%= f.text_field :bis, class: "form-control", placeholder: "Bis", id: "btm", required: true %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
+        <%= f.submit 'Speichern', class: "btn btn-primary btn-block" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

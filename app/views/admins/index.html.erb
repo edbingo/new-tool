@@ -1,41 +1,43 @@
-<div class="card" style="width: 100%">
-  <div class="card-body">
-    <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#newAdminModal">
-      Neuer Admin
-    </button>
-    <h5 class="card-title">Administratoren</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <table class="table table-hover sorttable">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th colspan="3">Aktionen</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @admins.each do |admin| %>
-        <tr>
-          <td><%= admin.handle %></td>
-          <td>
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Aktionen
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <%= link_to 'Infos', admin, class:"btn btn-primary dropdown-item" %>
-                <%= link_to 'Bearbeiten', edit_admin_path(admin), class:"btn btn-primary dropdown-item" %>
-                <%= link_to 'Löschen', admin, method: :delete, class:"btn btn-danger dropdown-item" %>
-              </div>
-            </div>
-            </td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+<div class="container-fluid mb-3">
+  <div class="row">
+    <div class="col">
+      <h4>Administratoren</h4>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#newAdminModal">
+        Neuer Admin
+      </button>
+    </div>
   </div>
 </div>
-
-
+<table class="table table-hover sorttable">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th colspan="3">Aktionen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @admins.each do |admin| %>
+    <tr>
+      <td><%= admin.handle %></td>
+      <td>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Aktionen
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <%= link_to 'Infos', admin, class:"btn btn-primary dropdown-item" %>
+            <%= link_to 'Bearbeiten', edit_admin_path(admin), class:"btn btn-primary dropdown-item" %>
+            <div class="dropdown-divider"></div>
+            <%= link_to 'Löschen', admin, method: :delete, class:"btn btn-danger dropdown-item" %>
+          </div>
+        </div>
+        </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <br>
 

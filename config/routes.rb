@@ -10,13 +10,32 @@ Rails.application.routes.draw do
   get 'list/presentations', to: 'admins#list_pres'
   get 'list/teachers', to: 'admins#list_teac'
   get 'list/students', to: 'admins#list_stud'
+  get 'list/teachers/all', to: 'admins#list_teac_all'
+
+  get 'list/teachers/view', to: 'admins#view_teac'
 
   post 'admin/new', to: 'admins#create'
   post 'teacher/new', to: 'admins#new_teac'
+  post 'student/new', to: 'admins#new_stud'
+  post 'presentation/new', to: 'admins#new_pres'
+
+  get 'update/teacher', to: 'admins#edit_teac'
+  get 'update/presentation', to: 'admins#edit_pres'
+  get 'update/student', to: 'admins#edit_stud'
+  post 'presentation/update', to: 'admins#update_presentation'
+  post 'student/update', to: 'admins#update_student'
+
+  post 'admin/update', to: 'admins#update_admin'
+  patch 'teacher/update', to: 'admins#update_teacher'
+  post 'teacher/update', to: 'admins#update_teacher'
+
 
   get 'dashboard', to: 'admins#dashboard'
 
   get 'settings', to: 'admins#settings'
+  get 'settings/activate', to: 'admins#act'
+  get 'settings/deactivate', to: 'admins#deact'
+  post 'settings/update', to: 'admins#update_set'
 
   get 'mailer', to: 'admins#mailer'
 
@@ -29,11 +48,17 @@ Rails.application.routes.draw do
   get 'upload/presentations', to: 'admins#upload_pres'
   post 'upload/presentations', to: 'admins#import_presentations'
 
-  get 'upload/presenta', to: 'admins#upload_stud'
+  get 'upload/settings', to: 'admins#prefs'
+  post 'upload/settings', to: 'admins#prefs_upd'
 
   get 'reset', to: 'admins#reset'
   get 'confirm', to: 'admins#clear'
 
+  get 'delete/teacher', to: 'admins#del_teac'
+  get 'delete/teacher/confirm', to: 'admins#del_teac_conf'
+
+  get 'delete/presentation', to: 'admins#del_pres'
+  get 'delete/presentation/confirm', to: 'admins#del_pres_conf'
   resources :admins
   resources :students
   resources :presentations

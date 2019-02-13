@@ -21,6 +21,10 @@ ActiveRecord::Schema.define(version: 2019_01_31_133221) do
   end
 
   create_table "prefs", force: :cascade do |t|
+    t.integer "time"
+    t.integer "req"
+    t.integer "free"
+    t.boolean "login"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,8 +46,8 @@ ActiveRecord::Schema.define(version: 2019_01_31_133221) do
   end
 
   create_table "students", force: :cascade do |t|
-    t.string "surname"
     t.string "name"
+    t.string "vorname"
     t.string "number"
     t.string "mail"
     t.string "klasse"
@@ -51,8 +55,6 @@ ActiveRecord::Schema.define(version: 2019_01_31_133221) do
     t.string "password_digest"
     t.boolean "register"
     t.boolean "rec"
-    t.boolean "login"
-    t.integer "req"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["number"], name: "index_students_on_number", unique: true
@@ -64,8 +66,6 @@ ActiveRecord::Schema.define(version: 2019_01_31_133221) do
     t.string "number"
     t.string "mail"
     t.boolean "rec"
-    t.string "nv"
-    t.string "vn"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

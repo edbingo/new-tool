@@ -1,8 +1,28 @@
 <div class="float-left">
 <% if current_page?(list_teachers_path) %>
   <ul class="nav nav-pills mb-3">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Lehrer</a>
+      <div class="dropdown-menu">
+        <%= link_to 'Aktiv', list_teachers_path, class: "dropdown-item active" %>
+        <%= link_to 'Alle', list_teachers_all_path, class: "dropdown-item" %>
+      </div>
+    </li>
     <li class="nav-item">
-      <%= link_to 'Lehrer', list_teachers_path, class: "nav-link active" %>
+      <%= link_to 'Präsentationen', list_presentations_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Schüler', list_students_path, class: "nav-link" %>
+    </li>
+  </ul>
+<% elsif current_page?(list_teachers_all_path) %>
+  <ul class="nav nav-pills mb-3">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Lehrer</a>
+      <div class="dropdown-menu">
+        <%= link_to 'Aktiv', list_teachers_path, class: "dropdown-item" %>
+        <%= link_to 'Alle', list_teachers_all_path, class: "dropdown-item active" %>
+      </div>
     </li>
     <li class="nav-item">
       <%= link_to 'Präsentationen', list_presentations_path, class: "nav-link" %>

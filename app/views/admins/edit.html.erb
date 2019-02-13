@@ -1,6 +1,6 @@
-<h1>Editing Admin</h1>
-
-<%= render 'form', admin: @admin %>
-
-<%= link_to 'Show', @admin %> |
-<%= link_to 'Back', admins_path %>
+<div class="card p-3 mb-5 bg-white rounded" style="max-width: 400px; margin: auto">
+  <div class="card-body">
+    <h4>Admin bearbeiten</h4>
+    <%= render 'adm_form', admin: @admin %>
+  </div>
+</div>

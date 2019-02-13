@@ -1,0 +1,43 @@
+<%= render 'navlist' %>
+<div class="float-right">
+  <button type="button" name="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newTeacherModal">Hinzufügen</button>
+</div>
+
+<table class="table table-hover sorttable">
+  <thead>
+    <tr class="srt">
+      <th>Vorname</th>
+      <th>Name</th>
+      <th>Mail</th>
+      <th>Nummer</th>
+      <th>Aktionen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @teachers.each do |teac| %>
+        <tr>
+          <td><%= teac.vorname %></td>
+          <td><%= teac.name %></td>
+          <td><%= teac.mail %></td>
+          <td><%= teac.number %></td>
+          <td>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Aktionen
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <% if Presentation.where(betreuer: teac.number).count > 0 %>
+                  <%= link_to "Anschauen", list_teachers_view_path(:id => teac.id), class: "btn btn-secondary dropdown-item" %>
+                <% end %>
+                <%= link_to "Bearbeiten", update_teacher_path(:id => teac.id), class: "btn btn-primary dropdown-item" %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "Löschen", delete_teacher_path(:id => teac.id), class: "btn btn-warning dropdown-item" %>
+              </div>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>
+
+<%= render 'newtemodal', object: "data" %>

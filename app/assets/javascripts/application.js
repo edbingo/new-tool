@@ -14,6 +14,7 @@
 //= require jquery3
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap/bootstrap-tooltip
 //= require jquery.turbolinks
 //= require turbolinks
 //= require popper
@@ -21,3 +22,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(function(){
+  $("a[rel='tooltip']").tooltip();
+})

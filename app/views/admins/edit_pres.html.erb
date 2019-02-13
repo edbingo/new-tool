@@ -1,0 +1,21 @@
+<div class="card p-3 mb-5 bg-white rounded" style="max-width: 800px; margin: auto">
+  <div class="card-body">
+    <h4>Präsentation bearbeiten</h4>
+    <div class="form-new wide">
+      <%= form_tag presentation_update_path do %>
+        <%= hidden_field_tag :id, @presentation.id %>
+        <%= text_field_tag :vorname, @presentation.vorname, class: "form-control", placeholder:"Vorname", id: "top" %>
+        <%= text_field_tag :name, @presentation.name, class: "form-control", placeholder:"Name", id: "mid" %>
+        <%= text_field_tag :klasse, @presentation.klasse, class: "form-control", placeholder:"Klasse", id: "mid" %>
+        <%= text_field_tag :titel, @presentation.titel, class: "form-control", placeholder:"Titel", id: "mid" %>
+        <%= text_field_tag :fach, @presentation.fach, class: "form-control", placeholder:"Fach", id: "mid" %>
+        <%= text_field_tag :betreuer, @presentation.betreuer, class: "form-control", placeholder:"Betreuer", id: "mid" %>
+        <%= text_field_tag :zimmer, @presentation.zimmer, class: "form-control", placeholder:"Zimmer", id: "mid" %>
+        <%= text_field_tag :von, Time.at(@presentation.von.to_f).utc.strftime("%H:%M"), class: "form-control", placeholder:"Von", id: "mid" %>
+        <%= text_field_tag :bis, Time.at(@presentation.bis.to_f).utc.strftime("%H:%M"), class: "form-control", placeholder:"Bis", id: "mid" %>
+
+        <%= submit_tag :Speichern, class:"btn btn-lg btn-block btn-primary mt-3" %>
+      <% end %>
+    </div>
+  </div>
+</div>

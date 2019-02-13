@@ -1,4 +1,7 @@
 <%= render 'navlist' %>
+<div class="float-right">
+  <button type="button" name="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newStudentModal">Hinzufügen</button>
+</div>
 
 
 <table class="table table-hover sorttable">
@@ -11,25 +14,40 @@
       <th>Nummer</th>
       <th>Passwort</th>
       <th>Registriert?</th>
-      <th>Bearbeiten</th>
-      <th>Force</th>
-      <th>Entfernen</th>
+      <th>Aktionen</th>
     </tr>
   </thead>
   <tbody>
     <% @students.each do |stud| %>
       <tr>
+        <td><%= stud.vorname %></td>
         <td><%= stud.name %></td>
-        <td><%= stud.surname %></td>
         <td><%= stud.klasse %></td>
         <td><%= stud.mail %></td>
         <td><%= stud.number %></td>
         <td><%= stud.code %></td>
-        <td><%= stud.register %></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <% if stud.register %>
+          <td>Ja</td>
+        <% else %>
+          <td>Nein</td>
+        <% end %>
+        <td>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Aktionen
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <%= link_to "Bearbeiten", '#', class: "btn btn-secondary dropdown-item" %>
+              <%= link_to "Mailer", '#', class: "btn btn-secondary dropdown-item" %>
+              <%= link_to "Force", '#', class: "btn btn-primary dropdown-item" %>
+              <div class="dropdown-divider"></div>
+              <%= link_to "Entfernen", '#', class: "btn btn-warning dropdown-item" %>
+            </div>
+          </div>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= render 'stmodal' %>
