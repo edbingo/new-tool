@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'list/teachers/all', to: 'admins#list_teac_all'
 
   get 'list/teachers/view', to: 'admins#view_teac'
+  get 'list/students/view', to: 'admins#view_stud'
 
   post 'admin/new', to: 'admins#create'
   post 'teacher/new', to: 'admins#new_teac'
@@ -59,6 +60,9 @@ Rails.application.routes.draw do
 
   get 'delete/presentation', to: 'admins#del_pres'
   get 'delete/presentation/confirm', to: 'admins#del_pres_conf'
+
+  get 'delete/student', to: 'admins#del_stud'
+  get 'delete/student/confirm', to: 'admins#del_stud_conf'
   resources :admins
   resources :students
   resources :presentations

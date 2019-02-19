@@ -1,0 +1,40 @@
+<table class="table table-hover sorttable">
+  <thead>
+    <tr>
+      <th>Vorname</th>
+      <th>Name</th>
+      <th>Klasse</th>
+      <th>Mail</th>
+      <th>Nummer</th>
+      <th>Passwort</th>
+      <th>Registriert?</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><%= @student.vorname %></td>
+        <td><%= @student.name %></td>
+        <td><%= @student.klasse %></td>
+        <td><%= @student.mail %></td>
+        <td><%= @student.number %></td>
+        <td><%= @student.code %></td>
+        <% if @student.register %>
+          <td>Ja</td>
+        <% else %>
+          <td>Nein</td>
+        <% end %>
+      </tr>
+  </tbody>
+</table>
+
+<h4>Ausgewählte Präsentationen</h4>
+<br>
+<% unless @student.rec %>
+<h4>Mailer</h4>
+<% unless @student.rec %>
+<%= link_to 'Anmeldedaten versenden', '#', class: "btn btn-primary" %>
+<% end %>
+<% unless @student.register %>
+<%= link_to 'Mahnmail versenden', '#', class: "btn btn-primary" %>
+<% end %>
+<% end %>

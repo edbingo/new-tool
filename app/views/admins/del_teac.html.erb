@@ -1,3 +1,4 @@
+<% if Presentation.where(betreuer: @teac.number).count > 0 %>
 <h4>Wenn Sie diesen Lehrer löschen, werden folgende Präsentationen auch entfernt.</h4>
 <table class="table table-hover sorttable">
   <thead>
@@ -31,5 +32,8 @@
     <% end %>
   </tbody>
 </table>
-
 <%= link_to 'Trotzdem entfernen', delete_teacher_confirm_path(:id => @teac.id), class: "btn btn-danger" %>
+<% else %>
+<h4>Möchten Sie <%= @teac.vorname %> <%= @teac.name %> wirklich entfernen?</h4> <br>
+<%= link_to 'Entfernen', delete_teacher_confirm_path(:id => @teac.id), class: "btn btn-danger" %>
+<% end %>

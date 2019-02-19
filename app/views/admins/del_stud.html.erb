@@ -1,0 +1,23 @@
+<h4 class="mb-3">Möchten Sie diesen Schüler wirklich entfernen?</h4>
+<table class="table table-hover sorttable">
+  <thead>
+    <tr>
+      <th>Vorname</th>
+      <th>Name</th>
+      <th>Klasse</th>
+      <th>Mail</th>
+      <th>Nummer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @student.vorname %></td>
+      <td><%= @student.name %></td>
+      <td><%= @student.klasse %></td>
+      <td><%= @student.mail %></td>
+      <td><%= @student.number %></td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to "Löschen", delete_student_confirm_path(:id => @student.id), class: "btn btn-danger" %>

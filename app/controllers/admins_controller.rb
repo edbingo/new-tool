@@ -7,6 +7,8 @@ class AdminsController < ApplicationController
   def dashboard
     if Student.first == nil && Presentation.first == nil && Teacher.first == nil
       redirect_to upload_teachers_path
+    else
+      @studrec = Student.where(rec: true).count / Student.where(rec: false).count
     end
   end
 
@@ -14,16 +16,24 @@ class AdminsController < ApplicationController
 
   # Teachers
   def import_teachers
+    render 'spinner'
+    conv = lambda { |header| header.downcase }
     items = []
-    CSV.foreach(params[:file].path,headers: true, col_sep: ";") do |row|
+    CSV.foreach(params[:file].path,headers: true, col_sep: ";", header_converters: conv) do |row|
       items << Teacher.new(row.to_h)
     end
     Teacher.import(items)
+    Teacher.all.each do |t|
+      t.rec = false
+      t.save
+    end
     redirect_to upload_students_path
   end
 
   # Students
   def import_students
+    render 'spinner'
+    conv = lambda { |header| header.downcase }
     file = params[:file].path
     table = CSV.read(file, headers: true, col_sep: ";")
     table.each do |row|
@@ -41,7 +51,7 @@ class AdminsController < ApplicationController
     end
 
     stud = []
-    CSV.foreach('new.csv',headers: true, col_sep: ";") do |row|
+    CSV.foreach('new.csv',headers: true, col_sep: ";", header_converters: conv) do |row|
       stud << Student.new(row.to_h)
     end
     Student.import(stud)
@@ -50,6 +60,7 @@ class AdminsController < ApplicationController
 
   # Presentations
   def import_presentations
+    render 'spinner'
     conv = lambda { |header| header.downcase }
     items = []
     CSV.foreach(params[:file].path, headers: true, col_sep: ";", header_converters: conv) do |row|
@@ -78,6 +89,22 @@ class AdminsController < ApplicationController
 # Settings ---------------------------------------------------------------------
 
   # Mailer
+
+  def mailer
+    @studrec = Student.where(rec: true).count.to_f / Student.all.count.to_f
+    n = 0
+    o = 0
+    Teacher.all.each do |t|
+      if Presentation.where(betreuer: t.number).count > 0 && t.rec == true
+        o = o + 1
+      end
+      if Presentation.where(betreuer: t.number).count > 0
+        n = n + 1
+      end
+    end
+    @teacrec = o.to_f / n.to_f
+    @num = n
+  end
 
   # Login Activation
   def act
@@ -172,6 +199,10 @@ class AdminsController < ApplicationController
     end
   end
 
+  def edit_stud
+    @student = Student.find_by_id(params[:id])
+  end
+
   def view_teac
     if params[:id] != nil && params[:number] == nil
       @teacher = Teacher.find_by(id: params[:id])
@@ -182,6 +213,10 @@ class AdminsController < ApplicationController
     end
   end
 
+  def view_stud
+    @student = Student.find_by_id(params[:id])
+  end
+
   def update_teacher
     t = Teacher.find_by(id: params[:id])
     p = Presentation.where(betreuer: t.number)
@@ -190,7 +225,7 @@ class AdminsController < ApplicationController
       r.save
     end
     t.update(teac_edit_params)
-    redirect_to list_teachers_path
+    redirect_to list_teachers_all_path
   end
 
   def update_presentation
@@ -210,8 +245,7 @@ class AdminsController < ApplicationController
   def update_student
     s = Student.find_by_id(params[:id])
     s.update(stud_edit_params)
-    s.rec = false
-    s.register = false
+    redirect_to list_students_path
   end
 
   def list_stud
@@ -318,6 +352,17 @@ class AdminsController < ApplicationController
     pres.destroy
     redirect_to list_presentations_path
     flash[:info] = "Präsentation erfolgreich gelöscht"
+  end
+
+  def del_stud
+    @student = Student.find_by_id(params[:id])
+  end
+
+  def del_stud_conf
+    stud = Student.find_by_id(params[:id])
+    stud.destroy
+    redirect_to list_students_path
+    flash[:info] = "Schüler erfolgreich gelöscht"
   end
 
   private

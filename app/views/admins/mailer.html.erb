@@ -1,0 +1,63 @@
+<div class="card mb-3">
+  <div class="card-header">
+    Mailer Status
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm">
+        <h4>Folgende Mails können versendet werden:</h4>
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Status</th>
+              <th>Prozent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Anmeldeinformationen</td>
+              <td>
+                <% if @studrec == 0 %>
+                  Noch nicht verschickt
+                <% else %>
+                  Verschickt
+                <% end %>
+              </td>
+              <td><%= (@studrec * 100).round(1) %>%</td>
+            </tr>
+            <tr>
+              <td>Mahnungsmail</td>
+              <td></td>
+              <td>N/A</td>
+            </tr>
+            <tr>
+              <td>Abschlusslisten</td>
+              <td>
+                <% if @teacrec == 0 %>
+                  Noch nicht verschickt
+                <% else %>
+                  Verschickt
+                <% end %>
+              </td>
+              <td><%= (@teacrec * 100).round(1) %>%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-sm">
+        <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#loginModal">
+          Anmeldedaten
+        </button>
+        <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#punishModal">
+          Mahnmail
+        </button>
+        <button type="button" class="btn btn-success mb-3" data-toggle="modal" data-target="#finalModal">
+          Schlusslisten
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'mailermodal' %>

@@ -10,11 +10,16 @@
         <% else %>
           Anmeldungen: <span class="text-danger font-weight-bold">Deaktiviert</span><br>
         <% end %>
-        <% if Student.first.rec == false %>
+        <% if @studrec == 0 %>
         Mailer Status: <span class="text-danger font-weight-bold">Mails wurden noch nicht verschickt</span>
-        <% else %>
+        <% elsif @studrec == 1 %>
         Mailer Status: <span class="text-success font-weight-bold">Online</span>
+        <% else %>
+        Mailer Status: <span class="text-danger font-weight-bold">Mails wurden noch nicht an allen Schülern verschickt</span>
         <% end %>
+        <hr>
+        <%= link_to 'System aktualisieren', '#', class: 'btn btn-warning mb-3' %>
+        <%= link_to 'Nach fehlern suchen', '#', class: 'btn btn-primary mb-3' %>
       </div>
       <div class="col-sm">
         <table class="table table-sm">
@@ -71,7 +76,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-title"></h5>
-          <%= link_to 'Mailerverwaltung öffnen', '#', class: 'btn-primary btn' %>
+          <%= link_to 'Mailerverwaltung öffnen', mailer_path, class: 'btn-primary btn' %>
         </div>
       </div>
     </div>

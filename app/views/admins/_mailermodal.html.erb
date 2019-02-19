@@ -1,0 +1,75 @@
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Anmeldedaten versenden</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Voraussichtliche Anzahl versendete Mails: <%= Student.where(rec: false).count %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
+        <button type="button" class="btn btn-primary">Senden</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="punishModal" tabindex="-1" role="dialog" aria-labelledby="punishModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="punishModalLabel">Mahnmail versenden</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Voraussichtliche Anzahl versendete Mails: <%= Student.where(register: false).count %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
+        <button type="button" class="btn btn-primary">Senden</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="finalModal" tabindex="-1" role="dialog" aria-labelledby="finalModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <% if Student.where(register: true).count / Student.all.count != 1 %>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="finalModalLabel">Schlusslisten versenden</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          Diese Mail kann erst versendet werden, wenn alle Schüler sich angemolden haben.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
+      </div>
+    </div>
+    <% else %>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="finalModalLabel">Schlusslisten versenden</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          Voraussichtliche Anzahl versendete Mails: <%= @num %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

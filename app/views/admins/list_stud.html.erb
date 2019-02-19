@@ -37,11 +37,16 @@
               Aktionen
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <%= link_to "Bearbeiten", '#', class: "btn btn-secondary dropdown-item" %>
-              <%= link_to "Mailer", '#', class: "btn btn-secondary dropdown-item" %>
+              <%= link_to "Bearbeiten", update_student_path(:id => stud.id), class: "btn btn-secondary dropdown-item" %>
+              <%= link_to "Anschauen", list_students_view_path(:id => stud.id), class: "btn btn-secondary dropdown-item" %>
+              <% unless stud.register %>
               <%= link_to "Force", '#', class: "btn btn-primary dropdown-item" %>
+              <% end %>
+              <% if stud.rec == true %>
+              <% else %>
               <div class="dropdown-divider"></div>
-              <%= link_to "Entfernen", '#', class: "btn btn-warning dropdown-item" %>
+              <%= link_to "Entfernen", delete_student_path(:id => stud.id), class: "btn btn-warning dropdown-item" %>
+              <% end %>
             </div>
           </div>
         </td>

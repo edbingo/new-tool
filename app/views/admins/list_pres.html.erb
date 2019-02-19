@@ -1,7 +1,9 @@
 <%= render 'navlist' %>
+<% unless Student.first.rec %>
 <div class="float-right">
   <button type="button" name="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newPresentationModal">Hinzufügen</button>
 </div>
+<% end %>
 
 <table class="table table-hover sorttable">
   <thead>
@@ -16,7 +18,9 @@
       <th>Von</th>
       <th>Bis</th>
       <th>Frei</th>
-      <th>Aktionen</th>
+      <% unless Student.first.rec = true %>
+        <th>Bearbeiten</th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
@@ -32,20 +36,22 @@
         <td><%= Time.at(pres.von.to_f).utc.strftime("%H:%M") %></td>
         <td><%= Time.at(pres.bis.to_f).utc.strftime("%H:%M") %></td>
         <td><%= pres.frei %></td>
-        <td>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Aktionen
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <%= link_to "Bearbeiten", update_presentation_path(:id => pres.id), class: "btn btn-primary dropdown-item" %>
-              <% unless Student.first.rec %>
-                <div class="dropdown-divider"></div>
-                <%= link_to "Löschen", delete_presentation_path(:id => pres.id), class: "btn btn-warning dropdown-item" %>
-              <% end %>
+        <% unless Student.first.rec %>
+          <td>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Aktionen
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <%= link_to "Bearbeiten", update_presentation_path(:id => pres.id), class: "btn btn-primary dropdown-item" %>
+                <% unless Student.first.rec %>
+                  <div class="dropdown-divider"></div>
+                  <%= link_to "Löschen", delete_presentation_path(:id => pres.id), class: "btn btn-warning dropdown-item" %>
+                <% end %>
+              </div>
             </div>
-          </div>
-        </td>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
