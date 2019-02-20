@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
+  get 'process', to: 'admins#processor'
+
   get 'list/presentations', to: 'admins#list_pres'
   get 'list/teachers', to: 'admins#list_teac'
   get 'list/students', to: 'admins#list_stud'

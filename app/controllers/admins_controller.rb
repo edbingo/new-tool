@@ -16,23 +16,17 @@ class AdminsController < ApplicationController
 
   # Teachers
   def import_teachers
-    render 'spinner'
     conv = lambda { |header| header.downcase }
     items = []
     CSV.foreach(params[:file].path,headers: true, col_sep: ";", header_converters: conv) do |row|
       items << Teacher.new(row.to_h)
     end
     Teacher.import(items)
-    Teacher.all.each do |t|
-      t.rec = false
-      t.save
-    end
     redirect_to upload_students_path
   end
 
   # Students
   def import_students
-    render 'spinner'
     conv = lambda { |header| header.downcase }
     file = params[:file].path
     table = CSV.read(file, headers: true, col_sep: ";")
@@ -60,17 +54,12 @@ class AdminsController < ApplicationController
 
   # Presentations
   def import_presentations
-    render 'spinner'
     conv = lambda { |header| header.downcase }
     items = []
     CSV.foreach(params[:file].path, headers: true, col_sep: ";", header_converters: conv) do |row|
       items << Presentation.new(row.to_h)
     end
     Presentation.import(items)
-    Presentation.all.each do |row|
-      row.update_attribute(:von, "#{Time.parse(row.von).seconds_since_midnight}")
-      row.update_attribute(:bis, "#{Time.parse(row.bis).seconds_since_midnight}")
-    end
     redirect_to upload_settings_path
   end
 
@@ -80,10 +69,21 @@ class AdminsController < ApplicationController
     f = params[:free]
     t = params[:time].to_i * 60
     Pref.create(time: t, req: r, free: f, login: true)
+    redirect_to process_path
+  end
+
+  def processor
+    Teacher.all.each do |t|
+      t.rec = false
+      t.save
+    end
+    Presentation.all.each do |row|
+      row.update_attribute(:von, "#{Time.parse(row.von).seconds_since_midnight}")
+      row.update_attribute(:bis, "#{Time.parse(row.bis).seconds_since_midnight}")
+    end
     Presentation.all.each do |row|
       row.update_attribute("frei", Pref.first.free)
     end
-    redirect_to dashboard_path
   end
 
 # Settings ---------------------------------------------------------------------
@@ -124,6 +124,7 @@ class AdminsController < ApplicationController
     Pref.first.update_attribute("free", params[:free])
     redirect_to settings_path
   end
+
 
 # Model Management -------------------------------------------------------------
 
