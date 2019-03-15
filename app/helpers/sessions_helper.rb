@@ -11,10 +11,6 @@ module SessionsHelper
     end
   end
 
-  def stud_in(student)
-    session[:student_id] = student.id
-  end
-
   def logged_ad?
     !current_admin.nil?
   end

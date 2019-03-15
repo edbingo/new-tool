@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  # Dashboard -----------------------------------------------
+
   get 'teachers/list_teac'
   resources :students
   root 'static_pages#index'

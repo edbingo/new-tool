@@ -30,6 +30,15 @@
         <%= link_to 'Abmelden', logout_path, class: "nav-link" %>
       </li>
 
+      <% elsif logged_ad? %>
+      <li class="nav-item">
+        <%= link_to 'Registration', '#', class: "nav-link" %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to 'Abmelden', '#', class: "nav-link" %>
+      </li>
+
       <% else %>
 
       <li class="nav-item <%= 'active' if current_page?(login_path) %>">
