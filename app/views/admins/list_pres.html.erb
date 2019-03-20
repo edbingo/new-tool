@@ -18,7 +18,7 @@
       <th>Von</th>
       <th>Bis</th>
       <th>Frei</th>
-      <% unless Student.first.rec = true %>
+      <% if Student.first.rec = false %>
         <th>Bearbeiten</th>
       <% end %>
     </tr>

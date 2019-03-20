@@ -6,34 +6,47 @@ class SessionsController < ApplicationController
     admin = Admin.find_by_handle(params[:handle])
     if admin && admin.authenticate(params[:password])
       session[:admin_id] = admin.id
-      redirect_to dashboard_path, notice: "Logged in!"
+      redirect_to dashboard_path, notice: "Anmeldung erfolgreich"
     else
-      flash.now[:alert] = "Handle or password is invalid"
+      flash.now[:alert] = "Name oder Passwort falsch"
       render "new"
     end
   end
 
   def destroy
     session[:admin_id] = nil
-    session[:studen]
+    session[:student_id] = nil
     redirect_to root_url, notice: "Logged out!"
   end
 
   def studcreate
     student = Student.find_by_number(params[:number])
-    if student && student.authenticate(params[:password]) && student.login && !student.register
+    prefs = Pref.first
+    if student && student.authenticate(params[:password]) && prefs.login && !student.register
       session[:student_id] = student.id
       redirect_to registrieren_path
       flash["success"] = "Willkommen, #{student.vorname} #{student.name}"
-    elsif !student.login
-      redirect_to root_path
+    elsif !prefs.login
+      redirect_to login_path
       flash["alert"] = "Anmeldungen sind deaktiviert. Bitte versuchen Sie später nochmals."
     elsif student.register
-      redirect_to root_path
+      redirect_to login_path
       flash["alert"] = "Sie haben sich schon registriert."
     else
-      redirect_to root_path
+      redirect_to login_path
       flash["error"] = "Diese Kombination wurde in der Datenbank nicht gefunden"
     end
   end
+  
+  def force
+    student = Student.find_by_id(params[:id])
+    session[:student_id] = student.id
+    redirect_to registrieren_path
+  end
+
+  def back
+    session[:student_id] = nil
+    redirect_to list_students_path
+  end
+
 end

@@ -22,6 +22,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require toastr
 
 $(function(){
   $("a[rel='tooltip']").tooltip();

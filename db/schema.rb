@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2019_01_31_133221) do
     t.string "password_digest"
     t.boolean "register"
     t.boolean "rec"
+    t.text "select"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["number"], name: "index_students_on_number", unique: true

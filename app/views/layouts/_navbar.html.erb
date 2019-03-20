@@ -10,44 +10,56 @@
         <%= link_to 'Home', root_path, class: "nav-link" %>
       </li>
 
-      <% if logged_ad? %>
-      <li class="nav-item <%= 'active' if current_page?(dashboard_path) %>">
-        <%= link_to 'Dashboard', dashboard_path, class: 'nav-link' %>
-      </li>
+      <% if logged_ad? && !logged_stud? %>
+        <li class="nav-item <%= 'active' if current_page?(dashboard_path) %>">
+          <%= link_to 'Dashboard', dashboard_path, class: 'nav-link' %>
+        </li>
 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Erweitert
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Erweitert
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
 
-      <li class="nav-item">
-        <%= link_to 'Abmelden', logout_path, class: "nav-link" %>
-      </li>
+        <li class="nav-item">
+          <%= link_to 'Abmelden', logout_path, class: "nav-link" %>
+        </li>
 
-      <% elsif logged_ad? %>
-      <li class="nav-item">
-        <%= link_to 'Registration', '#', class: "nav-link" %>
-      </li>
+      <% elsif logged_stud? && !logged_ad? %>
+        <li class="nav-item <%= 'active' if current_page?(registrieren_path) %>">
+          <%= link_to 'Registration', registrieren_path, class: "nav-link" %>
+        </li>
 
-      <li class="nav-item">
-        <%= link_to 'Abmelden', '#', class: "nav-link" %>
-      </li>
-
+        <li class="nav-item">
+          <%= link_to 'Abmelden', logout_path, class: "nav-link" %>
+        </li>
+      <% elsif logged_stud? && logged_ad? %>
+        <li class="nav-item">
+          <%= link_to 'Zurück', return_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Abmelden', logout_path, class: "nav-link" %>
+        </li>
       <% else %>
-
-      <li class="nav-item <%= 'active' if current_page?(login_path) %>">
-        <%= link_to 'Anmelden', login_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Hilfe</a>
-      </li>
+        <li class="nav-item <%= 'active' if current_page?(login_path) %>">
+          <%= link_to 'Anmelden', login_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Hilfe</a>
+        </li>
       <% end %>
     </ul>
+    <% if logged_ad? && logged_stud? %>
+      <strong class="white-text">GOD MODE</strong>
+    <% elsif logged_ad? && !logged_stud? %>
+      <span class="white-text">Administrator <%= current_admin.handle %></span>
+    <% elsif !logged_ad? && logged_stud? %>
+      <span class="white-text"><%= current_stud.vorname %> <%= current_stud.name %>
+    <% end %>
   </div>
 </nav>

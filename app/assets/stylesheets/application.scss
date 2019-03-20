@@ -12,6 +12,7 @@
  */
 
 @import 'bootstrap';
+@import "toastr";
 
 body {
   padding-top: 5rem;
@@ -97,4 +98,18 @@ img {
 
 .srt {
   cursor: pointer;
+}
+
+#fixedinfo {
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+  background: lightcoral;
+  border-radius: 5px;
+  padding: 0.5em;
+  font-size: 20px;
+}
+
+.white-text {
+  color: white;
 }

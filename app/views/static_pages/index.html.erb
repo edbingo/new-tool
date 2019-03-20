@@ -9,13 +9,13 @@
       <%= link_to 'Dashboard', dashboard_path, class: "btn btn-lg btn-primary" %>
     <% elsif Presentation.first == nil && Teacher.first == nil && Student.first == nil %>
       <p class="card-text">Diese Seite wurde noch nicht eingerichtet. Bitte kontaktieren Sie das Informatikbüro</p>
-      <%= link_to 'Anmelden', login_path, class: "btn btn-lg btn-primary" %>
     <% else %>
     <p class="card-text">Jetzt Anmelden</p>
-      <%= link_to 'Anmelden', '#', class: "btn btn-lg btn-primary" %>
+      <%= link_to 'Anmelden', login_path, class: "btn btn-lg btn-primary" %>
     <% end %>
   </div>
   <div class="card-footer text-muted">
-    Erstellt von Edward Lancaster MA18
+    Erstellt von Edward Lancaster MA18 <br />
+    <%= link_to 'Adminbereich', admin_login_path %>
   </div>
 </div>

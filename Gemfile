@@ -9,6 +9,8 @@ gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'bootstrap-tooltip-rails'
 
+gem 'toastr-rails'
+
 gem 'responders'
 
 gem 'haml'

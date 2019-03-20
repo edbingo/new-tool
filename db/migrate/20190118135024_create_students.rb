@@ -10,6 +10,8 @@ class CreateStudents < ActiveRecord::Migration[5.2]
       t.string :password_digest
       t.boolean :register
       t.boolean :rec
+      t.text :select
+
       t.timestamps
     end
     add_index :students, :number, unique: true

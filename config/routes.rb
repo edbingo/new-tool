@@ -7,10 +7,25 @@ Rails.application.routes.draw do
   root 'static_pages#index'
 
   get 'signup', to: 'admins#new', as: 'signup'
-  get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
+  get 'admin/login', to: 'sessions#new'
+  post 'admin/login', to: 'sessions#create'
+
+  get 'login', to: 'sessions#new_stud'
+  post 'login', to: 'sessions#studcreate'
+
   get 'process', to: 'admins#processor'
+
+  get 'registrieren', to: 'select#list'
+
+  get 'confirm/selection', to: 'select#confirm'
+
+  get 'force', to: 'sessions#force'
+  get 'return', to: 'sessions#back'
+  get 'choose', to: 'select#add'
+  get 'remove', to: 'select#remove'
+  get 'confirm/selection', to: 'select#confirm'
 
   get 'list/presentations', to: 'admins#list_pres'
   get 'list/teachers', to: 'admins#list_teac'

@@ -1,8 +1,8 @@
-<h1>Studenten hinzufügen</h1>
+<h4>Studenten hinzufügen</h4>
 
 <div class="custom-file">
     <%= form_tag upload_students_path, multipart: true do %>
       <%= file_field_tag :file, class: "form-control-file my-3" %>
-      <%= submit_tag "Import CSV", data: { disable_with: "Passwörter werden generiert" }, class: "btn btn-primary" %>
+      <%= submit_tag "Import CSV", data: { disable_with: "Passwörter werden generiert..." }, class: "btn btn-primary" %>
     <% end  %>
 </div>

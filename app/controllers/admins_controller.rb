@@ -1,6 +1,14 @@
 class AdminsController < ApplicationController
   require 'csv'
   before_action :set_admin, only: [:show, :edit, :update, :destroy]
+  before_action :only_auth
+
+  def only_auth
+    unless logged_ad?
+      redirect_to admin_login_path
+      flash[:error] = "Diese Seite ist nur für Administratoren verfügbar"
+    end
+  end
 
 # Dashboard --------------------------------------------------------------------
 
@@ -39,13 +47,17 @@ class AdminsController < ApplicationController
       row["rec"] = false
     end
 
+    
+
     CSV.open('new.csv', "w", col_sep: ";") do |f|
-      f << table.headers
-      table.each{ |row| f << row }
+      f << ["name", "vorname", "number", "mail", "klasse", "code", "password", "password_confirmation", "register", "rec"]
+      table.each do |row|
+         f << row
+      end
     end
 
     stud = []
-    CSV.foreach('new.csv',headers: true, col_sep: ";", header_converters: conv) do |row|
+    CSV.foreach('new.csv', headers: true, col_sep: ";", header_converters: conv) do |row|
       stud << Student.new(row.to_h)
     end
     Student.import(stud)
@@ -77,13 +89,16 @@ class AdminsController < ApplicationController
       t.rec = false
       t.save
     end
-    Presentation.all.each do |row|
-      row.update_attribute(:von, "#{Time.parse(row.von).seconds_since_midnight}")
-      row.update_attribute(:bis, "#{Time.parse(row.bis).seconds_since_midnight}")
+    Student.all.each do |s|
+      s.select = []
+      s.save
     end
     Presentation.all.each do |row|
       row.update_attribute("frei", Pref.first.free)
+      row.update_attribute(:von, "#{Time.parse(row.von).seconds_since_midnight}")
+      row.update_attribute(:bis, "#{Time.parse(row.bis).seconds_since_midnight}")
     end
+    redirect_to dashboard_path
   end
 
 # Settings ---------------------------------------------------------------------
@@ -292,7 +307,7 @@ class AdminsController < ApplicationController
   end
 
   def clear
-    [Student, Admin, Presentation, Teacher].each { |model| model.truncate! }
+    [Student, Admin, Presentation, Teacher, Pref].each { |model| model.truncate! }
     Rails.application.load_seed
     flash[:success] = "Datenbank wurde zurückgesetzt"
     redirect_to root_path

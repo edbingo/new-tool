@@ -9,5 +9,4 @@ module ApplicationHelper
       when 'info' then 'alert alert-info'
     end
   end
-
 end
