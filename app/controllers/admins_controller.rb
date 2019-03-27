@@ -231,6 +231,12 @@ class AdminsController < ApplicationController
 
   def view_stud
     @student = Student.find_by_id(params[:id])
+    @presentations = []
+    @student.select.each do |p|
+      pres = Presentation.find_by_id(p)
+      @presentations << pres
+    end
+
   end
 
   def update_teacher

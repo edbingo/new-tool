@@ -26,26 +26,42 @@
           <td><%= pres.klasse %></td>
           <td><%= pres.titel %></td>
           <td><%= pres.fach %></td>
-              <% btr = Teacher.find_by_number(pres.betreuer) %>
+          <% btr = Teacher.find_by_number(pres.betreuer) %>
           <td><%= btr.vorname %> <%= btr.name %></td>
           <td><%= pres.zimmer %></td>
           <td><%= Time.at(pres.von.to_f).utc.strftime("%H:%M") %></td>
           <td><%= Time.at(pres.bis.to_f).utc.strftime("%H:%M") %></td>
           <td><%= pres.frei %></td>
-          <td>
-            <% if current_student.select.include?(pres.id) %>
-              <%= link_to 'Entfernen', remove_path(:id => pres.id), class: "btn btn-primary btn-block" %>
-            <% elsif !current_student.select.include?(pres.id) %>
-            <%= link_to 'Wählen', choose_path(:id => pres.id), class: "btn btn-primary btn-block" %>
+          <% compat = [] %>
+          <% current_student.select.each do |s| %>
+            <% p = Presentation.find_by_id(s) %>
+            <% if p.von == pres.von || ( pres.von.to_i - p.bis.to_i < Pref.first.time && pres.von.to_i - p.bis.to_i > 0) || (p.von.to_i - pres.bis.to_i < Pref.first.time && p.von.to_i - pres.bis.to_i > 0) %>
+              <% compat << false %>
+            <% else %>
+              <% compat << true %>
             <% end %>
-          </td>
+          <% end %>
+          <% if compat.all? %>
+            <td>
+              <% if current_student.select.include?(pres.id) %>
+              <% elsif !current_student.select.include?(pres.id) %>
+                <%= link_to 'Wählen', choose_path(:id => pres.id), class: "btn btn-primary btn-block" %>
+              <% end %>
+            </td>
+          <% elsif current_student.select.include?(pres.id) %>
+            <td>
+              <%= link_to 'Entfernen', remove_path(:id => pres.id), class: "btn btn-primary btn-block" %>
+            </td>
+          <% else %>
+            <td></td>
+          <% end %>
         </tr>
     <% end %>
   </tbody>
 </table>
 
 
-<div id="fixedinfo" class="shadow">
+<div id="fixedinfo" class="shadow bg-warning">
   <% if Pref.first.req.to_i - current_student.select.count > 1 %>
     Sie müssen noch <%= Pref.first.req.to_i - current_student.select.count %> Präsentationen auswählen.
   <% elsif Pref.first.req.to_i - current_student.select.count == 1 %>

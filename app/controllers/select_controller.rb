@@ -25,7 +25,19 @@ class SelectController < ApplicationController
     end
     
     def confirm
+        @presentations = []
+        current_student.select.each do |p|
+            pres = Presentation.find_by_id(p)
+            @presentations << pres
+        end
+    end
 
+    def time_check
+        current_student.select.each do |i|
+            pres = Presentation.find_by_id(i)
+            if pres.bis + Pref.first.time > newpres.von
+            end
+        end
     end
 
     private

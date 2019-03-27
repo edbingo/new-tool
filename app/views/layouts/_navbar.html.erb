@@ -31,10 +31,15 @@
         </li>
 
       <% elsif logged_stud? && !logged_ad? %>
-        <li class="nav-item <%= 'active' if current_page?(registrieren_path) %>">
-          <%= link_to 'Registration', registrieren_path, class: "nav-link" %>
-        </li>
-
+        <% unless current_student.select.count == Pref.first.req %>
+          <li class="nav-item <%= 'active' if current_page?(registrieren_path) %>">
+            <%= link_to 'Registration', registrieren_path, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item <%= 'active' if current_page?(confirm_selection_path) %>">
+            <%= link_to 'Bestätigung', confirm_selection_path, class: "nav-link" %>
+          </li>
+        <% end %>
         <li class="nav-item">
           <%= link_to 'Abmelden', logout_path, class: "nav-link" %>
         </li>
@@ -59,7 +64,7 @@
     <% elsif logged_ad? && !logged_stud? %>
       <span class="white-text">Administrator <%= current_admin.handle %></span>
     <% elsif !logged_ad? && logged_stud? %>
-      <span class="white-text"><%= current_stud.vorname %> <%= current_stud.name %>
+      <span class="white-text"><%= current_student.vorname %> <%= current_student.name %>
     <% end %>
   </div>
 </nav>

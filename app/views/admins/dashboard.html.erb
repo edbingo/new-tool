@@ -46,61 +46,61 @@
   </div>
 </div>
 
-  <div class="row">
-    <div class="col-sm">
-      <div class="card mb-3">
-        <div class="card-header">
-          Datenbank Verwaltung
-        </div>
-        <div class="card-body">
+<div class="row">
+  <div class="col-sm">
+    <div class="card mb-3">
+      <div class="card-header">
+        Datenbank Verwaltung
+      </div>
+      <div class="card-body">
 
-          <% if Presentation.first == nil && Teacher.first == nil && Student.first == nil %>
+        <% if Presentation.first == nil || Teacher.first == nil || Student.first == nil %>
           <p class="card-text">Die Datenbank ist noch nicht vollständig ausgefüllt.</p>
           <%= link_to "Jetzt Ausfüllen...", upload_teachers_path, class: "btn btn-primary"%>
-          <% else %>
+        <% else %>
           <h5 class="card-title">Verfügbare Datenbanken:</h5>
           <div class="btn-group" role="group" aria-label="Basic example">
             <%= link_to 'Lehrer', list_teachers_path, class:"btn btn-secondary" %>
             <%= link_to 'Präsentationen', list_presentations_path, class:"btn btn-secondary" %>
             <%= link_to 'Schüler', list_students_path, class:"btn btn-secondary" %>
           </div>
-          <% end %>
+        <% end %>
 
-        </div>
-      </div>
-    </div>
-    <div class="col-sm mb-3">
-      <div class="card">
-        <div class="card-header">
-          Mailer
-        </div>
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <%= link_to 'Mailerverwaltung öffnen', mailer_path, class: 'btn-primary btn' %>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm mb-3">
-      <div class="card">
-        <div class="card-header">
-          Servereinstellungen
-        </div>
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          Current user type:
-          <% if logged_ad? %>
-          Admin, <%= @current_admin.handle %>
-          <% elsif logged_stud? %>
-          Student.
-          <% end %>
-          <hr>
-          <%= link_to 'Einstellungen', settings_path, class: 'btn-primary btn' %>
-          <hr>
-          <%= link_to 'Admins verwalten', admins_path, class: 'btn btn-primary' %>
-          <%= link_to 'Reset', reset_path, class: 'btn-danger btn' %>
-        </div>
       </div>
     </div>
   </div>
+  <div class="col-sm mb-3">
+    <div class="card">
+      <div class="card-header">
+        Mailer
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <%= link_to 'Mailerverwaltung öffnen', mailer_path, class: 'btn-primary btn' %>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm mb-3">
+    <div class="card">
+      <div class="card-header">
+        Servereinstellungen
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        Current user type:
+        <% if logged_ad? %>
+        Admin, <%= @current_admin.handle %>
+        <% elsif logged_stud? %>
+        Student.
+        <% end %>
+        <hr>
+        <%= link_to 'Einstellungen', settings_path, class: 'btn-primary btn' %>
+        <hr>
+        <%= link_to 'Admins verwalten', admins_path, class: 'btn btn-primary' %>
+        <%= link_to 'Reset', reset_path, class: 'btn-danger btn' %>
+      </div>
+    </div>
+  </div>
+</div>
 <br>
 <br>

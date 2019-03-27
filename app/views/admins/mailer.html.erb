@@ -5,7 +5,7 @@
   <div class="card-body">
     <div class="row">
       <div class="col-sm">
-        <h4>Folgende Mails können versendet werden:</h4>
+        <h5 class="card-title">Folgende Mails können versendet werden:</h5>
         <table class="table table-sm">
           <thead>
             <tr>
@@ -26,11 +26,13 @@
               </td>
               <td><%= (@studrec * 100).round(1) %>%</td>
             </tr>
-            <tr>
-              <td>Mahnungsmail</td>
-              <td></td>
-              <td>N/A</td>
-            </tr>
+            <% unless Student.where(rec: true).count == 0 %>
+              <tr>
+                <td>Mahnungsmail</td>
+                <td></td>
+                <td>N/A</td>
+              </tr>
+            <% end %>
             <tr>
               <td>Abschlusslisten</td>
               <td>

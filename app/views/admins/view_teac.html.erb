@@ -1,36 +1,42 @@
-<h4 class="mb-3"><%= @teacher.vorname %> <%= @teacher.name %></h4>
-<table class="table table-hover sorttable">
-  <thead>
-    <tr class="srt">
-      <th>Vorname</th>
-      <th>Nachname</th>
-      <th>Klasse</th>
-      <th>Titel</th>
-      <th>Fach</th>
-      <th>Betreuer</th>
-      <th>Zimmer</th>
-      <th>Von</th>
-      <th>Bis</th>
-      <th>Frei</th>
-      <th>Besucher</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @presentations.each do |pres| %>
-      <tr>
-        <td><%= pres.vorname %></td>
-        <td><%= pres.name %></td>
-        <td><%= pres.klasse %></td>
-        <td><%= pres.titel %></td>
-        <td><%= pres.fach %></td>
-        <td><span rel="tooltip" data-toggle="tooltip" style="cursor: pointer;" title="<%= Teacher.find_by(number: pres.betreuer).vorname %> <%= Teacher.find_by(number: pres.betreuer).name %>"><%= pres.betreuer %></span></td>
-        <td><%= pres.zimmer %></td>
-        <td><%= Time.at(pres.von.to_f).utc.strftime("%H:%M") %></td>
-        <td><%= Time.at(pres.bis.to_f).utc.strftime("%H:%M") %></td>
-        <td><%= pres.frei %></td>
-        <td>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="card mb-3">
+  <div class="card-header">
+    <%= @teacher.vorname %> <%= @teacher.name %>
+  </div>
+  <div class="card-body">
+    <table class="table table-hover sorttable table-sm">
+      <thead>
+        <tr class="srt">
+          <th>Vorname</th>
+          <th>Nachname</th>
+          <th>Klasse</th>
+          <th>Titel</th>
+          <th>Fach</th>
+          <th>Betreuer</th>
+          <th>Zimmer</th>
+          <th>Von</th>
+          <th>Bis</th>
+          <th>Frei</th>
+          <th>Besucher</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @presentations.each do |pres| %>
+          <tr>
+            <td><%= pres.vorname %></td>
+            <td><%= pres.name %></td>
+            <td><%= pres.klasse %></td>
+            <td><%= pres.titel %></td>
+            <td><%= pres.fach %></td>
+            <td><span rel="tooltip" data-toggle="tooltip" style="cursor: pointer;" title="<%= Teacher.find_by(number: pres.betreuer).vorname %> <%= Teacher.find_by(number: pres.betreuer).name %>"><%= pres.betreuer %></span></td>
+            <td><%= pres.zimmer %></td>
+            <td><%= Time.at(pres.von.to_f).utc.strftime("%H:%M") %></td>
+            <td><%= Time.at(pres.bis.to_f).utc.strftime("%H:%M") %></td>
+            <td><%= pres.frei %></td>
+            <td>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

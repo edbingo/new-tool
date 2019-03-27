@@ -7,6 +7,6 @@
     <%= number_field_tag 'time', 6, class: "form-control mb-3", min: 1, max: 60, step: 1 %>
     Anzahl freie Plätze pro Präsentation
     <%= number_field_tag 'free', 5, class: "form-control mb-3", min: 1, max: 10, step: 1 %>
-    <%= submit_tag 'Speichern', class: "btn btn-lg btn-primary btn-block" %>
+    <%= submit_tag 'Speichern', class: "btn btn-lg btn-primary btn-block", data: { disable_with: "Processing data..." } %>
   <% end %>
 </div>
