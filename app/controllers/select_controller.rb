@@ -32,12 +32,18 @@ class SelectController < ApplicationController
         end
     end
 
-    def time_check
-        current_student.select.each do |i|
-            pres = Presentation.find_by_id(i)
-            if pres.bis + Pref.first.time > newpres.von
-            end
+    def sending
+        current_student.select.each do |s|
+            p = Presentation.find_by_id(s)
+            p.visit << current_student
+            p.save
         end
+        current_student.register = true
+        current_student.save
+        # Send emails
+        session[:admin_id] = nil
+        session[:student_id] = nil
+        redirect_to root_url, notice: "Session beendet"
     end
 
     private

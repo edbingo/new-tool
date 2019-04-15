@@ -16,7 +16,7 @@ class AdminsController < ApplicationController
     if Student.first == nil && Presentation.first == nil && Teacher.first == nil
       redirect_to upload_teachers_path
     else
-      @studrec = Student.where(rec: true).count / Student.where(rec: false).count
+      @studrec = Student.where(rec: true).count.to_f / Student.all.count.to_f
     end
   end
 
@@ -80,7 +80,7 @@ class AdminsController < ApplicationController
     r = params[:req]
     f = params[:free]
     t = params[:time].to_i * 60
-    Pref.create(time: t, req: r, free: f, login: true)
+    Pref.create(time: t, req: r, free: f, login: true, log_data: false)
     redirect_to process_path
   end
 
@@ -94,9 +94,11 @@ class AdminsController < ApplicationController
       s.save
     end
     Presentation.all.each do |row|
-      row.update_attribute("frei", Pref.first.free)
-      row.update_attribute(:von, "#{Time.parse(row.von).seconds_since_midnight}")
-      row.update_attribute(:bis, "#{Time.parse(row.bis).seconds_since_midnight}")
+      row.frei = Pref.first.free
+      row.von = "#{Time.parse(row.von).seconds_since_midnight}"
+      row.bis = "#{Time.parse(row.bis).seconds_since_midnight}"
+      row.visit = []
+      row.save
     end
     redirect_to dashboard_path
   end
@@ -227,6 +229,10 @@ class AdminsController < ApplicationController
       @teacher = Teacher.find_by(number: params[:number])
       @presentations = Presentation.where(betreuer: @teacher.number)
     end
+  end
+
+  def view_pres
+    @pres = Presentation.find_by_id(params[:id])
   end
 
   def view_stud

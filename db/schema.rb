@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_01_31_133221) do
     t.integer "req"
     t.integer "free"
     t.boolean "login"
+    t.boolean "log_data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,7 +41,7 @@ ActiveRecord::Schema.define(version: 2019_01_31_133221) do
     t.string "von"
     t.string "bis"
     t.integer "frei"
-    t.integer "time"
+    t.text "visit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

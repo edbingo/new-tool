@@ -11,7 +11,7 @@ class CreatePresentations < ActiveRecord::Migration[5.2]
       t.string :von
       t.string :bis
       t.integer :frei
-      t.integer :time
+      t.text :visit
       t.timestamps
     end
   end

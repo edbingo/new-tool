@@ -18,7 +18,7 @@
       <th>Von</th>
       <th>Bis</th>
       <th>Frei</th>
-      <% if Student.first.rec = false %>
+      <% if Pref.first.log_data = false %>
         <th>Bearbeiten</th>
       <% end %>
     </tr>
@@ -36,7 +36,7 @@
         <td><%= Time.at(pres.von.to_f).utc.strftime("%H:%M") %></td>
         <td><%= Time.at(pres.bis.to_f).utc.strftime("%H:%M") %></td>
         <td><%= pres.frei %></td>
-        <% unless Student.first.rec %>
+        <% unless Pref.first.log_data %>
           <td>
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -51,6 +51,9 @@
               </div>
             </div>
           </td>
+        <% else %>
+          <td>
+            <%= link_to 'Besucher', list_presentations_view_path(:id => pres.id), class: "btn btn-secondary" %>
         <% end %>
       </tr>
     <% end %>

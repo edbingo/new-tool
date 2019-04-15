@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-sm">
+    <div class="card mb-3">
+      <div class="card-header">
+        Grundinfo
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= @pres.titel %>, <%= @pres.vorname %> <%= @pres.name %>, <%= @pres.klasse %></h5>
+        <table class="table table-hover sorttable table-sm">
+          <thead>
+            <tr>
+              <th>Fach</th>
+              <th>Betreuer</th>
+              <th>Zimmer</th>
+              <th>Von</th>
+              <th>Bis</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td><%= @pres.fach %></td>
+                <td><%= @pres.betreuer %></td>
+                <td><%= @pres.zimmer %></td>
+                <td><%= Time.at(@pres.von.to_f).utc.strftime("%H:%M") %>
+                <td><%= Time.at(@pres.bis.to_f).utc.strftime("%H:%M") %>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm">
+    <div class="card mb-3">
+      <div class="card-header">
+        Besucher
+      </div>
+      <div class="card-body">
+        <table class="table table-hover sorttable table-sm">
+            <thead>
+                <tr>
+                    <th>Vorname</th>
+                    <th>Name</th>
+                    <th>Klasse</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% @pres.visit.each do |s| %>
+                <tr>
+                    <td><%= s.vorname %></td>
+                    <td><%= s.name %></td>
+                    <td><%= s.klasse %></td>
+                </tr>
+            <% end %>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

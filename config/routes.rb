@@ -46,6 +46,10 @@ Rails.application.routes.draw do
   post 'presentation/update', to: 'admins#update_presentation'
   post 'student/update', to: 'admins#update_student'
 
+  get 'list/presentations/view', to: 'admins#view_pres'
+
+  get 'registration/send', to: 'select#sending'
+
   post 'admin/update', to: 'admins#update_admin'
   patch 'teacher/update', to: 'admins#update_teacher'
   post 'teacher/update', to: 'admins#update_teacher'

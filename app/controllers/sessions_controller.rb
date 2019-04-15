@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:admin_id] = nil
     session[:student_id] = nil
-    redirect_to root_url, notice: "Logged out!"
+    redirect_to root_url, notice: "Session beendet"
   end
 
   def studcreate

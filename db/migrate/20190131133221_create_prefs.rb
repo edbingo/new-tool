@@ -5,6 +5,7 @@ class CreatePrefs < ActiveRecord::Migration[5.2]
       t.integer :req
       t.integer :free
       t.boolean :login
+      t.boolean :log_data
       t.timestamps
     end
   end
