@@ -5,7 +5,7 @@ class AdminsController < ApplicationController
 
   def only_auth
     unless logged_ad?
-      redirect_to admin_login_path
+      redirect_to login_path
       flash[:error] = "Diese Seite ist nur für Administratoren verfügbar"
     end
   end
@@ -46,8 +46,6 @@ class AdminsController < ApplicationController
       row["register"] = false
       row["rec"] = false
     end
-
-    
 
     CSV.open('new.csv', "w", col_sep: ";") do |f|
       f << ["name", "vorname", "number", "mail", "klasse", "code", "password", "password_confirmation", "register", "rec"]
@@ -194,115 +192,192 @@ class AdminsController < ApplicationController
       end
     end
 
+  # Teachers
 
-  def list_teac
-    @teachers = Teacher.all
-    @teacher = Teacher.new
-  end
-
-  def list_teac_all
-    @teachers = Teacher.all
-    @teacher = Teacher.new
-  end
-
-  def edit_teac
-    @teacher = Teacher.find_by(id: params[:id])
-  end
-
-  def edit_pres
-    if params[:id] == nil
-      redirect_to list_presentations_path
-    else
-      @presentation = Presentation.find_by(id: params[:id])
+    # List
+    def list_teac
+      @teachers = Teacher.all
+      @teacher = Teacher.new
     end
-  end
 
-  def edit_stud
-    @student = Student.find_by_id(params[:id])
-  end
+    def list_teac_all
+      @teachers = Teacher.all
+      @teacher = Teacher.new
+    end
 
-  def view_teac
-    if params[:id] != nil && params[:number] == nil
+    # Create
+    def new_teac
+      @teacher = Teacher.new(teac_params)
+      if @teacher.save
+        redirect_to list_teachers_all_path
+      else
+        redirect_to list_teachers_path
+        flash["error"] = "Bitte überprüfen Sie Ihre Eingabe."
+      end
+    end
+
+    # Edit
+    def edit_teac
       @teacher = Teacher.find_by(id: params[:id])
-      @presentations = Presentation.where(betreuer: @teacher.number)
-    elsif params[:number] != nil && params[:id] == nil
-      @teacher = Teacher.find_by(number: params[:number])
-      @presentations = Presentation.where(betreuer: @teacher.number)
-    end
-  end
-
-  def view_pres
-    @pres = Presentation.find_by_id(params[:id])
-  end
-
-  def view_stud
-    @student = Student.find_by_id(params[:id])
-    @presentations = []
-    @student.select.each do |p|
-      pres = Presentation.find_by_id(p)
-      @presentations << pres
     end
 
-  end
-
-  def update_teacher
-    t = Teacher.find_by(id: params[:id])
-    p = Presentation.where(betreuer: t.number)
-    p.each do |r|
-      r.betreuer = params[:number]
-      r.save
+    def update_teacher
+      t = Teacher.find_by(id: params[:id])
+      p = Presentation.where(betreuer: t.number)
+      p.each do |r|
+        r.betreuer = params[:number]
+        r.save
+      end
+      t.update(teac_edit_params)
+      redirect_to list_teachers_all_path
     end
-    t.update(teac_edit_params)
-    redirect_to list_teachers_all_path
-  end
 
-  def update_presentation
-    p = Presentation.find_by_id(params[:id])
-    if Teacher.where(number: params[:betreuer]).count == 0
-      flash["error"] = "Dieser Lehrer sollte es nicht geben"
-      redirect_to update_presentation_path
-    elsif Teacher.where(number: params[:betreuer]).count > 0
-      p.update(pres_edit_params)
-      p.von = Time.parse(p.von).seconds_since_midnight
-      p.bis = Time.parse(p.bis).seconds_since_midnight
-      p.save
+    # Delete
+    def del_teac
+      @teac = Teacher.find_by_id(params[:id])
+      @presentations = Presentation.where(betreuer: @teac.number)
+    end
+
+    def del_teac_conf
+      teac = Teacher.find_by_id(params[:id])
+      pres = Presentation.where(betreuer: teac.number)
+      teac.destroy
+      pres.each do |r|
+        r.destroy
+      end
+      redirect_to list_teachers_path
+      flash[:info] = "Lehrer erfolgreich gelöscht"
+    end
+
+    # View
+    def view_teac
+      if params[:id] != nil && params[:number] == nil
+        @teacher = Teacher.find_by(id: params[:id])
+        @presentations = Presentation.where(betreuer: @teacher.number)
+      elsif params[:number] != nil && params[:id] == nil
+        @teacher = Teacher.find_by(number: params[:number])
+        @presentations = Presentation.where(betreuer: @teacher.number)
+      end
+    end
+
+  # Presentations
+
+    # List
+    def list_pres
+      @presentations = Presentation.all
+      @presentation = Presentation.new
+    end
+
+    # Create
+    def new_pres
+      @presentation = Presentation.new(pres_params)
+      if @presentation.save
+        @presentation.update_attribute("frei", Pref.first.free)
+        @presentation.update_attribute("von", Time.parse(@presentation.von).seconds_since_midnight)
+        @presentation.update_attribute("bis", Time.parse(@presentation.bis).seconds_since_midnight)
+        redirect_to list_presentations_path
+      else
+        redirect_to list_presentations_path
+        flash["error"] = "Bitte überprüfen Sie Ihre Eingabe"
+      end
+    end
+
+    # Edit
+    def edit_pres
+      if params[:id] == nil
+        redirect_to list_presentations_path
+      else
+        @presentation = Presentation.find_by(id: params[:id])
+      end
+    end
+
+    def update_presentation
+      p = Presentation.find_by_id(params[:id])
+      if Teacher.where(number: params[:betreuer]).count == 0
+        flash["error"] = "Dieser Lehrer sollte es nicht geben"
+        redirect_to update_presentation_path
+      elsif Teacher.where(number: params[:betreuer]).count > 0
+        p.update(pres_edit_params)
+        p.von = Time.parse(p.von).seconds_since_midnight
+        p.bis = Time.parse(p.bis).seconds_since_midnight
+        p.save
+        redirect_to list_presentations_path
+      end
+    end
+
+    # Delete
+    def del_pres
+      @presentation = Presentation.find_by_id(params[:id])
+    end
+
+    def del_pres_conf
+      pres = Presentation.find_by_id(params[:id])
+      pres.destroy
       redirect_to list_presentations_path
+      flash[:info] = "Präsentation erfolgreich gelöscht"
     end
-  end
 
-  def update_student
-    s = Student.find_by_id(params[:id])
-    s.update(stud_edit_params)
-    redirect_to list_students_path
-  end
-
-  def list_stud
-    @students = Student.all
-    @student = Student.new
-    @pass = rand.to_s[2..6]
-  end
-
-  def list_pres
-    @presentations = Presentation.all
-    @presentation = Presentation.new
-  end
-
-  def new_pres
-    @presentation = Presentation.new(pres_params)
-    if @presentation.save
-      @presentation.update_attribute("frei", Pref.first.free)
-      @presentation.update_attribute("von", Time.parse(@presentation.von).seconds_since_midnight)
-      @presentation.update_attribute("bis", Time.parse(@presentation.bis).seconds_since_midnight)
-      redirect_to list_presentations_path
-    else
-      redirect_to list_presentations_path
-      flash["error"] = "Bitte überprüfen Sie Ihre Eingabe"
+    # View
+    def view_pres
+      @pres = Presentation.find_by_id(params[:id])
     end
-  end
 
-  def remove_pres
-    #code
-  end
+  # Students
+
+    # List
+    def list_stud
+      @students = Student.all
+      @student = Student.new
+      @pass = rand.to_s[2..6]
+    end
+
+    # Create
+    def new_stud
+      @student = Student.new(stud_params)
+      if @student.save
+        @student.register = false
+        @student.rec = false
+        @student.save
+        redirect_to list_students_path
+      else
+        redirect_to list_students_path
+        flash["error"] = "Bitte überprüfen Sie Ihre Eingabe"
+      end
+    end
+
+    # Edit
+    def edit_stud
+      @student = Student.find_by_id(params[:id])
+    end
+
+    def update_student
+      s = Student.find_by_id(params[:id])
+      s.update(stud_edit_params)
+      redirect_to list_students_path
+    end
+
+    # Delete
+    def del_stud
+      @student = Student.find_by_id(params[:id])
+    end
+
+    def del_stud_conf
+      stud = Student.find_by_id(params[:id])
+      stud.destroy
+      redirect_to list_students_path
+      flash[:info] = "Schüler erfolgreich gelöscht"
+    end
+
+    # View
+    def view_stud
+      @student = Student.find_by_id(params[:id])
+      @presentations = []
+      @student.select.each do |p|
+        pres = Presentation.find_by_id(p)
+        @presentations << pres
+      end
+    end
+
 
   # GET /admins/1
   # GET /admins/1.json
@@ -323,74 +398,6 @@ class AdminsController < ApplicationController
     Rails.application.load_seed
     flash[:success] = "Datenbank wurde zurückgesetzt"
     redirect_to root_path
-  end
-
-  # POST /admins
-  # POST /admins.json
-
-
-  def new_teac
-    @teacher = Teacher.new(teac_params)
-    if @teacher.save
-      redirect_to list_teachers_all_path
-    else
-      redirect_to list_teachers_path
-      flash["error"] = "Bitte überprüfen Sie Ihre Eingabe."
-    end
-  end
-
-  def new_stud
-    @student = Student.new(stud_params)
-    if @student.save
-      @student.register = false
-      @student.rec = false
-      @student.save
-      redirect_to list_students_path
-    else
-      redirect_to list_students_path
-      flash["error"] = "Bitte überprüfen Sie Ihre Eingabe"
-    end
-  end
-
-  # PATCH/PUT /admins/1
-  # PATCH/PUT /admins/1.json
-
-  def del_teac
-    @teac = Teacher.find_by_id(params[:id])
-    @presentations = Presentation.where(betreuer: @teac.number)
-  end
-
-  def del_teac_conf
-    teac = Teacher.find_by_id(params[:id])
-    pres = Presentation.where(betreuer: teac.number)
-    teac.destroy
-    pres.each do |r|
-      r.destroy
-    end
-    redirect_to list_teachers_path
-    flash[:info] = "Lehrer erfolgreich gelöscht"
-  end
-
-  def del_pres
-    @presentation = Presentation.find_by_id(params[:id])
-  end
-
-  def del_pres_conf
-    pres = Presentation.find_by_id(params[:id])
-    pres.destroy
-    redirect_to list_presentations_path
-    flash[:info] = "Präsentation erfolgreich gelöscht"
-  end
-
-  def del_stud
-    @student = Student.find_by_id(params[:id])
-  end
-
-  def del_stud_conf
-    stud = Student.find_by_id(params[:id])
-    stud.destroy
-    redirect_to list_students_path
-    flash[:info] = "Schüler erfolgreich gelöscht"
   end
 
   private

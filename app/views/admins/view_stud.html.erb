@@ -40,7 +40,7 @@
         <% if @student.register %>
           Registrationsstatus: <strong class="text-success">Registration erfolgreich</strong>
         <% else %>
-          Registrationsstatus: <strong class="text-warning">Registration noch nicht erhalten</strong>
+          Registrationsstatus: <strong class="text-warning">Registration noch nicht abgeschickt</strong>
         <% end %>
         <hr>
         <% if @student.rec && !@student.register %>
@@ -48,8 +48,9 @@
         <% elsif !@student.rec %>
           <%= link_to "Anmeldedaten versenden", '#', class: "btn btn-primary" %>
         <% end %>
-        <% unless @student.reigster %>
-          <%= link_to "Force", force_path(:id => stud.id), class: "btn btn-primary" %>
+        <% unless @student.register %>
+          <%= link_to "Force", force_path(:id => @student.id), class: "btn btn-primary" %>
+        <% end %>
 
       </div>
     </div>

@@ -7,7 +7,6 @@
 <table class="table table-hover sorttable">
   <thead>
     <tr>
-      <th>Vorname</th>
       <th>Name</th>
       <th>Klasse</th>
       <th>Mail</th>
@@ -20,8 +19,7 @@
   <tbody>
     <% @students.each do |stud| %>
       <tr>
-        <td><%= stud.vorname %></td>
-        <td><%= stud.name %></td>
+        <td><%= stud.vorname %> <%= stud.name %></td>
         <td><%= stud.klasse %></td>
         <td><%= stud.mail %></td>
         <td><%= stud.number %></td>

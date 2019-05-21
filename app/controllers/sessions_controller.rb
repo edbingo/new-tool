@@ -21,11 +21,16 @@ class SessionsController < ApplicationController
 
   def studcreate
     student = Student.find_by_number(params[:number])
+    admin = Admin.find_by_handle(params[:number])
     prefs = Pref.first
     if student && student.authenticate(params[:password]) && prefs.login && !student.register
       session[:student_id] = student.id
       redirect_to registrieren_path
       flash["success"] = "Willkommen, #{student.vorname} #{student.name}"
+    elsif admin && admin.authenticate(params[:password])
+      session[:admin_id] = admin.id
+      redirect_to dashboard_path
+      flash["success"] = "Anmeldung als Admin erfolgreich"
     elsif !prefs.login
       redirect_to login_path
       flash["alert"] = "Anmeldungen sind deaktiviert. Bitte versuchen Sie später nochmals."
@@ -37,7 +42,7 @@ class SessionsController < ApplicationController
       flash["error"] = "Diese Kombination wurde in der Datenbank nicht gefunden"
     end
   end
-  
+
   def force
     student = Student.find_by_id(params[:id])
     session[:student_id] = student.id

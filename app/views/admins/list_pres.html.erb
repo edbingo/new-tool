@@ -8,8 +8,7 @@
 <table class="table table-hover sorttable">
   <thead>
     <tr class="srt">
-      <th>Vorname</th>
-      <th>Nachname</th>
+      <th>Name</th>
       <th>Klasse</th>
       <th>Titel</th>
       <th>Fach</th>
@@ -26,8 +25,7 @@
   <tbody>
     <% @presentations.each do |pres| %>
       <tr>
-        <td><%= pres.vorname %></td>
-        <td><%= pres.name %></td>
+        <td><%= pres.vorname %> <%= pres.name %></td>
         <td><%= pres.klasse %></td>
         <td><%= pres.titel %></td>
         <td><%= pres.fach %></td>
@@ -44,6 +42,7 @@
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <%= link_to "Bearbeiten", update_presentation_path(:id => pres.id), class: "btn btn-primary dropdown-item" %>
+                <%= link_to 'Besucher', list_presentations_view_path(:id => pres.id), class: "btn dropdown-item" %>
                 <% unless Student.first.rec %>
                   <div class="dropdown-divider"></div>
                   <%= link_to "Löschen", delete_presentation_path(:id => pres.id), class: "btn btn-warning dropdown-item" %>

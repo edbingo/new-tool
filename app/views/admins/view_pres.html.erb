@@ -5,7 +5,7 @@
         Grundinfo
       </div>
       <div class="card-body">
-        <h5 class="card-title"><%= @pres.titel %>, <%= @pres.vorname %> <%= @pres.name %>, <%= @pres.klasse %></h5>
+        <h5 class="card-title">'<%= @pres.titel %>' <br> <%= @pres.vorname %> <%= @pres.name %>, <%= @pres.klasse %></h5>
         <table class="table table-hover sorttable table-sm">
           <thead>
             <tr>
@@ -38,7 +38,6 @@
         <table class="table table-hover sorttable table-sm">
             <thead>
                 <tr>
-                    <th>Vorname</th>
                     <th>Name</th>
                     <th>Klasse</th>
                 </tr>
@@ -46,8 +45,7 @@
             <tbody>
             <% @pres.visit.each do |s| %>
                 <tr>
-                    <td><%= s.vorname %></td>
-                    <td><%= s.name %></td>
+                    <td><%= s.vorname %> <%= s.name %></td>
                     <td><%= s.klasse %></td>
                 </tr>
             <% end %>

@@ -1,38 +1,44 @@
 <% if Presentation.where(betreuer: @teac.number).count > 0 %>
-<h4>Wenn Sie diesen Lehrer löschen, werden folgende Präsentationen auch entfernt.</h4>
-<table class="table table-hover sorttable">
-  <thead>
-    <tr class="srt">
-      <th>Vorname</th>
-      <th>Nachname</th>
-      <th>Klasse</th>
-      <th>Titel</th>
-      <th>Fach</th>
-      <th>Betreuer</th>
-      <th>Zimmer</th>
-      <th>Von</th>
-      <th>Bis</th>
-      <th>Frei</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @presentations.each do |pres| %>
-      <tr>
-        <td><%= pres.vorname %></td>
-        <td><%= pres.name %></td>
-        <td><%= pres.klasse %></td>
-        <td><%= pres.titel %></td>
-        <td><%= pres.fach %></td>
-        <td><span rel="tooltip" data-toggle="tooltip" style="cursor: pointer;" title="<%= Teacher.find_by(number: pres.betreuer).vorname %> <%= Teacher.find_by(number: pres.betreuer).name %>"><%= pres.betreuer %></span></td>
-        <td><%= pres.zimmer %></td>
-        <td><%= Time.at(pres.von.to_f).utc.strftime("%H:%M") %></td>
-        <td><%= Time.at(pres.bis.to_f).utc.strftime("%H:%M") %></td>
-        <td><%= pres.frei %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= link_to 'Trotzdem entfernen', delete_teacher_confirm_path(:id => @teac.id), class: "btn btn-danger" %>
+<div class="card mb-3">
+  <div class="card-header">
+    Wenn Sie <%= @teac.vorname %> <%= @teac.name %> entfernen, werden folgende Präsentationen auch entfernt.
+  </div>
+  <div class="card-body">
+    <table class="table table-hover sorttable">
+      <thead>
+        <tr class="srt">
+          <th>Vorname</th>
+          <th>Nachname</th>
+          <th>Klasse</th>
+          <th>Titel</th>
+          <th>Fach</th>
+          <th>Betreuer</th>
+          <th>Zimmer</th>
+          <th>Von</th>
+          <th>Bis</th>
+          <th>Frei</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @presentations.each do |pres| %>
+          <tr>
+            <td><%= pres.vorname %></td>
+            <td><%= pres.name %></td>
+            <td><%= pres.klasse %></td>
+            <td><%= pres.titel %></td>
+            <td><%= pres.fach %></td>
+            <td><span rel="tooltip" data-toggle="tooltip" style="cursor: pointer;" title="<%= Teacher.find_by(number: pres.betreuer).vorname %> <%= Teacher.find_by(number: pres.betreuer).name %>"><%= pres.betreuer %></span></td>
+            <td><%= pres.zimmer %></td>
+            <td><%= Time.at(pres.von.to_f).utc.strftime("%H:%M") %></td>
+            <td><%= Time.at(pres.bis.to_f).utc.strftime("%H:%M") %></td>
+            <td><%= pres.frei %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'Trotzdem entfernen', delete_teacher_confirm_path(:id => @teac.id), class: "btn btn-danger" %>
+  </div>
+</div>
 <% else %>
 <h4>Möchten Sie <%= @teac.vorname %> <%= @teac.name %> wirklich entfernen?</h4> <br>
 <%= link_to 'Entfernen', delete_teacher_confirm_path(:id => @teac.id), class: "btn btn-danger" %>
