@@ -7,8 +7,8 @@
         <%= text_field_tag :vorname, @student.vorname, class: "form-control", placeholder:"Vorname", id: "top" %>
         <%= text_field_tag :name, @student.name, class: "form-control", placeholder:"Name", id: "mid" %>
         <%= text_field_tag :klasse, @student.klasse, class: "form-control", placeholder:"Klasse", id: "mid" %>
-        <%= text_field_tag :titel, @student.mail, class: "form-control", placeholder:"Titel", id: "mid" %>
-        <%= text_field_tag :fach, @student.number, class: "form-control", placeholder:"Fach", id: "btm" %>
+        <%= text_field_tag :mail, @student.mail, class: "form-control", placeholder:"Titel", id: "mid" %>
+        <%= text_field_tag :number, @student.number, class: "form-control", placeholder:"Fach", id: "btm" %>
 
         <%= submit_tag :Speichern, class:"btn btn-lg btn-block btn-primary mt-3" %>
       <% end %>

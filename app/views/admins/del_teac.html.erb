@@ -1,10 +1,11 @@
 <% if Presentation.where(betreuer: @teac.number).count > 0 %>
 <div class="card mb-3">
   <div class="card-header">
-    Wenn Sie <%= @teac.vorname %> <%= @teac.name %> entfernen, werden folgende Präsentationen auch entfernt.
+    Warnung
   </div>
   <div class="card-body">
-    <table class="table table-hover sorttable">
+    <h5 class="card-title">Wenn Sie <%= @teac.vorname %> <%= @teac.name %> entfernen, werden folgende Präsentationen auch entfernt:</h5>
+    <table class="table table-hover sorttable table-sm">
       <thead>
         <tr class="srt">
           <th>Vorname</th>

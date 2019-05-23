@@ -1,5 +1,5 @@
 <%= render 'navlist' %>
-<% unless Student.first.rec %>
+<% unless Pref.first.log_data %>
 <div class="float-right">
   <button type="button" name="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newPresentationModal">Hinzufügen</button>
 </div>
@@ -17,9 +17,7 @@
       <th>Von</th>
       <th>Bis</th>
       <th>Frei</th>
-      <% if Pref.first.log_data = false %>
-        <th>Bearbeiten</th>
-      <% end %>
+      <th>Optionen</th>
     </tr>
   </thead>
   <tbody>
@@ -29,12 +27,13 @@
         <td><%= pres.klasse %></td>
         <td><%= pres.titel %></td>
         <td><%= pres.fach %></td>
-        <td><%= link_to pres.betreuer, list_teachers_view_path(:number => pres.betreuer) %></td>
+        <% tn = Teacher.find_by_number(pres.betreuer) %>
+        <td><%= link_to "#{tn.vorname} #{tn.name}", list_teachers_view_path(:number => pres.betreuer) %></td>
         <td><%= pres.zimmer %></td>
         <td><%= Time.at(pres.von.to_f).utc.strftime("%H:%M") %></td>
         <td><%= Time.at(pres.bis.to_f).utc.strftime("%H:%M") %></td>
         <td><%= pres.frei %></td>
-        <% unless Pref.first.log_data %>
+        <% if Student.all.where(rec: true).count == 0 %>
           <td>
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -42,8 +41,12 @@
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <%= link_to "Bearbeiten", update_presentation_path(:id => pres.id), class: "btn btn-primary dropdown-item" %>
-                <%= link_to 'Besucher', list_presentations_view_path(:id => pres.id), class: "btn dropdown-item" %>
-                <% unless Student.first.rec %>
+                <% if Pref.first.log_data %>
+                  <%= link_to 'Besucher', list_presentations_view_path(:id => pres.id), class: "btn dropdown-item" %>
+                <% else %>
+                  <%= link_to 'Infos', list_presentations_view_path(:id => pres.id), class: "btn dropdown-item" %>
+                <% end %>
+                <% unless Pref.first.log_data %>
                   <div class="dropdown-divider"></div>
                   <%= link_to "Löschen", delete_presentation_path(:id => pres.id), class: "btn btn-warning dropdown-item" %>
                 <% end %>

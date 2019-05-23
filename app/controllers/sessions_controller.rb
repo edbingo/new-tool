@@ -22,6 +22,7 @@ class SessionsController < ApplicationController
   def studcreate
     student = Student.find_by_number(params[:number])
     admin = Admin.find_by_handle(params[:number])
+    teacher = Teacher.find_by_number(params[:number])
     prefs = Pref.first
     if student && student.authenticate(params[:password]) && prefs.login && !student.register
       session[:student_id] = student.id

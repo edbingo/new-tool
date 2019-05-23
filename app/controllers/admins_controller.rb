@@ -1,10 +1,10 @@
 class AdminsController < ApplicationController
   require 'csv'
   before_action :set_admin, only: [:show, :edit, :update, :destroy]
-  before_action :only_auth
+  before_action :only_auth, except: [:list_teachers_view_path]
 
   def only_auth
-    unless logged_ad?
+    if !logged_ad?
       redirect_to login_path
       flash[:error] = "Diese Seite ist nur für Administratoren verfügbar"
     end
@@ -15,6 +15,10 @@ class AdminsController < ApplicationController
   def dashboard
     if Student.first == nil && Presentation.first == nil && Teacher.first == nil
       redirect_to upload_teachers_path
+    elsif Student.first == nil && Presentation.first == nil && Teacher.first != nil
+      redirect_to upload_students_path
+    elsif Presentation.first == nil && Student.first != nil && Teacher.first != nil
+      redirect_to upload_presentations_path
     else
       @studrec = Student.where(rec: true).count.to_f / Student.all.count.to_f
     end
@@ -24,10 +28,17 @@ class AdminsController < ApplicationController
 
   # Teachers
   def import_teachers
+    if params[:file].nil?
+      flash[:error] = "Sie haben keine Datei hochgeladen"
+      redirect_to upload_teachers_path
+      return
+    end
     conv = lambda { |header| header.downcase }
     items = []
     CSV.foreach(params[:file].path,headers: true, col_sep: ";", header_converters: conv) do |row|
-      items << Teacher.new(row.to_h)
+      unless row["name"] == nil
+        items << Teacher.new(row.to_h)
+      end
     end
     Teacher.import(items)
     redirect_to upload_students_path
@@ -35,6 +46,11 @@ class AdminsController < ApplicationController
 
   # Students
   def import_students
+    if params[:file].nil?
+      flash[:error] = "Sie haben keine Datei hochgeladen"
+      redirect_to upload_students_path
+      return
+    end
     conv = lambda { |header| header.downcase }
     file = params[:file].path
     table = CSV.read(file, headers: true, col_sep: ";")
@@ -45,10 +61,11 @@ class AdminsController < ApplicationController
       row["password_confirmation"] = pass
       row["register"] = false
       row["rec"] = false
+      row["mahn_rec"] = 0
     end
 
     CSV.open('new.csv', "w", col_sep: ";") do |f|
-      f << ["name", "vorname", "number", "mail", "klasse", "code", "password", "password_confirmation", "register", "rec"]
+      f << ["name", "vorname", "number", "mail", "klasse", "code", "password", "password_confirmation", "register", "rec", "mahn_rec"]
       table.each do |row|
          f << row
       end
@@ -56,7 +73,9 @@ class AdminsController < ApplicationController
 
     stud = []
     CSV.foreach('new.csv', headers: true, col_sep: ";", header_converters: conv) do |row|
-      stud << Student.new(row.to_h)
+      unless row["name"] == nil
+        stud << Student.new(row.to_h)
+      end
     end
     Student.import(stud)
     redirect_to upload_presentations_path
@@ -64,10 +83,17 @@ class AdminsController < ApplicationController
 
   # Presentations
   def import_presentations
+    if params[:file].nil?
+      flash[:error] = "Sie haben keine Datei hochgeladen"
+      redirect_to upload_presentations_path
+      return
+    end
     conv = lambda { |header| header.downcase }
     items = []
     CSV.foreach(params[:file].path, headers: true, col_sep: ";", header_converters: conv) do |row|
-      items << Presentation.new(row.to_h)
+      unless row["name"] == nil
+        items << Presentation.new(row.to_h)
+      end
     end
     Presentation.import(items)
     redirect_to upload_settings_path
@@ -78,8 +104,14 @@ class AdminsController < ApplicationController
     r = params[:req]
     f = params[:free]
     t = params[:time].to_i * 60
-    Pref.create(time: t, req: r, free: f, login: true, log_data: false)
-    redirect_to process_path
+    d = params[:pres_date]
+    if Student.all.count * r.to_i > Presentation.all.count * f.to_i
+      flash[:error] = "Error 2: Diese Kombination ist ungültig."
+      redirect_to upload_settings_path
+    else
+      Pref.create(time: t, req: r, free: f, login: false, log_data: false, mahn_count: 0, pres_date: d)
+      redirect_to process_path
+    end
   end
 
   def processor
@@ -110,15 +142,44 @@ class AdminsController < ApplicationController
     n = 0
     o = 0
     Teacher.all.each do |t|
-      if Presentation.where(betreuer: t.number).count > 0 && t.rec == true
+      if Presentation.where(betreuer: t.number).count != 0 && t.rec == true
         o = o + 1
       end
-      if Presentation.where(betreuer: t.number).count > 0
+      if Presentation.where(betreuer: t.number).count != 0
         n = n + 1
       end
     end
     @teacrec = o.to_f / n.to_f
     @num = n
+  end
+
+  def send_login
+    n = 0
+    s = Student.all.where(rec: false)
+    p = Pref.first
+    s.each do |stud|
+      StudentMailer.login_mail(stud).deliver_now
+      stud.rec = true
+      stud.save
+      n += 1
+    end
+    p.login = true
+    p.log_data = true
+    p.save
+    flash[:success] = "#{n} Mails wurden versendet"
+    redirect_to mailer_path
+  end
+
+  def send_login_single
+    s = Student.find_by_id(params[:id])
+    p = Pref.first
+    StudentMailer.login_mail(s).deliver_now
+    s.rec = true
+    s.save
+    p.login = true
+    p.log_data = true
+    p.save
+    redirect_to list_students_view_path(:id => s.id)
   end
 
   # Login Activation
@@ -137,6 +198,7 @@ class AdminsController < ApplicationController
     Pref.first.update_attribute("time", params[:time].to_i * 60)
     Pref.first.update_attribute("req", params[:req])
     Pref.first.update_attribute("free", params[:free])
+    Pref.first.update_attribute("pres_date", params[:pres_date])
     redirect_to settings_path
   end
 
@@ -352,6 +414,10 @@ class AdminsController < ApplicationController
 
     def update_student
       s = Student.find_by_id(params[:id])
+      if s.mail != params["mail"] || s.number != params["number"]
+        s.rec = false
+        s.save
+      end
       s.update(stud_edit_params)
       redirect_to list_students_path
     end
@@ -377,7 +443,6 @@ class AdminsController < ApplicationController
         @presentations << pres
       end
     end
-
 
   # GET /admins/1
   # GET /admins/1.json

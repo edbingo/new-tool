@@ -18,7 +18,11 @@
   </thead>
   <tbody>
     <% @students.each do |stud| %>
-      <tr>
+      <% if !stud.rec && Pref.first.log_data %>
+        <tr class="table-warning">
+      <% else %>
+        <tr>
+      <% end %>
         <td><%= stud.vorname %> <%= stud.name %></td>
         <td><%= stud.klasse %></td>
         <td><%= stud.mail %></td>

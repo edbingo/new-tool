@@ -11,11 +11,28 @@
       <div class="modal-body">
         <div class="form-new">
           Verlangte Anmeldungen
-          <%= number_field_tag 'req', Pref.first.req, class: "form-control", min: 1, max: 10, step: 1 %>
-          Verlangte Zeit zwischen Präsentationen in Minuten
+          <div class="input-group mb-3">
+            <%= number_field_tag 'req', Pref.first.req, class: "form-control", min: 1, max: 10, step: 1 %>
+            <div class="input-group-append">
+              <span class="input-group-text">Anmeldungen</span>
+            </div>
+          </div>
+          Verlangte Zeit zwischen Präsentationen
+          <div class="input-group mb-3">
           <%= number_field_tag 'time', Pref.first.time.to_i / 60, class: "form-control", min: 1, max: 60, step: 1 %>
+          <div class="input-group-append">
+            <span class="input-group-text">Minuten</span>
+          </div>
+        </div>
           Anzahl freie Plätze pro Präsentation
+          <div class="input-group mb-3">
           <%= number_field_tag 'free', Pref.first.free, class: "form-control", min: 1, max: 10, step: 1 %>
+          <div class="input-group-append">
+            <span class="input-group-text">Plätze</span>
+          </div>
+        </div>
+          Datum
+          <%= date_field_tag 'pres_date', Pref.first.pres_date, class: "form-control" %>
         </div>
       </div>
       <div class="modal-footer">

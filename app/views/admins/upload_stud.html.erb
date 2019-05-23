@@ -1,8 +1,9 @@
-<h4>Studenten hinzufügen</h4>
-
-<div class="custom-file">
+<div class="card shadow p-3 mb-5 bg-white rounded" style="max-width: 400px; margin: auto;">
+  <div class="card-body">
+    <h5 class="card-title">Studenten hinzufügen</h5>
     <%= form_tag upload_students_path, multipart: true do %>
       <%= file_field_tag :file, class: "form-control-file my-3" %>
-      <%= submit_tag "Import CSV", data: { disable_with: "Passwörter werden generiert..." }, class: "btn btn-primary" %>
+      <%= submit_tag "Import CSV", data: { disable_with: "Passwörter werden generiert..." }, class: "special-upload-button" %>
     <% end  %>
+  </div>
 </div>

@@ -38,9 +38,13 @@
               <td>Freie Plätze pro Präsentation:</td>
               <td><%= Pref.first.free %></td>
             </tr>
+            <tr>
+              <td>Datum</td>
+              <td><%= Date.parse(Pref.first.pres_date).strftime("%d/%m/%Y") %></td>
+            </tr>
           </tbody>
         </table>
-        <% if Student.first.rec == false %>
+        <% if Student.all.where(rec: true).count == 0 %>
           <button type="button" name="button" class="btn btn-primary" data-toggle="modal" data-target="#editSettingsModal">Bearbeiten</button>
         <% end %>
       </div>

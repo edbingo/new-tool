@@ -18,7 +18,7 @@
             <tr>
               <td>Anmeldeinformationen</td>
               <td>
-                <% if @studrec == 0 %>
+                <% if Student.all.where(rec: true).count == 0 %>
                   Noch nicht verschickt
                 <% else %>
                   Verschickt
@@ -29,7 +29,7 @@
             <% unless Student.where(rec: true).count == 0 %>
               <tr>
                 <td>Mahnungsmail</td>
-                <td></td>
+                <td><%= Pref.first.mahn_count %> Mal verschickt</td>
                 <td>N/A</td>
               </tr>
             <% end %>
@@ -57,6 +57,7 @@
         <button type="button" class="btn btn-success mb-3" data-toggle="modal" data-target="#finalModal">
           Schlusslisten
         </button>
+        <p>Bitte kontaktieren Sie das Informatikbüro falls sie einen Vorschau der Email möchten.</p>
       </div>
     </div>
   </div>

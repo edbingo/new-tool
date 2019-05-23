@@ -9,10 +9,12 @@
       </div>
       <div class="modal-body">
         Voraussichtliche Anzahl versendete Mails: <%= Student.where(rec: false).count %>
+        <br />
+        Wenn Sie diese Mails versenden werden Anmeldungen automatisch aktiviert.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
-        <button type="button" class="btn btn-primary">Senden</button>
+        <%= link_to 'Senden', send_loginmail_path, class: "btn btn-primary" %>
       </div>
     </div>
   </div>
@@ -30,7 +32,24 @@
       <% unless Student.where(rec: true).count == 0 %>
         <div class="modal-body">
           Voraussichtliche Anzahl versendete Mails: <%= Student.where(register: false).count %>
+          An folgenden Schülern wird eine Mahnmail versendet:
         </div>
+        <table class="table table-sm table-hover" style="margin: 1rem; width: auto;">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Klasse</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% Student.where(register: false).each do |s| %>
+            <tr>
+              <td><%= s.vorname %> <%= s.name %></td>
+              <td><%= s.klasse %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
           <button type="button" class="btn btn-primary">Senden</button>

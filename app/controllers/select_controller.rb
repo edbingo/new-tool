@@ -23,7 +23,7 @@ class SelectController < ApplicationController
         current_student.save
         redirect_to registrieren_path
     end
-    
+
     def confirm
         @presentations = []
         current_student.select.each do |p|
@@ -41,9 +41,12 @@ class SelectController < ApplicationController
         current_student.register = true
         current_student.save
         # Send emails
-        session[:admin_id] = nil
         session[:student_id] = nil
-        redirect_to root_url, notice: "Session beendet"
+        if logged_ad?
+          redirect_to list_students_path
+        else
+          redirect_to root_url, notice: "Session beendet"
+        end
     end
 
     private

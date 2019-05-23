@@ -110,6 +110,19 @@ img {
   font-size: 20px;
 }
 
+#fixedcard {
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+}
+
 .white-text {
   color: white;
+}
+
+.special-upload-button {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
 }

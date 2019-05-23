@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2019_01_31_133221) do
     t.integer "time"
     t.integer "req"
     t.integer "free"
+    t.integer "mahn_count"
+    t.string "pres_date"
     t.boolean "login"
     t.boolean "log_data"
     t.datetime "created_at", null: false
@@ -54,6 +56,7 @@ ActiveRecord::Schema.define(version: 2019_01_31_133221) do
     t.string "klasse"
     t.string "code"
     t.string "password_digest"
+    t.integer "mahn_rec"
     t.boolean "register"
     t.boolean "rec"
     t.text "select"

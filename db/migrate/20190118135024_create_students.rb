@@ -8,6 +8,7 @@ class CreateStudents < ActiveRecord::Migration[5.2]
       t.string :klasse
       t.string :code
       t.string :password_digest
+      t.integer :mahn_rec
       t.boolean :register
       t.boolean :rec
       t.text :select

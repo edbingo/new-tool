@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'teacher/view'
   # Dashboard -----------------------------------------------
 
   get 'teachers/list_teac'
@@ -14,6 +15,10 @@ Rails.application.routes.draw do
 
   get 'login', to: 'sessions#new_stud'
   post 'login', to: 'sessions#studcreate'
+
+  get 'teacher/list', to: 'teacher#view'
+
+  get 'list/students/view/send/login', to: 'admins#send_login_single'
 
   get 'process', to: 'admins#processor'
 
@@ -48,6 +53,8 @@ Rails.application.routes.draw do
 
   get 'list/presentations/view', to: 'admins#view_pres'
 
+  get 'send/loginmail', to: 'admins#send_login'
+
   get 'registration/send', to: 'select#sending'
 
   post 'admin/update', to: 'admins#update_admin'
@@ -67,6 +74,8 @@ Rails.application.routes.draw do
   get 'upload/teachers', to: 'admins#upload_teac'
   post 'upload/teachers', to: 'admins#import_teachers'
 
+  get 'upload/error', to: 'admins#error_page_upload'
+
   get 'upload/students', to: 'admins#upload_stud'
   post 'upload/students', to: 'admins#import_students'
 
@@ -75,6 +84,8 @@ Rails.application.routes.draw do
 
   get 'upload/settings', to: 'admins#prefs'
   post 'upload/settings', to: 'admins#prefs_upd'
+
+  get 'upload/help', to: 'admins#upload_help'
 
   get 'reset', to: 'admins#reset'
   get 'confirm', to: 'admins#clear'

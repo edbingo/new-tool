@@ -1,0 +1,236 @@
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "admins"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (28.6ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "handle" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (51.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_handle" ON "admins" ("handle")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "prefs"[0m
+  [1m[35m (51.2ms)[0m  [1m[35mCREATE TABLE "prefs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "time" integer, "req" integer, "free" integer, "mahn_count" integer, "login" boolean, "log_data" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "presentations"[0m
+  [1m[35m (53.1ms)[0m  [1m[35mCREATE TABLE "presentations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "vorname" varchar, "name" varchar, "klasse" varchar, "titel" varchar, "fach" varchar, "betreuer" varchar, "zimmer" varchar, "von" varchar, "bis" varchar, "frei" integer, "visit" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (86.6ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "vorname" varchar, "number" varchar, "mail" varchar, "klasse" varchar, "code" varchar, "password_digest" varchar, "register" boolean, "rec" boolean, "select" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (40.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_students_on_number" ON "students" ("number")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "teachers"[0m
+  [1m[35m (35.1ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "vorname" varchar, "name" varchar, "number" varchar, "mail" varchar, "rec" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (63.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (36.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190131133221)[0m
+  [1m[35m (37.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190118113610),
+(20190118135024),
+(20190118160033),
+(20190118160039);
+
+[0m
+  [1m[35m (64.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-05-21 12:19:01.575301"], ["updated_at", "2019-05-21 12:19:01.575301"]]
+  [1m[35m (37.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "admins"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "prefs"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "presentations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "students"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "teachers"[0m
+  [1m[36mFixture Insert (0.7ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$2HOeTmBOwmPtcmwvDJLYeu2DBJOf5ZDn5VHpw2ffJvWgL5lrtBnYu', '2019-05-21 12:19:02.191109', '2019-05-21 12:19:02.191109', 980190962)[0m
+  [1m[36mFixture Insert (1.2ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$DyM9OEMlAnj5doPxYZFo.uEpVeA/Yyy1n1RrGIvdxpMyAvkjJWCEe', '2019-05-21 12:19:02.191109', '2019-05-21 12:19:02.191109', 298486374)[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (1.0ms)[0m  [1m[31mDELETE FROM "admins"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "prefs"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "presentations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "students"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "teachers"[0m
+  [1m[36mFixture Insert (0.7ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$Xo412Or.MfUbHbL.JzkKIOR0DLRRuuHzGwnA2NHY9Wp0aRjDunYmK', '2019-05-21 12:19:02.664771', '2019-05-21 12:19:02.664771', 980190962)[0m
+  [1m[36mFixture Insert (0.9ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$Mgkwl7IWeGW5oiqqlDoGf.HXtuxPQ3Pa/Qlc8XTTnoztuB9GXRA.i', '2019-05-21 12:19:02.664771', '2019-05-21 12:19:02.664771', 298486374)[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "admins"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "prefs"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "presentations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "students"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "teachers"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$GIWGaQFfXHJn7D4H/kAQ3OKKdcOJ5I.P8FJiuvWLeEVppIDBL2AU6', '2019-05-21 12:19:03.028461', '2019-05-21 12:19:03.028461', 980190962)[0m
+  [1m[36mFixture Insert (0.8ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$95BGksYNy3E9PPKkT6KEVuXB8TVHxW5Yq3hYLmvINS79DtZ7O5dg2', '2019-05-21 12:19:03.028461', '2019-05-21 12:19:03.028461', 298486374)[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "admins"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "prefs"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "presentations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "students"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "teachers"[0m
+  [1m[36mFixture Insert (0.7ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$XgFszhYqNTTHTv.XAseUuef0AmTXFoFaOVHaiImLSVDuNePbUgdJe', '2019-05-21 12:19:03.391321', '2019-05-21 12:19:03.391321', 980190962)[0m
+  [1m[36mFixture Insert (0.9ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$d8UvM66jxUKfcYgQ0HKf3utguxkGLZr4kKoaHxwPsxyCSXprG4ype', '2019-05-21 12:19:03.391321', '2019-05-21 12:19:03.391321', 298486374)[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "admins"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "prefs"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "presentations"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "students"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "teachers"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$89fxyASyHFttGpaQr3eVcOlBdchwwn21XFaMrU/pov9BL3dazmnaq', '2019-05-21 12:19:03.750601', '2019-05-21 12:19:03.750601', 980190962)[0m
+  [1m[36mFixture Insert (0.8ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$FdHneVukATFioWRa9BryWOgry96lBkxnGrFksW7FDGTx7N50mMuxK', '2019-05-21 12:19:03.750601', '2019-05-21 12:19:03.750601', 298486374)[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "admins"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "prefs"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "presentations"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "students"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "teachers"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$pOgryT7cPuX8blo0lI4JAumFQvpCGKxhEX6nXqBuJBGbC2XzmrSVq', '2019-05-21 12:19:04.110859', '2019-05-21 12:19:04.110859', 980190962)[0m
+  [1m[36mFixture Insert (0.8ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$dvka1PKl445PZ.0WMdGgCOsVpgMEC/S8XuDs5xcrTJOkJ59s5Bhei', '2019-05-21 12:19:04.110859', '2019-05-21 12:19:04.110859', 298486374)[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "admins"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "prefs"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "presentations"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "students"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "teachers"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$DzBINKtiAf/1Hu8Jgh1CFOsH2Q3CizhOw22DkhS5EARtKY6Sj63xO', '2019-05-21 12:19:04.471643', '2019-05-21 12:19:04.471643', 980190962)[0m
+  [1m[36mFixture Insert (0.9ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$/o89bHxTTqn1gk9doltLKOy3l7dZ8O8wVfny.V74BJpq/La8l1xui', '2019-05-21 12:19:04.471643', '2019-05-21 12:19:04.471643', 298486374)[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "admins"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "prefs"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "presentations"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "students"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "teachers"[0m
+  [1m[36mFixture Insert (0.7ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$gLQoATIEnUBDuEVHcFLJmeOTMa7rtnk7pDBvcNBku29y4vDmlWMpO', '2019-05-21 12:19:04.830524', '2019-05-21 12:19:04.830524', 980190962)[0m
+  [1m[36mFixture Insert (1.1ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$L3MXq7XWk63uXeY1p3nLKu62Sq7QY4Awy4ortFxzJFG8lZze.AZva', '2019-05-21 12:19:04.830524', '2019-05-21 12:19:04.830524', 298486374)[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "admins"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "prefs"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "presentations"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "students"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "teachers"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$iqq8Fn3NI/U8eVknHmH8NeHeMHYJ9ZTSD6KaYJvjByB59TMCylepC', '2019-05-21 12:19:05.193783', '2019-05-21 12:19:05.193783', 980190962)[0m
+  [1m[36mFixture Insert (0.8ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$F9QEndl1zvQKZuFV1PDAd.I4pwKdcIYyhVfwQH74tq/CrLFdbJPMK', '2019-05-21 12:19:05.193783', '2019-05-21 12:19:05.193783', 298486374)[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "admins"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "prefs"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "presentations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "students"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "teachers"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$g5XTw.RDf3zGuGnDTtWgY.zow3A1keOhE34V3DIBDs2hU14QDdrrK', '2019-05-21 12:19:05.552247', '2019-05-21 12:19:05.552247', 980190962)[0m
+  [1m[36mFixture Insert (0.9ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$QH9q0RR.hRcS6GONlLroaukAAm4HFh8wx7SFElVaGGARR3qmMNDUm', '2019-05-21 12:19:05.552247', '2019-05-21 12:19:05.552247', 298486374)[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "admins"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "prefs"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "presentations"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "students"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "teachers"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$9GIeb8jw3JAkFYooePyJMuUISdYGBshE/UzKIogLEhg0tDL48kVVK', '2019-05-21 12:19:05.914490', '2019-05-21 12:19:05.914490', 980190962)[0m
+  [1m[36mFixture Insert (0.9ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$ZKaArSclmUVW1Abpsio7kuV3Pe6f5kmpEmyAJDrsPrAbiksstki/O', '2019-05-21 12:19:05.914490', '2019-05-21 12:19:05.914490', 298486374)[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "admins"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "prefs"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "presentations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "students"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "teachers"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$fw14DLA39nPyTN5xQSBd6.0kJzmQluZ1TqTOB3bSijMZRvpe/61oi', '2019-05-21 12:19:06.274684', '2019-05-21 12:19:06.274684', 980190962)[0m
+  [1m[36mFixture Insert (1.0ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$8fZhYH9X0d6qv2AUM69Due0VOLarbtRCHfmyips25S/R9.GN6qVyS', '2019-05-21 12:19:06.274684', '2019-05-21 12:19:06.274684', 298486374)[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "admins"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "prefs"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "presentations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "students"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "teachers"[0m
+  [1m[36mFixture Insert (0.9ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$7Ks81gDGw6ieoj1mJoyasO0NpO4WScRfnPzBKbc/6Q43tc4oFBmQ6', '2019-05-21 12:19:06.633782', '2019-05-21 12:19:06.633782', 980190962)[0m
+  [1m[36mFixture Insert (1.0ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$DGZkm89XkFdDG/uC3C772unQw/y0vkew40.U4Pp6pBAE.3su9Z7Ti', '2019-05-21 12:19:06.633782', '2019-05-21 12:19:06.633782', 298486374)[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "admins"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "prefs"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "presentations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "students"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "teachers"[0m
+  [1m[36mFixture Insert (0.7ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$olT8Vvd0GFQfRIHKmTKbE.R6reQ8HlH8BS39dGO7CpHhbyGg9KwqC', '2019-05-21 12:19:06.994252', '2019-05-21 12:19:06.994252', 980190962)[0m
+  [1m[36mFixture Insert (0.9ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$4eJRBnYh1MZEXvT6yK9Oheaj9aLEwWIvf6hFK3cdp.gQ6viYXP6LW', '2019-05-21 12:19:06.994252', '2019-05-21 12:19:06.994252', 298486374)[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "admins"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "prefs"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "presentations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "students"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "teachers"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$RSMzupBpddA12aO//Hoh7e4e4Ib.Az9zLqEBoiu3qaebZFUQJxpYi', '2019-05-21 12:19:07.354138', '2019-05-21 12:19:07.354138', 980190962)[0m
+  [1m[36mFixture Insert (0.8ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$aNSRBoGF3gz3luSJ8D/29.s1Mb/7855pZBCtXmO0uvG/8MmXaZJ2i', '2019-05-21 12:19:07.354138', '2019-05-21 12:19:07.354138', 298486374)[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "admins"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "prefs"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "presentations"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "students"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "teachers"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$nR7tTF2rJM3TejtSs9B./.rYIsPUOoXSZpM0SiKNFUG3iYfFG4iuK', '2019-05-21 12:19:07.714393', '2019-05-21 12:19:07.714393', 980190962)[0m
+  [1m[36mFixture Insert (0.9ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$vVbRVIAZ6kot7Vf1iolZEe6IpXdAvihXfMsAI74ilzqCATf5SaC1q', '2019-05-21 12:19:07.714393', '2019-05-21 12:19:07.714393', 298486374)[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "admins"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "prefs"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "presentations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "students"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "teachers"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$c2DP2GLUjCPpYWD1kZ.FaenQo7Bcy1xkzuZdudwBLQ2lktrITeQmO', '2019-05-21 12:19:08.074933', '2019-05-21 12:19:08.074933', 980190962)[0m
+  [1m[36mFixture Insert (0.8ms)[0m  [1m[32mINSERT INTO "admins" ("handle", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', '$2a$10$J1dyh7IJU7umwjJARw79CORqtKggiESaM70jDx2VpKOnLVfUIMqLq', '2019-05-21 12:19:08.074933', '2019-05-21 12:19:08.074933', 298486374)[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m

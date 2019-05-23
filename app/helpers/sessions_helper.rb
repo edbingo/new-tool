@@ -11,6 +11,12 @@ module SessionsHelper
     end
   end
 
+  def current_teacher
+    if session[:teacher_id]
+      @current_teacher ||= Teacher.find_by_id(session[:teacher_id])
+    end
+  end
+
   def logged_ad?
     !current_admin.nil?
   end

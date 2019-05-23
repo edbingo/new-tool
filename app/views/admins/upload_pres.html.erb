@@ -1,8 +1,9 @@
-<h4>Präsentationen hinzufügen</h4>
-
-<div class="custom-file">
-  <%= form_tag upload_presentations_path, multipart: true do %>
-    <%= file_field_tag :file, class: "form-control-file my-3" %>
-    <%= submit_tag "Import CSV", data: { disable_with: "Wird hochgeladen..." }, class: "btn btn-primary" %>
-  <% end  %>
+<div class="card shadow p-3 mb-5 bg-white rounded" style="max-width: 400px; margin: auto;">
+  <div class="card-body">
+    <h5 class="card-title">Präsentationen hinzufügen</h5>
+    <%= form_tag upload_presentations_path, multipart: true do %>
+      <%= file_field_tag :file, class: "form-control-file my-3" %>
+      <%= submit_tag "Import CSV", data: { disable_with: "Wird hochgeladen..." }, class: "special-upload-button" %>
+    <% end  %>
+  </div>
 </div>

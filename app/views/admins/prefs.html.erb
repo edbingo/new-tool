@@ -1,12 +1,29 @@
 <div class="card shadow p-3 mb-5 bg-white rounded" style="max-width: 400px; margin: auto">
   <h3>Servereinstellungen</h3>
-  <%= form_tag upload_settings_path do %>
-    Anzahl verlangte Anmeldungen
-    <%= number_field_tag 'req', 3, class: "form-control mb-3", min: 1, max: 10, step: 1 %>
-    Verlangte Zeit zwischen Präsentationen in Minuten
-    <%= number_field_tag 'time', 6, class: "form-control mb-3", min: 1, max: 60, step: 1 %>
-    Anzahl freie Plätze pro Präsentation
-    <%= number_field_tag 'free', 5, class: "form-control mb-3", min: 1, max: 10, step: 1 %>
-    <%= submit_tag 'Speichern', class: "btn btn-lg btn-primary btn-block", data: { disable_with: "Processing data..." } %>
-  <% end %>
+    <%= form_tag upload_settings_path do %>
+      Anzahl verlangte Anmeldungen
+      <div class="input-group mb-3">
+      <%= number_field_tag 'req', 3, class: "form-control", min: 1, max: 10, step: 1 %>
+        <div class="input-group-append">
+          <span class="input-group-text">Anmeldungen</span>
+        </div>
+      </div>
+      Verlangte Zeit zwischen Präsentationen
+      <div class="input-group mb-3">
+        <%= number_field_tag 'time', 6, class: "form-control", min: 1, max: 60, step: 1 %>
+        <div class="input-group-append">
+          <span class="input-group-text">Minuten</span>
+        </div>
+      </div>
+      Anzahl freie Plätze pro Präsentation
+      <div class="input-group mb-3">
+        <%= number_field_tag 'free', 5, class: "form-control", min: 1, max: 10, step: 1 %>
+        <div class="input-group-append">
+          <span class="input-group-text">Plätze</span>
+        </div>
+      </div>
+      Datum der Präsentationen
+      <%= date_field_tag 'pres_date', "31/12/2099", class: "form-control mb-3" %>
+      <%= submit_tag 'Speichern', class: "btn btn-lg btn-primary btn-block", data: { disable_with: "Daten werden verarbeitet..." } %>
+    <% end %>
 </div>

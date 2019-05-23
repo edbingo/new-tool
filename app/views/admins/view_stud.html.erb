@@ -33,10 +33,18 @@
       <div class="card-body">
         <% if @student.rec %>
           Mailstatus: <strong class="text-success">Anmeldedaten erhalten</strong>
+          <br />
         <% else %>
           Mailstatus: <strong class="text-warning">Anmeldedaten nicht erhalten</strong>
+          <br />
         <% end %>
-        <br>
+        <% if @student.rec && @student.mahn_rec == 0 %>
+          Mahnmails: <strong class="text-success">Noch keine Mahnmails erhalten</strong>
+          <br />
+        <% elsif @student.rec && @student.mahn_rec != 0 %>
+          Mahnmails: <strong class="text-warning">Schon <%= @student.mahn_rec %> Mahnmails erhalten.</strong>
+          <br />
+        <% end %>
         <% if @student.register %>
           Registrationsstatus: <strong class="text-success">Registration erfolgreich</strong>
         <% else %>
@@ -44,55 +52,56 @@
         <% end %>
         <hr>
         <% if @student.rec && !@student.register %>
-          <%= link_to "Mahnmail versenden", '#', class: "btn btn-primary" %>
+          <%= link_to "Mahnmail versenden", '#', class: "btn btn-primary mb-3" %>
         <% elsif !@student.rec %>
-          <%= link_to "Anmeldedaten versenden", '#', class: "btn btn-primary" %>
+          <%= link_to "Anmeldedaten versenden", list_students_view_send_login_path(:id => @student.id), class: "btn btn-primary mb-3" %>
         <% end %>
         <% unless @student.register %>
-          <%= link_to "Force", force_path(:id => @student.id), class: "btn btn-primary" %>
+          <%= link_to "Force", force_path(:id => @student.id), class: "btn btn-primary mb-3" %>
         <% end %>
 
       </div>
     </div>
   </div>
 </div>
-
-<div class="card mb-3">
-  <div class="card-header">
-    Ausgewählte Präsentationen
-  </div>
-  <div class="card-body">
-  <% if @student.select.count == 0 %>
-    Dieser Schüler hat noch keine Präsentationen ausgewählt
-  <% else %>
-    <table class="table table-hover sorttable table-sm">
-      <thead>
-        <tr class="srt">
-          <th>Vorname</th>
-          <th>Nachname</th>
-          <th>Titel</th>
-          <th>Fach</th>
-          <th>Betreuer</th>
-          <th>Zimmer</th>
-          <th>Von</th>
-          <th>Bis</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @presentations.each do |pres| %>
-          <tr>
-            <td><%= pres.vorname %></td>
-            <td><%= pres.name %></td>
-            <td><%= pres.titel %></td>
-            <td><%= pres.fach %></td>
-            <td><%= link_to pres.betreuer, list_teachers_view_path(:number => pres.betreuer) %></td>
-            <td><%= pres.zimmer %></td>
-            <td><%= Time.at(pres.von.to_f).utc.strftime("%H:%M") %></td>
-            <td><%= Time.at(pres.bis.to_f).utc.strftime("%H:%M") %></td>
+<% if @student.rec %>
+  <div class="card mb-3">
+    <div class="card-header">
+      Ausgewählte Präsentationen
+    </div>
+    <div class="card-body">
+    <% if @student.select.count == 0 %>
+      Dieser Schüler hat noch keine Präsentationen ausgewählt
+    <% else %>
+      <table class="table table-hover sorttable table-sm">
+        <thead>
+          <tr class="srt">
+            <th>Vorname</th>
+            <th>Nachname</th>
+            <th>Titel</th>
+            <th>Fach</th>
+            <th>Betreuer</th>
+            <th>Zimmer</th>
+            <th>Von</th>
+            <th>Bis</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
-  <% end %>
+        </thead>
+        <tbody>
+          <% @presentations.each do |pres| %>
+            <tr>
+              <td><%= pres.vorname %></td>
+              <td><%= pres.name %></td>
+              <td><%= pres.titel %></td>
+              <td><%= pres.fach %></td>
+              <td><%= link_to pres.betreuer, list_teachers_view_path(:number => pres.betreuer) %></td>
+              <td><%= pres.zimmer %></td>
+              <td><%= Time.at(pres.von.to_f).utc.strftime("%H:%M") %></td>
+              <td><%= Time.at(pres.bis.to_f).utc.strftime("%H:%M") %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+    </div>
   </div>
-</div>
+<% end %>

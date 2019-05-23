@@ -60,7 +60,7 @@
   </tbody>
 </table>
 
-
+<!--
 <div id="fixedinfo" class="shadow bg-warning">
   <% if Pref.first.req.to_i - current_student.select.count > 1 %>
     Sie müssen noch <%= Pref.first.req.to_i - current_student.select.count %> Präsentationen auswählen.
@@ -68,3 +68,18 @@
     Sie müssen noch <%= Pref.first.req.to_i - current_student.select.count %> Präsentation auswählen.
   <% end %>
 </div>
+-->
+
+
+
+<div class="card text-white bg-info shadow" id="fixedcard" style="max-width: 18rem;">
+  <div class="card-header">Information</div>
+  <div class="card-body">
+    <% if Pref.first.req.to_i - current_student.select.count > 1 %>
+      Sie müssen noch <%= Pref.first.req.to_i - current_student.select.count %> Präsentationen auswählen.
+    <% elsif Pref.first.req.to_i - current_student.select.count == 1 %>
+      Sie müssen noch <%= Pref.first.req.to_i - current_student.select.count %> Präsentation auswählen.
+    <% end %>
+  </div>
+</div>
+<br /><br /><br /><br /><br /><br />

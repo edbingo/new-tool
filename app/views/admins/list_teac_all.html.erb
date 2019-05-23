@@ -28,7 +28,7 @@
                   <%= link_to "Anschauen", list_teachers_view_path(:id => teac.id), class: "btn btn-secondary dropdown-item" %>
                 <% end %>
                 <%= link_to "Bearbeiten", update_teacher_path(:id => teac.id), class: "btn btn-primary dropdown-item" %>
-                <% unless Student.first.rec %>
+                <% unless Pref.first.log_data %>
                 <div class="dropdown-divider"></div>
                 <%= link_to "Löschen", delete_teacher_path(:id => teac.id), class: "btn btn-warning dropdown-item" %>
                 <% end %>

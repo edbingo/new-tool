@@ -29,29 +29,35 @@
       </div>
     </div>
   </div>
+  <% if Pref.first.log_data %>
   <div class="col-sm">
     <div class="card mb-3">
       <div class="card-header">
         Besucher
       </div>
       <div class="card-body">
-        <table class="table table-hover sorttable table-sm">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Klasse</th>
-                </tr>
-            </thead>
-            <tbody>
-            <% @pres.visit.each do |s| %>
-                <tr>
-                    <td><%= s.vorname %> <%= s.name %></td>
-                    <td><%= s.klasse %></td>
-                </tr>
-            <% end %>
-            </tbody>
-        </table>
+        <% if @pres.visit.count == 0 %>
+          Derzeitig haben sich noch keine Schüler/innen für diese Präsentation angemolden.
+        <% else %>
+          <table class="table table-hover sorttable table-sm">
+              <thead>
+                  <tr>
+                      <th>Name</th>
+                      <th>Klasse</th>
+                  </tr>
+              </thead>
+              <tbody>
+              <% @pres.visit.each do |s| %>
+                  <tr>
+                      <td><%= s.vorname %> <%= s.name %></td>
+                      <td><%= s.klasse %></td>
+                  </tr>
+              <% end %>
+              </tbody>
+          </table>
+        <% end %>
       </div>
     </div>
   </div>
+  <% end %>
 </div>

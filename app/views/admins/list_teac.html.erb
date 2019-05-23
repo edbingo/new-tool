@@ -1,7 +1,9 @@
 <%= render 'navlist' %>
+<% unless Pref.first.log_data %>
 <div class="float-right">
   <button type="button" name="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newTeacherModal">Hinzufügen</button>
 </div>
+<% end %>
 
 <table class="table table-hover sorttable">
   <thead>
