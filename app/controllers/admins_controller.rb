@@ -404,6 +404,7 @@ class AdminsController < ApplicationController
       if @student.save
         @student.register = false
         @student.rec = false
+        @student.select = []
         @student.save
         redirect_to list_students_path
       else
