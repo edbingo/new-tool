@@ -184,6 +184,7 @@ class AdminsController < ApplicationController
 
   def testmail
     StudentMailer.test_mail.deliver_now
+    redirect_to mailer_path
   end
 
   # Login Activation
