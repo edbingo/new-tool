@@ -40,7 +40,7 @@ class SelectController < ApplicationController
         end
         current_student.register = true
         current_student.save
-        # Send emails
+        StudentMailer.final_mail(current_student).deliver_now
         session[:student_id] = nil
         if logged_ad?
           redirect_to list_students_path
