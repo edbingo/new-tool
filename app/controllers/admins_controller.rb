@@ -187,6 +187,33 @@ class AdminsController < ApplicationController
     redirect_to mailer_path
   end
 
+  def punishmail
+    s = Student.all.where(register: false)
+    n = 0
+    s.each do |s|
+      StudentMailer.mahn_mail(s)
+      s.mahn_rec += 1
+      s.save
+      n += 1
+    end
+    p = Pref.first
+    p.mahn_count += 1
+    p.save
+    redirect_to mailer_path
+  end
+
+  def finalmail
+    t = Teacher.all
+    t.each do |teac|
+      if Presentation.where(betreuer: teac.number).count > 0
+        StudentMailer.list_mail(teac)
+        teac.rec = true
+        teac.save
+      end
+    end
+    redirect_to mailer_path
+  end
+
   # Login Activation
   def act
     Pref.first.update_attribute("login", true)
@@ -339,9 +366,11 @@ class AdminsController < ApplicationController
     def new_pres
       @presentation = Presentation.new(pres_params)
       if @presentation.save
-        @presentation.update_attribute("frei", Pref.first.free)
-        @presentation.update_attribute("von", Time.parse(@presentation.von).seconds_since_midnight)
-        @presentation.update_attribute("bis", Time.parse(@presentation.bis).seconds_since_midnight)
+        @presentation.frei = Pref.first.free
+        @presentation.von = Time.parse(@presentation.von).seconds_since_midnight
+        @presentation.bis = Time.parse(@presentation.bis).seconds_since_midnight
+        @presentation.visit = []
+        @presentation.save
         redirect_to list_presentations_path
       else
         redirect_to list_presentations_path
@@ -405,6 +434,7 @@ class AdminsController < ApplicationController
         @student.register = false
         @student.rec = false
         @student.select = []
+        @student.mahn_rec = 0
         @student.save
         redirect_to list_students_path
       else

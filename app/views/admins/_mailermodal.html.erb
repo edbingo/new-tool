@@ -31,7 +31,7 @@
       </div>
       <% unless Student.where(rec: true).count == 0 %>
         <div class="modal-body">
-          Voraussichtliche Anzahl versendete Mails: <%= Student.where(register: false).count %>
+          Voraussichtliche Anzahl versendete Mails: <%= Student.where(register: false).count %><br />
           An folgenden Schülern wird eine Mahnmail versendet:
         </div>
         <table class="table table-sm table-hover" style="margin: 1rem; width: auto;">
@@ -52,7 +52,7 @@
         </table>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
-          <button type="button" class="btn btn-primary">Senden</button>
+          <%= link_to 'Senden', send_punishmail_path, class: "btn btn-primary" %>
         </div>
       <% else %>
         <div class="modal-body">
@@ -96,6 +96,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Schliessen</button>
+        <%= link_to 'Senden', send_finallist_path, class: "btn btn-primary" %>
       </div>
     </div>
     <% end %>

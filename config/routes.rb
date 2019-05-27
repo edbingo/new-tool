@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   get 'registrieren', to: 'select#list'
 
   get 'send/testmail', to: 'admins#testmail'
+  get 'send/punishmail', to: 'admins#punishmail'
+  get 'send/finallist', to: 'admins#finalmail'
 
   get 'confirm/selection', to: 'select#confirm'
 

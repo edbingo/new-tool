@@ -1,7 +1,7 @@
 class StudentMailer < ApplicationMailer
   def login_mail(student)
     @student = student
-    subject = "MA#{Time.new.year - 2000} - Elektronische Anmeldung fpr den Besuch der Präsentationen der Maturaarbeiten MA#{Time.new.year - 2001}"
+    subject = "MA#{Time.new.year - 2000} - Elektronische Anmeldung für den Besuch der Präsentationen der Maturaarbeiten MA#{Time.new.year - 2001}"
     mail to: @student.mail, subject: subject
   end
 

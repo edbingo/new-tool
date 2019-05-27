@@ -27,8 +27,12 @@
         <td><%= pres.klasse %></td>
         <td><%= pres.titel %></td>
         <td><%= pres.fach %></td>
-        <% tn = Teacher.find_by_number(pres.betreuer) %>
-        <td><%= link_to "#{tn.vorname} #{tn.name}", list_teachers_view_path(:number => pres.betreuer) %></td>
+          <% if Teacher.find_by_number(pres.betreuer) == nil%>
+            <td><button type="button" class="btn btn-danger" data-target="#errorModal" data-toggle="modal">Error</button></td>
+          <% else %>
+            <% tn = Teacher.find_by_number(pres.betreuer) %>
+            <td><%= link_to "#{tn.vorname} #{tn.name}", list_teachers_view_path(:number => pres.betreuer) %></td>
+          <% end %>
         <td><%= pres.zimmer %></td>
         <td><%= Time.at(pres.von.to_f).utc.strftime("%H:%M") %></td>
         <td><%= Time.at(pres.bis.to_f).utc.strftime("%H:%M") %></td>
