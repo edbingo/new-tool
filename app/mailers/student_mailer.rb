@@ -22,4 +22,8 @@ class StudentMailer < ApplicationMailer
     mail to: @teacher.mail, subject: "Mündliche Maturapräsentationen"
   end
 
+  def test_mail
+    mail to: 'elancaster4@gmail.com', subject: "Testing 1, 2, 1, 2"
+  end
+
 end

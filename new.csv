@@ -1,162 +1,162 @@
 name;vorname;number;mail;klasse;code;password;password_confirmation;register;rec;mahn_rec
-Kessler;Jan;s8556;kessler.jan@bks-campus.ch;5 Gg;09196;09196;09196;false;false;0
-Crufer;Noël;s8563;crufer.noel@bks-campus.ch;5 Gk;05664;05664;05664;false;false;0
-Bajrektarevic;Anel;s8555;bajrektarevic.anel@bks-campus.ch;5 Gi;42834;42834;42834;false;false;0
-Florence Angelo;Laxchan;s8586;florence.laxchan@bks-campus.ch;5 Gg;59231;59231;59231;false;false;0
-Petrovic;Matej;s8621;petrovic.matej@bks-campus.ch;5 Gk;11489;11489;11489;false;false;0
-Quinter;Giulia;s8626;quinter.giulia@bks-campus.ch;5 Gg;08284;08284;08284;false;false;0
-Krishnakumar;Kaumethaky;s8604;krishnakumar.kaumethaky@bks-campus.ch;5 Gh;83997;83997;83997;false;false;0
-Jörg;Fabian;s8599;joerg.fabian@bks-campus.ch;5 Gk;49909;49909;49909;false;false;0
-Kunz;David;s8605;kunz.david@bks-campus.ch;5 Gi;25454;25454;25454;false;false;0
-Neuland;Janina Anastasia;s8616;neuland.janina@bks-campus.ch;5 Gg;54451;54451;54451;false;false;0
-Glättli;Naomi Beryl;s8591;glaettli.naomi@bks-campus.ch;5 Gg;29120;29120;29120;false;false;0
-Burz;Leander Elias;s8574;burz.leander@bks-campus.ch;5 Gd;10975;10975;10975;false;false;0
-Zoppi;Manon Lara;s8827;bossart.manon@bks-campus.ch;5 Ge;65187;65187;65187;false;false;0
-Bächler;Andrina;s8910;baechler.andrina@bks-campus.ch;5 Gk;05396;05396;05396;false;false;0
-Ferus;Sebastian Thomas;s8940;ferus.sebastian@bks-campus.ch;5 Gh;91193;91193;91193;false;false;0
-Führer;Eileen Vivien;s8943;fuehrer.eileen@bks-campus.ch;5 Gh;59223;59223;59223;false;false;0
-Gadient;Flurina;s8944;gadient.flurina@bks-campus.ch;5 Gk;77179;77179;77179;false;false;0
-Gasser;Matteo Andrea;s8949;gasser.matteo@bks-campus.ch;5 Gg;31795;31795;31795;false;false;0
-Bislin;Fiona Lioba;s8918;bislin.fiona@bks-campus.ch;5 Gh;91308;91308;91308;false;false;0
-Accola;Sira Rahel;s8906;accola.sira@bks-campus.ch;5 Gg;92590;92590;92590;false;false;0
-Bertogg;Corsin;s8916;bertogg.corsin@bks-campus.ch;5 Gc;51517;51517;51517;false;false;0
-Carigiet;Marc Andriu;s8925;carigiet.marc@bks-campus.ch;5 Gc;60098;60098;60098;false;false;0
-Curschellas;Marco;s8933;curschellas.marco@bks-campus.ch;5 Gk;04380;04380;04380;false;false;0
-Danuser;Yola;s8934;danuser.yola@bks-campus.ch;5 Gh;21110;21110;21110;false;false;0
-Decurtins;Marius;s8935;decurtins.marius@bks-campus.ch;5 Gc;46003;46003;46003;false;false;0
-Furrer;Fabian;s8936;furrer.fabian@bks-campus.ch;5 Gc;99450;99450;99450;false;false;0
-Grünenfelder;Naïma Joia;s8954;gruenenfelder.naima@bks-campus.ch;5 Gk;78699;78699;78699;false;false;0
-Hardegger;Robin Noè;s8945;hardegger.robin@bks-campus.ch;5 Gg;19916;19916;19916;false;false;0
-Brunold;Sara Sidney;s8921;brunold.sara@bks-campus.ch;5 Gg;54796;54796;54796;false;false;0
-Albrecht;Cyrill;s8907;albrecht.cyrill@bks-campus.ch;5 Gi;10411;10411;10411;false;false;0
-Aliesch;Gaudenz;s8909;aliesch.gaudenz@bks-campus.ch;5 Gi;40168;40168;40168;false;false;0
-Briccola;Matteo;s8920;briccola.matteo@bks-campus.ch;5 Gi;33791;33791;33791;false;false;0
-Camenisch;Michelle Céline;s8923;camenisch.michelle@bks-campus.ch;5 Gi;79865;79865;79865;false;false;0
-Casutt;Amin;s8928;casutt.amin@bks-campus.ch;5 Gi;41861;41861;41861;false;false;0
-Fetz;Madlaina Lia;s8941;fetz.madlaina@bks-campus.ch;5 Gi;27367;27367;27367;false;false;0
-Giubbini;Enrico Umberto;s8953;giubbini.enrico@bks-campus.ch;5 Gi;62020;62020;62020;false;false;0
-Caluori;Ramona;s8922;caluori.ramona@bks-campus.ch;5 Gi;83691;83691;83691;false;false;0
-Bergamin;Manuel;s8915;bergamin.manuel@bks-campus.ch;5 Gg;73044;73044;73044;false;false;0
-Cavelti;Céline;s8931;cavelti.celine@bks-campus.ch;5 Gh;23887;23887;23887;false;false;0
-Degiacomi;Olivia Romina;s8937;degiacomi.olivia@bks-campus.ch;5 Gh;31764;31764;31764;false;false;0
-Fragner;Selina;s8942;fragner.selina@bks-campus.ch;5 Gg;13071;13071;13071;false;false;0
-Hassler;Marco;s8946;hassler.marco@bks-campus.ch;5 Gh;30193;30193;30193;false;false;0
-Hotz;Laura;s8957;hotz.laura@bks-campus.ch;5 Gh;56525;56525;56525;false;false;0
-Kök;Ibocan;s8958;koek.ibocan@bks-campus.ch;5 Gk;85907;85907;85907;false;false;0
-Lazzarini;Gianna;s8959;lazzarini.gianna@bks-campus.ch;5 Gk;34463;34463;34463;false;false;0
-Joos;Bianca;s8961;joos.bianca@bks-campus.ch;5 Gk;80223;80223;80223;false;false;0
-Riedi;Jannis Mattia;s8972;riedi.jannis@bks-campus.ch;5 Gk;35475;35475;35475;false;false;0
-Oettl;Samuel;s8977;oettl.samuel@bks-campus.ch;5 Gh;77709;77709;77709;false;false;0
-Ughini;Nayara Rahel;s8991;ughini.nayara@bks-campus.ch;5 Gk;78423;78423;78423;false;false;0
-Wiedemann;Flurina Laura;s8995;wiedemann.flurina@bks-campus.ch;5 Gk;36766;36766;36766;false;false;0
-Würthner;Tiago;s8998;wuerthner.tiago@bks-campus.ch;5 Gh;17051;17051;17051;false;false;0
-Jäger;Timo;s8960;jaeger.timo@bks-campus.ch;5 Gk;97049;97049;97049;false;false;0
-Robinson;Marius Lee;s8973;robinson.marius@bks-campus.ch;5 Gc;45105;45105;45105;false;false;0
-Wieland;Jana Maria;s8996;wieland.jana@bks-campus.ch;5 Gc;85386;85386;85386;false;false;0
-Wittwer;Gian-Luca;s8997;wittwer.gian@bks-campus.ch;5 Gc;77477;77477;77477;false;false;0
-Kugler;Irina Lara;s8964;kugler.irina@bks-campus.ch;5 Gg;72370;72370;72370;false;false;0
-Liner;Marcelle Sonja;s8966;liner.marcelle@bks-campus.ch;5 Gg;25594;25594;25594;false;false;0
-Manetsch;Damian;s8969;manetsch.damian@bks-campus.ch;5 Ge;23500;23500;23500;false;false;0
-Reich;Seraina Laura;s8979;reich.seraina@bks-campus.ch;5 Gg;30963;30963;30963;false;false;0
-Sennrich;Joël;s8984;sennrich.joel@bks-campus.ch;5 Gi;72908;72908;72908;false;false;0
-Sivakumar;Shiruja;s8986;sivakumar.shiruja@bks-campus.ch;5 Gg;25145;25145;25145;false;false;0
-Zindel;Dominik Sebastian;s9000;zindel.dominik@bks-campus.ch;5 Ge;06088;06088;06088;false;false;0
-Müller;Gianna Irina;s8976;mueller.gianna@bks-campus.ch;5 Gi;96078;96078;96078;false;false;0
-Thayalaranjan;Ilakkijan;s8990;thayalaranjan.ilakkijan@bks-campus.ch;5 Gi;84119;84119;84119;false;false;0
-Vedana;Annalena;s8992;vedana.annalena@bks-campus.ch;5 Gi;94655;94655;94655;false;false;0
-Mahathevan;Lavaniya;s8967;mahathevan.lavaniya@bks-campus.ch;5 Gh;43991;43991;43991;false;false;0
-Schaller;Luis Konrad;s8975;schaller.luis@bks-campus.ch;5 Gh;25613;25613;25613;false;false;0
-Schegg;Manuel;s8981;schegg.manuel@bks-campus.ch;5 Gh;93143;93143;93143;false;false;0
-Schwarz;Ladina;s8983;schwarz.ladina@bks-campus.ch;5 Gh;01082;01082;01082;false;false;0
-Strebel;Camil Gisep;s8987;strebel.camil@bks-campus.ch;5 Gg;28651;28651;28651;false;false;0
-Taboas;Diego;s8989;taboas.diego@bks-campus.ch;5 Gh;52178;52178;52178;false;false;0
-Ziegler;Joel;s8999;ziegler.joel@bks-campus.ch;5 Gh;79491;79491;79491;false;false;0
-Maurya;Sheetal;s9012;maurya.sheetal@bks-campus.ch;5 Gh;20592;20592;20592;false;false;0
-Müller;Adriana Marisa;s8971;mueller.adriana@bks-campus.ch;5 Gc;64583;64583;64583;false;false;0
-Käslin;Annalena Margret;s9046;kaeslin.annalena@bks-campus.ch;5 Gd;95474;95474;95474;false;false;0
-Margreth;Katja;s9171;margreth.katja1@bks-campus.ch;5 Gf;28225;28225;28225;false;false;0
-Gopalasingham;Sathurthika;s9179;sathurthika.gopalasingham@bks-campus.ch;5 Gg;19009;19009;19009;false;false;0
-Müller;Cecile Martina;s9290;mueller.cecile@bks-campus.ch;5 Gh;29286;29286;29286;false;false;0
-Udovicic;Ivana;s9298;udovicic.ivana@bks-campus.ch;5 Gh;48521;48521;48521;false;false;0
-Vitetti;Viviana Erminia;s9299;vitetti.viviana@bks-campus.ch;5 Gh;06973;06973;06973;false;false;0
-Huber;Joëlle;s9283;huber.joelle@bks-campus.ch;5 Gf;65243;65243;65243;false;false;0
-Alpiger;Ceiba Lucia;s9317;alpiger.ceiba@bks-campus.ch;5 Gc;49229;49229;49229;false;false;0
-Casutt;Alice Gisela;s9337;casutt.alice@bks-campus.ch;5 Ge;64478;64478;64478;false;false;0
-Barone;Michela Domenica;s9320;barone.michela@bks-campus.ch;5 Gf;85543;85543;85543;false;false;0
-Baumgartner;Mario Lukas;s9322;baumgartner.mario@bks-campus.ch;5 Gi;07564;07564;07564;false;false;0
-Orlik;Zippora;s9376;orlik.zippora@bks-campus.ch;5 Ge;06190;06190;06190;false;false;0
-Straub;Matti Melvin;s9394;straub.matti@bks-campus.ch;5 Gb;26667;26667;26667;false;false;0
-Derungs;Gino;s9346;derungs.gino@bks-campus.ch;5 Gd;04134;04134;04134;false;false;0
-Ghilardi;Alice;s9491;ghilardi.alice@bks-campus.ch;5 Ga;48081;48081;48081;false;false;0
-Lingandira;Nitheshigan;s9454;lingandira.nitheshigan@bks-campus.ch;5 Gf;35084;35084;35084;false;false;0
-Simmen;Svenja;s9493;simmen.svenja@bks-campus.ch;5 Gf;38684;38684;38684;false;false;0
-Allemann;Lea;s9492;allemann.lea@bks-campus.ch;5 Ge;42431;42431;42431;false;false;0
-Flepp;Ursina Catarina;s9446;flepp.ursina@bks-campus.ch;5 Ge;79456;79456;79456;false;false;0
-Ponzio;Ivan;s9485;ponzio.ivan@bks-campus.ch;5 Ga;01583;01583;01583;false;false;0
-Sieber;Medea;s9616;sieber.medea@bks-campus.ch;5 Gd;99857;99857;99857;false;false;0
-D'Atria;Fabio Claudio;s9642;datria.fabio@bks-campus.ch;5 Gb;66031;66031;66031;false;false;0
-Deflorin;Larissa;s9634;deflorin.larissa@bks-campus.ch;5 Gd;09198;09198;09198;false;false;0
-Brunner;Janis;s9614;brunner.janis@bks-campus.ch;5 Gd;67448;67448;67448;false;false;0
-Federspiel;Ronja;s9655;federspiel.ronja@bks-campus.ch;5 Ge;01035;01035;01035;false;false;0
-Buchli;Larissa;s9663;buchli.larissa@bks-campus.ch;5 Gb;13897;13897;13897;false;false;0
-Fromm;Valeria;s9607;fromm.valeria@bks-campus.ch;5 Gb;53262;53262;53262;false;false;0
-Casal;Michel;s9666;casal.michel1@bks-campus.ch;5 Gf;17150;17150;17150;false;false;0
-Martens;Gian-Martin;s9639;martens.gian@bks-campus.ch;5 Gb;21896;21896;21896;false;false;0
-Stoffel;Martina;s9612;stoffel.martina@bks-campus.ch;5 Ge;58281;58281;58281;false;false;0
-Eggenberger;Laura;s9618;eggenberger.laura@bks-campus.ch;5 Gd;18061;18061;18061;false;false;0
-Kaib;Svenja;s9643;kaib.svenja@bks-campus.ch;5 Gc;62279;62279;62279;false;false;0
-Bläsi;Eva;s9659;blaesi.eva@bks-campus.ch;5 Gd;33000;33000;33000;false;false;0
-Beeli;Andrina;s9644;beeli.andrina@bks-campus.ch;5 Gc;60507;60507;60507;false;false;0
-Cancedda;Gianmarco;s9661;cancedda.gianmarco@bks-campus.ch;5 Gf;75434;75434;75434;false;false;0
-Holle;Noora;s9619;holle.noora@bks-campus.ch;5 Ge;37753;37753;37753;false;false;0
-Grünenfelder;Mattea;s9625;gruenenfelder.mattea@bks-campus.ch;5 Gd;41995;41995;41995;false;false;0
-Rodigari;Fabio;s9653;rodigari.fabio@bks-campus.ch;5 Gb;52572;52572;52572;false;false;0
-Leimgruber;Jessica;s9640;leimgruber.jessica@bks-campus.ch;5 Gf;89534;89534;89534;false;false;0
-Michael;Andrina;s9632;michael.andrina@bks-campus.ch;5 Gf;96627;96627;96627;false;false;0
-Müller;Rosalina;s9626;mueller.rosalina@bks-campus.ch;5 Ge;66489;66489;66489;false;false;0
-Hunziker;Julia;s9674;hunziker.julia@bks-campus.ch;5 Gf;62632;62632;62632;false;false;0
-Tobler;Francesca;s9605;tobler.francesca@bks-campus.ch;5 Ga;16528;16528;16528;false;false;0
-Mensing;Mauro;s9609;mensing.mauro@bks-campus.ch;5 Gc;16795;16795;16795;false;false;0
-Loser;Jennifer;s9622;loser.jennifer@bks-campus.ch;5 Gd;06110;06110;06110;false;false;0
-Hannoschöck;Amelie;s9662;hannoschoeck.amelie@bks-campus.ch;5 Gf;12347;12347;12347;false;false;0
-Pedersen;Sofie;s9637;pedersen.sofie@bks-campus.ch;5 Gb;73766;73766;73766;false;false;0
-Gantenbein;Sina;s9631;gantenbein.sina@bks-campus.ch;5 Gc;71889;71889;71889;false;false;0
-Guyer;Sara;s9628;guyer.sara@bks-campus.ch;5 Gd;48258;48258;48258;false;false;0
-Flepp;Lea;s9658;flepp.lea@bks-campus.ch;5 Gd;36058;36058;36058;false;false;0
-Neilson;Cameron;s9665;neilson.cameron@bks-campus.ch;5 Gf;03280;03280;03280;false;false;0
-Bearth;Yara;s9654;bearth.yara@bks-campus.ch;5 Ge;66286;66286;66286;false;false;0
-Recchia;Dominique;s9606;recchia.dominique@bks-campus.ch;5 Ga;29582;29582;29582;false;false;0
-Saner;Jonas;s9630;saner.jonas@bks-campus.ch;5 Gc;14346;14346;14346;false;false;0
-Seifert;Laura;s9615;seifert.laura@bks-campus.ch;5 Gd;50344;50344;50344;false;false;0
-Willi;Noelle;s9650;willi.noelle@bks-campus.ch;5 Ge;78874;78874;78874;false;false;0
-Trotta;Joël;s9604;trotta.joel@bks-campus.ch;5 Ga;97921;97921;97921;false;false;0
-Ferrari;Jan;s9646;ferrari.jan@bks-campus.ch;5 Gf;80240;80240;80240;false;false;0
-Zanetti;Jeanne;s9603;zanetti.jeanne@bks-campus.ch;5 Ga;16213;16213;16213;false;false;0
-Mareischen;Melissa;s9623;mareischen.melissa@bks-campus.ch;5 Ge;87457;87457;87457;false;false;0
-Lauper;Fabia;s9620;lauper.fabia@bks-campus.ch;5 Gf;78758;78758;78758;false;false;0
-Bärtsch;Max;s9638;baertsch.max@bks-campus.ch;5 Gb;79229;79229;79229;false;false;0
-Russo;Deborah;s9649;russo.deborah@bks-campus.ch;5 Gb;46263;46263;46263;false;false;0
-Albertin;Yves;s9672;albertin.yves@bks-campus.ch;5 Gf;39653;39653;39653;false;false;0
-Capelli;Damiano;s9608;capelli.damiano@bks-campus.ch;5 Ga;60987;60987;60987;false;false;0
-Kurz;Saira;s9669;kurz.saira@bks-campus.ch;5 Gf;45727;45727;45727;false;false;0
-Peterelli;Flavio;s9647;peterelli.flavio@bks-campus.ch;5 Ge;06621;06621;06621;false;false;0
-Steffen;Luc;s9610;steffen.luc@bks-campus.ch;5 Gd;30290;30290;30290;false;false;0
-Maffiew;Lara;s9678;maffiew.lara@bks-campus.ch;5 Gf;83726;83726;83726;false;false;0
-Dössegger;Lara;s9679;doessegger.lara@bks-campus.ch;5 Gd;20696;20696;20696;false;false;0
-Ammann;Svenja;s9677;ammann.svenja@bks-campus.ch;5 Gc;81032;81032;81032;false;false;0
-Laperre;Lara;s9675;laperre.lara@bks-campus.ch;5 Gb;00475;00475;00475;false;false;0
-Voneschen;Sven;s9680;voneschen.sven@bks-campus.ch;5 Gf;87743;87743;87743;false;false;0
-Gonçalves Fonseca;Marta;s9664;goncalves.marta@bks-campus.ch;5 Gb;90252;90252;90252;false;false;0
-Casanova;Nico;s9682;casanova.nico@bks-campus.ch;5 Gb;96495;96495;96495;false;false;0
-Casadei;Jennifer;s9699;casadei.jennifer@bks-campus.ch;5 Ga;93439;93439;93439;false;false;0
-Chebaro;Tarek;s9700;chebaro.tarek@bks-campus.ch;5 Ga;29730;29730;29730;false;false;0
-Maffezzini;Jarno;s9701;maffezzini.jarno@bks-campus.ch;5 Ga;48705;48705;48705;false;false;0
-Cereghetti;Enea;s9704;cereghetti.enea@bks-campus.ch;5 Ga;04925;04925;04925;false;false;0
-Ferrari;Francesca;s9757;ferrari.francesca@bks-campus.ch;5 Ga;05451;05451;05451;false;false;0
-Martire;Giuseppe Gabriele;s9978;martire.giuseppe@bks-campus.ch;5 Ga;83852;83852;83852;false;false;0
-Carigiet;Jana;s10225;carigiet.jana@bks-campus.ch;5 Gc;20459;20459;20459;false;false;0
-Ardüser;Bigna;s10232;ardueser.bignia@bks-campus.ch;5 Gf;25570;25570;25570;false;false;0
-Camenisch;Anna Madlaina;s10235;camenisch.anna@bks-campus.ch;5 Gf;05538;05538;05538;false;false;0
-Diaz Tavera;Montserrat;s10239;diaz.montserrat@bks-campus.ch;5 Ge;84596;84596;84596;false;false;0
-Gamez;David;s10240;gamez.david@bks-campus.ch;5 Gg;78011;78011;78011;false;false;0
-Kunchani;Somchat;s10241;kunchani.somchat@bks-campus.ch;5 Gd;17743;17743;17743;false;false;0
+Kessler;Jan;s8556;kessler.jan@bks-campus.ch;5 Gg;38075;38075;38075;false;false;0
+Crufer;Noël;s8563;crufer.noel@bks-campus.ch;5 Gk;80211;80211;80211;false;false;0
+Bajrektarevic;Anel;s8555;bajrektarevic.anel@bks-campus.ch;5 Gi;05684;05684;05684;false;false;0
+Florence Angelo;Laxchan;s8586;florence.laxchan@bks-campus.ch;5 Gg;91584;91584;91584;false;false;0
+Petrovic;Matej;s8621;petrovic.matej@bks-campus.ch;5 Gk;92435;92435;92435;false;false;0
+Quinter;Giulia;s8626;quinter.giulia@bks-campus.ch;5 Gg;59857;59857;59857;false;false;0
+Krishnakumar;Kaumethaky;s8604;krishnakumar.kaumethaky@bks-campus.ch;5 Gh;89009;89009;89009;false;false;0
+Jörg;Fabian;s8599;joerg.fabian@bks-campus.ch;5 Gk;59041;59041;59041;false;false;0
+Kunz;David;s8605;kunz.david@bks-campus.ch;5 Gi;36508;36508;36508;false;false;0
+Neuland;Janina Anastasia;s8616;neuland.janina@bks-campus.ch;5 Gg;46115;46115;46115;false;false;0
+Glättli;Naomi Beryl;s8591;glaettli.naomi@bks-campus.ch;5 Gg;08547;08547;08547;false;false;0
+Burz;Leander Elias;s8574;burz.leander@bks-campus.ch;5 Gd;92272;92272;92272;false;false;0
+Zoppi;Manon Lara;s8827;bossart.manon@bks-campus.ch;5 Ge;53965;53965;53965;false;false;0
+Bächler;Andrina;s8910;baechler.andrina@bks-campus.ch;5 Gk;40715;40715;40715;false;false;0
+Ferus;Sebastian Thomas;s8940;ferus.sebastian@bks-campus.ch;5 Gh;14494;14494;14494;false;false;0
+Führer;Eileen Vivien;s8943;fuehrer.eileen@bks-campus.ch;5 Gh;46306;46306;46306;false;false;0
+Gadient;Flurina;s8944;gadient.flurina@bks-campus.ch;5 Gk;55038;55038;55038;false;false;0
+Gasser;Matteo Andrea;s8949;gasser.matteo@bks-campus.ch;5 Gg;74595;74595;74595;false;false;0
+Bislin;Fiona Lioba;s8918;bislin.fiona@bks-campus.ch;5 Gh;61792;61792;61792;false;false;0
+Accola;Sira Rahel;s8906;accola.sira@bks-campus.ch;5 Gg;64237;64237;64237;false;false;0
+Bertogg;Corsin;s8916;bertogg.corsin@bks-campus.ch;5 Gc;31866;31866;31866;false;false;0
+Carigiet;Marc Andriu;s8925;carigiet.marc@bks-campus.ch;5 Gc;25328;25328;25328;false;false;0
+Curschellas;Marco;s8933;curschellas.marco@bks-campus.ch;5 Gk;73407;73407;73407;false;false;0
+Danuser;Yola;s8934;danuser.yola@bks-campus.ch;5 Gh;72636;72636;72636;false;false;0
+Decurtins;Marius;s8935;decurtins.marius@bks-campus.ch;5 Gc;28367;28367;28367;false;false;0
+Furrer;Fabian;s8936;furrer.fabian@bks-campus.ch;5 Gc;40688;40688;40688;false;false;0
+Grünenfelder;Naïma Joia;s8954;gruenenfelder.naima@bks-campus.ch;5 Gk;97514;97514;97514;false;false;0
+Hardegger;Robin Noè;s8945;hardegger.robin@bks-campus.ch;5 Gg;74844;74844;74844;false;false;0
+Brunold;Sara Sidney;s8921;brunold.sara@bks-campus.ch;5 Gg;24552;24552;24552;false;false;0
+Albrecht;Cyrill;s8907;albrecht.cyrill@bks-campus.ch;5 Gi;54485;54485;54485;false;false;0
+Aliesch;Gaudenz;s8909;aliesch.gaudenz@bks-campus.ch;5 Gi;14252;14252;14252;false;false;0
+Briccola;Matteo;s8920;briccola.matteo@bks-campus.ch;5 Gi;79163;79163;79163;false;false;0
+Camenisch;Michelle Céline;s8923;camenisch.michelle@bks-campus.ch;5 Gi;12980;12980;12980;false;false;0
+Casutt;Amin;s8928;casutt.amin@bks-campus.ch;5 Gi;63960;63960;63960;false;false;0
+Fetz;Madlaina Lia;s8941;fetz.madlaina@bks-campus.ch;5 Gi;05456;05456;05456;false;false;0
+Giubbini;Enrico Umberto;s8953;giubbini.enrico@bks-campus.ch;5 Gi;14555;14555;14555;false;false;0
+Caluori;Ramona;s8922;caluori.ramona@bks-campus.ch;5 Gi;99870;99870;99870;false;false;0
+Bergamin;Manuel;s8915;bergamin.manuel@bks-campus.ch;5 Gg;01954;01954;01954;false;false;0
+Cavelti;Céline;s8931;cavelti.celine@bks-campus.ch;5 Gh;17657;17657;17657;false;false;0
+Degiacomi;Olivia Romina;s8937;degiacomi.olivia@bks-campus.ch;5 Gh;74164;74164;74164;false;false;0
+Fragner;Selina;s8942;fragner.selina@bks-campus.ch;5 Gg;33782;33782;33782;false;false;0
+Hassler;Marco;s8946;hassler.marco@bks-campus.ch;5 Gh;26332;26332;26332;false;false;0
+Hotz;Laura;s8957;hotz.laura@bks-campus.ch;5 Gh;81697;81697;81697;false;false;0
+Kök;Ibocan;s8958;koek.ibocan@bks-campus.ch;5 Gk;46161;46161;46161;false;false;0
+Lazzarini;Gianna;s8959;lazzarini.gianna@bks-campus.ch;5 Gk;70826;70826;70826;false;false;0
+Joos;Bianca;s8961;joos.bianca@bks-campus.ch;5 Gk;82838;82838;82838;false;false;0
+Riedi;Jannis Mattia;s8972;riedi.jannis@bks-campus.ch;5 Gk;37521;37521;37521;false;false;0
+Oettl;Samuel;s8977;oettl.samuel@bks-campus.ch;5 Gh;64325;64325;64325;false;false;0
+Ughini;Nayara Rahel;s8991;ughini.nayara@bks-campus.ch;5 Gk;87643;87643;87643;false;false;0
+Wiedemann;Flurina Laura;s8995;wiedemann.flurina@bks-campus.ch;5 Gk;04268;04268;04268;false;false;0
+Würthner;Tiago;s8998;wuerthner.tiago@bks-campus.ch;5 Gh;64534;64534;64534;false;false;0
+Jäger;Timo;s8960;jaeger.timo@bks-campus.ch;5 Gk;11213;11213;11213;false;false;0
+Robinson;Marius Lee;s8973;robinson.marius@bks-campus.ch;5 Gc;83215;83215;83215;false;false;0
+Wieland;Jana Maria;s8996;wieland.jana@bks-campus.ch;5 Gc;68863;68863;68863;false;false;0
+Wittwer;Gian-Luca;s8997;wittwer.gian@bks-campus.ch;5 Gc;72367;72367;72367;false;false;0
+Kugler;Irina Lara;s8964;kugler.irina@bks-campus.ch;5 Gg;95089;95089;95089;false;false;0
+Liner;Marcelle Sonja;s8966;liner.marcelle@bks-campus.ch;5 Gg;58513;58513;58513;false;false;0
+Manetsch;Damian;s8969;manetsch.damian@bks-campus.ch;5 Ge;96727;96727;96727;false;false;0
+Reich;Seraina Laura;s8979;reich.seraina@bks-campus.ch;5 Gg;04433;04433;04433;false;false;0
+Sennrich;Joël;s8984;sennrich.joel@bks-campus.ch;5 Gi;07824;07824;07824;false;false;0
+Sivakumar;Shiruja;s8986;sivakumar.shiruja@bks-campus.ch;5 Gg;62667;62667;62667;false;false;0
+Zindel;Dominik Sebastian;s9000;zindel.dominik@bks-campus.ch;5 Ge;00918;00918;00918;false;false;0
+Müller;Gianna Irina;s8976;mueller.gianna@bks-campus.ch;5 Gi;80287;80287;80287;false;false;0
+Thayalaranjan;Ilakkijan;s8990;thayalaranjan.ilakkijan@bks-campus.ch;5 Gi;34441;34441;34441;false;false;0
+Vedana;Annalena;s8992;vedana.annalena@bks-campus.ch;5 Gi;01243;01243;01243;false;false;0
+Mahathevan;Lavaniya;s8967;mahathevan.lavaniya@bks-campus.ch;5 Gh;09496;09496;09496;false;false;0
+Schaller;Luis Konrad;s8975;schaller.luis@bks-campus.ch;5 Gh;66180;66180;66180;false;false;0
+Schegg;Manuel;s8981;schegg.manuel@bks-campus.ch;5 Gh;79281;79281;79281;false;false;0
+Schwarz;Ladina;s8983;schwarz.ladina@bks-campus.ch;5 Gh;75084;75084;75084;false;false;0
+Strebel;Camil Gisep;s8987;strebel.camil@bks-campus.ch;5 Gg;89664;89664;89664;false;false;0
+Taboas;Diego;s8989;taboas.diego@bks-campus.ch;5 Gh;92342;92342;92342;false;false;0
+Ziegler;Joel;s8999;ziegler.joel@bks-campus.ch;5 Gh;27761;27761;27761;false;false;0
+Maurya;Sheetal;s9012;maurya.sheetal@bks-campus.ch;5 Gh;24148;24148;24148;false;false;0
+Müller;Adriana Marisa;s8971;mueller.adriana@bks-campus.ch;5 Gc;74469;74469;74469;false;false;0
+Käslin;Annalena Margret;s9046;kaeslin.annalena@bks-campus.ch;5 Gd;65279;65279;65279;false;false;0
+Margreth;Katja;s9171;margreth.katja1@bks-campus.ch;5 Gf;66527;66527;66527;false;false;0
+Gopalasingham;Sathurthika;s9179;sathurthika.gopalasingham@bks-campus.ch;5 Gg;42241;42241;42241;false;false;0
+Müller;Cecile Martina;s9290;mueller.cecile@bks-campus.ch;5 Gh;86095;86095;86095;false;false;0
+Udovicic;Ivana;s9298;udovicic.ivana@bks-campus.ch;5 Gh;40443;40443;40443;false;false;0
+Vitetti;Viviana Erminia;s9299;vitetti.viviana@bks-campus.ch;5 Gh;51769;51769;51769;false;false;0
+Huber;Joëlle;s9283;huber.joelle@bks-campus.ch;5 Gf;84182;84182;84182;false;false;0
+Alpiger;Ceiba Lucia;s9317;alpiger.ceiba@bks-campus.ch;5 Gc;83008;83008;83008;false;false;0
+Casutt;Alice Gisela;s9337;casutt.alice@bks-campus.ch;5 Ge;88201;88201;88201;false;false;0
+Barone;Michela Domenica;s9320;barone.michela@bks-campus.ch;5 Gf;36506;36506;36506;false;false;0
+Baumgartner;Mario Lukas;s9322;baumgartner.mario@bks-campus.ch;5 Gi;03828;03828;03828;false;false;0
+Orlik;Zippora;s9376;orlik.zippora@bks-campus.ch;5 Ge;95852;95852;95852;false;false;0
+Straub;Matti Melvin;s9394;straub.matti@bks-campus.ch;5 Gb;84997;84997;84997;false;false;0
+Derungs;Gino;s9346;derungs.gino@bks-campus.ch;5 Gd;01268;01268;01268;false;false;0
+Ghilardi;Alice;s9491;ghilardi.alice@bks-campus.ch;5 Ga;25040;25040;25040;false;false;0
+Lingandira;Nitheshigan;s9454;lingandira.nitheshigan@bks-campus.ch;5 Gf;09287;09287;09287;false;false;0
+Simmen;Svenja;s9493;simmen.svenja@bks-campus.ch;5 Gf;55408;55408;55408;false;false;0
+Allemann;Lea;s9492;allemann.lea@bks-campus.ch;5 Ge;99682;99682;99682;false;false;0
+Flepp;Ursina Catarina;s9446;flepp.ursina@bks-campus.ch;5 Ge;78814;78814;78814;false;false;0
+Ponzio;Ivan;s9485;ponzio.ivan@bks-campus.ch;5 Ga;72328;72328;72328;false;false;0
+Sieber;Medea;s9616;sieber.medea@bks-campus.ch;5 Gd;55052;55052;55052;false;false;0
+D'Atria;Fabio Claudio;s9642;datria.fabio@bks-campus.ch;5 Gb;25390;25390;25390;false;false;0
+Deflorin;Larissa;s9634;deflorin.larissa@bks-campus.ch;5 Gd;26168;26168;26168;false;false;0
+Brunner;Janis;s9614;brunner.janis@bks-campus.ch;5 Gd;04734;04734;04734;false;false;0
+Federspiel;Ronja;s9655;federspiel.ronja@bks-campus.ch;5 Ge;15276;15276;15276;false;false;0
+Buchli;Larissa;s9663;buchli.larissa@bks-campus.ch;5 Gb;39121;39121;39121;false;false;0
+Fromm;Valeria;s9607;fromm.valeria@bks-campus.ch;5 Gb;16059;16059;16059;false;false;0
+Casal;Michel;s9666;casal.michel1@bks-campus.ch;5 Gf;87373;87373;87373;false;false;0
+Martens;Gian-Martin;s9639;martens.gian@bks-campus.ch;5 Gb;67112;67112;67112;false;false;0
+Stoffel;Martina;s9612;stoffel.martina@bks-campus.ch;5 Ge;83219;83219;83219;false;false;0
+Eggenberger;Laura;s9618;eggenberger.laura@bks-campus.ch;5 Gd;30595;30595;30595;false;false;0
+Kaib;Svenja;s9643;kaib.svenja@bks-campus.ch;5 Gc;85353;85353;85353;false;false;0
+Bläsi;Eva;s9659;blaesi.eva@bks-campus.ch;5 Gd;33829;33829;33829;false;false;0
+Beeli;Andrina;s9644;beeli.andrina@bks-campus.ch;5 Gc;84648;84648;84648;false;false;0
+Cancedda;Gianmarco;s9661;cancedda.gianmarco@bks-campus.ch;5 Gf;61453;61453;61453;false;false;0
+Holle;Noora;s9619;holle.noora@bks-campus.ch;5 Ge;73730;73730;73730;false;false;0
+Grünenfelder;Mattea;s9625;gruenenfelder.mattea@bks-campus.ch;5 Gd;41833;41833;41833;false;false;0
+Rodigari;Fabio;s9653;rodigari.fabio@bks-campus.ch;5 Gb;25406;25406;25406;false;false;0
+Leimgruber;Jessica;s9640;leimgruber.jessica@bks-campus.ch;5 Gf;85199;85199;85199;false;false;0
+Michael;Andrina;s9632;michael.andrina@bks-campus.ch;5 Gf;25151;25151;25151;false;false;0
+Müller;Rosalina;s9626;mueller.rosalina@bks-campus.ch;5 Ge;41090;41090;41090;false;false;0
+Hunziker;Julia;s9674;hunziker.julia@bks-campus.ch;5 Gf;56382;56382;56382;false;false;0
+Tobler;Francesca;s9605;tobler.francesca@bks-campus.ch;5 Ga;70807;70807;70807;false;false;0
+Mensing;Mauro;s9609;mensing.mauro@bks-campus.ch;5 Gc;92997;92997;92997;false;false;0
+Loser;Jennifer;s9622;loser.jennifer@bks-campus.ch;5 Gd;98096;98096;98096;false;false;0
+Hannoschöck;Amelie;s9662;hannoschoeck.amelie@bks-campus.ch;5 Gf;47100;47100;47100;false;false;0
+Pedersen;Sofie;s9637;pedersen.sofie@bks-campus.ch;5 Gb;82562;82562;82562;false;false;0
+Gantenbein;Sina;s9631;gantenbein.sina@bks-campus.ch;5 Gc;11425;11425;11425;false;false;0
+Guyer;Sara;s9628;guyer.sara@bks-campus.ch;5 Gd;77637;77637;77637;false;false;0
+Flepp;Lea;s9658;flepp.lea@bks-campus.ch;5 Gd;02415;02415;02415;false;false;0
+Neilson;Cameron;s9665;neilson.cameron@bks-campus.ch;5 Gf;83043;83043;83043;false;false;0
+Bearth;Yara;s9654;bearth.yara@bks-campus.ch;5 Ge;08700;08700;08700;false;false;0
+Recchia;Dominique;s9606;recchia.dominique@bks-campus.ch;5 Ga;76462;76462;76462;false;false;0
+Saner;Jonas;s9630;saner.jonas@bks-campus.ch;5 Gc;08365;08365;08365;false;false;0
+Seifert;Laura;s9615;seifert.laura@bks-campus.ch;5 Gd;39703;39703;39703;false;false;0
+Willi;Noelle;s9650;willi.noelle@bks-campus.ch;5 Ge;58155;58155;58155;false;false;0
+Trotta;Joël;s9604;trotta.joel@bks-campus.ch;5 Ga;11233;11233;11233;false;false;0
+Ferrari;Jan;s9646;ferrari.jan@bks-campus.ch;5 Gf;38474;38474;38474;false;false;0
+Zanetti;Jeanne;s9603;zanetti.jeanne@bks-campus.ch;5 Ga;45742;45742;45742;false;false;0
+Mareischen;Melissa;s9623;mareischen.melissa@bks-campus.ch;5 Ge;74691;74691;74691;false;false;0
+Lauper;Fabia;s9620;lauper.fabia@bks-campus.ch;5 Gf;65192;65192;65192;false;false;0
+Bärtsch;Max;s9638;baertsch.max@bks-campus.ch;5 Gb;55440;55440;55440;false;false;0
+Russo;Deborah;s9649;russo.deborah@bks-campus.ch;5 Gb;35650;35650;35650;false;false;0
+Albertin;Yves;s9672;albertin.yves@bks-campus.ch;5 Gf;75071;75071;75071;false;false;0
+Capelli;Damiano;s9608;capelli.damiano@bks-campus.ch;5 Ga;13832;13832;13832;false;false;0
+Kurz;Saira;s9669;kurz.saira@bks-campus.ch;5 Gf;26630;26630;26630;false;false;0
+Peterelli;Flavio;s9647;peterelli.flavio@bks-campus.ch;5 Ge;09083;09083;09083;false;false;0
+Steffen;Luc;s9610;steffen.luc@bks-campus.ch;5 Gd;10849;10849;10849;false;false;0
+Maffiew;Lara;s9678;maffiew.lara@bks-campus.ch;5 Gf;01780;01780;01780;false;false;0
+Dössegger;Lara;s9679;doessegger.lara@bks-campus.ch;5 Gd;85385;85385;85385;false;false;0
+Ammann;Svenja;s9677;ammann.svenja@bks-campus.ch;5 Gc;87571;87571;87571;false;false;0
+Laperre;Lara;s9675;laperre.lara@bks-campus.ch;5 Gb;38016;38016;38016;false;false;0
+Voneschen;Sven;s9680;voneschen.sven@bks-campus.ch;5 Gf;16077;16077;16077;false;false;0
+Gonçalves Fonseca;Marta;s9664;goncalves.marta@bks-campus.ch;5 Gb;82797;82797;82797;false;false;0
+Casanova;Nico;s9682;casanova.nico@bks-campus.ch;5 Gb;70532;70532;70532;false;false;0
+Casadei;Jennifer;s9699;casadei.jennifer@bks-campus.ch;5 Ga;00445;00445;00445;false;false;0
+Chebaro;Tarek;s9700;chebaro.tarek@bks-campus.ch;5 Ga;55723;55723;55723;false;false;0
+Maffezzini;Jarno;s9701;maffezzini.jarno@bks-campus.ch;5 Ga;51000;51000;51000;false;false;0
+Cereghetti;Enea;s9704;cereghetti.enea@bks-campus.ch;5 Ga;05974;05974;05974;false;false;0
+Ferrari;Francesca;s9757;ferrari.francesca@bks-campus.ch;5 Ga;53884;53884;53884;false;false;0
+Martire;Giuseppe Gabriele;s9978;martire.giuseppe@bks-campus.ch;5 Ga;69836;69836;69836;false;false;0
+Carigiet;Jana;s10225;carigiet.jana@bks-campus.ch;5 Gc;21448;21448;21448;false;false;0
+Ardüser;Bigna;s10232;ardueser.bignia@bks-campus.ch;5 Gf;81731;81731;81731;false;false;0
+Camenisch;Anna Madlaina;s10235;camenisch.anna@bks-campus.ch;5 Gf;39310;39310;39310;false;false;0
+Diaz Tavera;Montserrat;s10239;diaz.montserrat@bks-campus.ch;5 Ge;33188;33188;33188;false;false;0
+Gamez;David;s10240;gamez.david@bks-campus.ch;5 Gg;49479;49479;49479;false;false;0
+Kunchani;Somchat;s10241;kunchani.somchat@bks-campus.ch;5 Gd;72125;72125;72125;false;false;0

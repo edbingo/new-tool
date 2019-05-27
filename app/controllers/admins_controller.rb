@@ -182,6 +182,10 @@ class AdminsController < ApplicationController
     redirect_to list_students_view_path(:id => s.id)
   end
 
+  def testmail
+    StudentMailer.test_mail.deliver_now
+  end
+
   # Login Activation
   def act
     Pref.first.update_attribute("login", true)

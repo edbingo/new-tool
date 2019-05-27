@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
   get 'registrieren', to: 'select#list'
 
+  get 'send/testmail', to: 'admins#testmail'
+
   get 'confirm/selection', to: 'select#confirm'
 
   get 'force', to: 'sessions#force'
