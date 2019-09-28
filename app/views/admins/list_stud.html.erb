@@ -44,7 +44,7 @@
               <% unless stud.register %>
                 <%= link_to "Force", force_path(:id => stud.id), class: "btn btn-primary dropdown-item" %>
               <% end %>
-              <% unless stud.rec == true %>
+              <% unless stud.register == true %>
                 <div class="dropdown-divider"></div>
                 <%= link_to "Entfernen", delete_student_path(:id => stud.id), class: "btn btn-warning dropdown-item" %>
               <% end %>

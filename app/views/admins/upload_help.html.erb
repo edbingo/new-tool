@@ -1,14 +1,5 @@
-<div style="position:relative;">
-  <div class="row">
-    <div class="col-2">
-      <div id="list" class="list-group">
-        <a class="list-group-item list-group-item-action" href="#teac">Lehrer</a>
-        <a class="list-group-item list-group-item-action" href="#stud">Schüler</a>
-        <a class="list-group-item list-group-item-action" href="#pres">Präsentationen</a>
-      </div>
-    </div>
-    <div class="col-8">
-      <div data-spy="scroll" data-target="#list" data-offset="0" style="position:relative; overflow: auto">
+<div class="card shadow p-3 mb-5 bg-white rounded" style="min-width: 890px;">
+    <div>
         <p>Bitte achten Sie darauf, dass die CSV Datei einen Semikolon (;) als Separator benützt und wie unten aufgebaut ist.</p>
         <p>Die Kolonnen müssen in der gleichen Reihenfolge sein wie hier dargestellt.</p>
         <h4 id="teac">Lehrer</h4>
@@ -30,28 +21,58 @@
               </tr>
             </tbody>
           </table>
+          <hr>
         <h4 id="stud">Schüler</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Vorname</th>
+              <th>Number</th>
+              <th>Mail</th>
+              <th>Klasse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lancaster</td>
+              <td>Edward</td>
+              <td>s9362</td>
+              <td>elancaster4@gmail.com</td>
+              <td>6 Gf</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr>
+        <h4 id="pres">Präsentationen</h4>
         <table class="table">
           <thead>
             <tr>
               <th>Klasse</th>
               <th>Betreuer</th>
               <th>Fach</th>
-
+              <th>Zimmer</th>
+              <th>Von</th>
+              <th>Bis</th>
               <th>Name</th>
               <th>Vorname</th>
-              <th>Number</th>
-              <th>Mail</th>
+              <th>Titel</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-
-          </tr>
+              <td>6 Gf</td>
+              <td>274</td>
+              <td>Informatik/Typ T</td>
+              <td>K 614</td>
+              <td>13:20</td>
+              <td>13:35</td>
+              <td>Lancaster</td>
+              <td>Edward</td>
+              <td>App für die BKS</td>
+            </tr>
           </tbody>
         </table>
-        <h4 id="pres">Präsentationen</h4>
-      </div>
+        <p>Wobei 274 die ID-Nummer des Lehrers ist.</p>
     </div>
   </div>
-</div>

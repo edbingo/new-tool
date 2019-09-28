@@ -20,11 +20,11 @@ Sie haben sich für folgende Präsentationen der Maturaarbeiten MA<%= Time.new.y
   <tbody>
     <% p.each do |pres| %>
       <tr>
-        <td style="padding: 0.3rem; border-top: 1px solid #dee2e6"><%= pres.name %></td>
+        <td style="padding: 0.3rem; border-top: 1px solid #dee2e6"><%= pres.vorname %> <%= pres.name %></td>
         <td style="padding: 0.3rem; border-top: 1px solid #dee2e6"><%= pres.klasse %></td>
         <td style="padding: 0.3rem; border-top: 1px solid #dee2e6"><%= pres.titel %></td>
         <td style="padding: 0.3rem; border-top: 1px solid #dee2e6"><%= pres.fach %></td>
-        <td style="padding: 0.3rem; border-top: 1px solid #dee2e6"><%= pres.betreuer %></td>
+        <td style="padding: 0.3rem; border-top: 1px solid #dee2e6"><%= Teacher.find_by_number(pres.betreuer).vorname %> <%= Teacher.find_by_number(pres.betreuer).name %></td>
         <td style="padding: 0.3rem; border-top: 1px solid #dee2e6"><%= pres.zimmer %></td>
         <td style="padding: 0.3rem; border-top: 1px solid #dee2e6"><%= Time.at(pres.von.to_f).utc.strftime("%H:%M") %></td>
         <td style="padding: 0.3rem; border-top: 1px solid #dee2e6"><%= Time.at(pres.bis.to_f).utc.strftime("%H:%M") %></td>

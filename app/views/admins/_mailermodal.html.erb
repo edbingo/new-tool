@@ -8,8 +8,8 @@
         </button>
       </div>
       <div class="modal-body">
-        Voraussichtliche Anzahl versendete Mails: <%= Student.where(rec: false).count %>
-        <br />
+        Voraussichtliche Anzahl versendete Mails: <%= Student.where(rec: false).count %><hr>
+        <strong>Nachdem diese Mails versendet geworden sind, können keine Änderungen an der Datenbank vorgenommen werden.</strong><hr>
         Wenn Sie diese Mails versenden werden Anmeldungen automatisch aktiviert.
       </div>
       <div class="modal-footer">

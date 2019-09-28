@@ -24,7 +24,7 @@
           <tr>
             <td><%= pres.vorname %> <%= pres.name %></td>
             <td><%= pres.klasse %></td>
-            <td><%= pres.titel %></td>
+            <td><%= link_to pres.titel, list_presentations_view_path(:id => pres.id) %></td>
             <td><%= pres.fach %></td>
             <td><%= pres.zimmer %></td>
             <td><%= Time.at(pres.von.to_f).utc.strftime("%H:%M") %></td>

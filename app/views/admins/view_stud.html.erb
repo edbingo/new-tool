@@ -88,12 +88,13 @@
         </thead>
         <tbody>
           <% @presentations.each do |pres| %>
+          <% betname = "#{Teacher.find_by_number(pres.betreuer).vorname}" + " #{Teacher.find_by_number(pres.betreuer).name}" %>
             <tr>
               <td><%= pres.vorname %></td>
               <td><%= pres.name %></td>
               <td><%= pres.titel %></td>
               <td><%= pres.fach %></td>
-              <td><%= link_to pres.betreuer, list_teachers_view_path(:number => pres.betreuer) %></td>
+              <td><%= link_to betname, list_teachers_view_path(:number => pres.betreuer) %></td>
               <td><%= pres.zimmer %></td>
               <td><%= Time.at(pres.von.to_f).utc.strftime("%H:%M") %></td>
               <td><%= Time.at(pres.bis.to_f).utc.strftime("%H:%M") %></td>
