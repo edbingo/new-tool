@@ -1,0 +1,15 @@
+<div class="card text-center">
+  <div class="card-header">
+    BKS-Tool Version 2.0.1
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Hilfe</h5>
+    <% if Presentation.first == nil && Teacher.first == nil && Student.first == nil %>
+      Diese Web-App wurde noch nicht eingerichtet. Bitte kontaktieren Sie die Schulleitung.
+      Bei weiteren Problemen kontaktieren Sie bitte Edward Lancaster. (<a href="mailto:elancaster4@gmail.com?subject=feedback">E-Mail</a>)
+    <% end %>
+  </div>
+  <div class="card-footer text-muted">
+    Erstellt von Edward Lancaster MA18 <br />
+  </div>
+</div>

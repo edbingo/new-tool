@@ -19,7 +19,8 @@
           <tbody>
               <tr>
                 <td><%= @pres.fach %></td>
-                <td><%= Teacher.find_by_number(@pres.betreuer).vorname %> <%= Teacher.find_by_number(@pres.betreuer).name %></td>
+                <% betname = "#{Teacher.find_by_number(@pres.betreuer).vorname} " + "#{Teacher.find_by_number(@pres.betreuer).name}" %>
+                <td><%= link_to betname, list_teachers_view_path(:id => Teacher.find_by_number(@pres.betreuer).id) %>
                 <td><%= @pres.zimmer %></td>
                 <td><%= Time.at(@pres.von.to_f).utc.strftime("%H:%M") %>
                 <td><%= Time.at(@pres.bis.to_f).utc.strftime("%H:%M") %>

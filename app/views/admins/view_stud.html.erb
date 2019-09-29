@@ -41,9 +41,12 @@
         <% if @student.rec && @student.mahn_rec == 0 %>
           Mahnmails: <strong class="text-success">Noch keine Mahnmails erhalten</strong>
           <br />
-        <% elsif @student.rec && @student.mahn_rec != 0 %>
-          Mahnmails: <strong class="text-warning">Schon <%= @student.mahn_rec %> Mahnmails erhalten.</strong>
+        <% elsif @student.rec && @student.mahn_rec == 1 %>
+          Mahnmails: <strong class="text-warning">Schon <%= @student.mahn_rec %> Mahnmail erhalten.</strong>
           <br />
+        <% elsif @student.rec && @student.mahn_rec > 1 %>
+          Mahnmails: <strong class="text-warning">Schon <%= @student.mahn_rec %> Mahnmails erhalten</strong>
+          <br /> 
         <% end %>
         <% if @student.register %>
           Registrationsstatus: <strong class="text-success">Registration erfolgreich</strong>

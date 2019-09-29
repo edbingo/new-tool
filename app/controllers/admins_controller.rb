@@ -206,7 +206,7 @@ class AdminsController < ApplicationController
     s = Student.find_by_id(params[:id])
     p = Pref.first
     StudentMailer.mahn_mail(s)
-    s.mahn_count += 1
+    s.mahn_rec += 1
     s.save
     p.mahn_count += 1
     p.save
