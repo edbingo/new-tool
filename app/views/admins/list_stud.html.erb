@@ -39,8 +39,8 @@
               Aktionen
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <%= link_to "Infos", list_students_view_path(:id => stud.id), class: "btn btn-secondary dropdown-item" %>
               <%= link_to "Bearbeiten", update_student_path(:id => stud.id), class: "btn btn-secondary dropdown-item" %>
-              <%= link_to "Anschauen", list_students_view_path(:id => stud.id), class: "btn btn-secondary dropdown-item" %>
               <% unless stud.register %>
                 <%= link_to "Force", force_path(:id => stud.id), class: "btn btn-primary dropdown-item" %>
               <% end %>

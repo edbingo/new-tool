@@ -1,7 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NewTool</title>
+    <% if current_page?(root_path) %>
+      <title>BKS Tool</title>
+    <% elsif current_page?(login_path) %>
+      <title>Anmelden - BKS Tool</title>
+    <% elsif current_page?(dashboard_path) %>
+      <title>Dashboard</title>
+    <% elsif current_page?(list_teachers_path) || current_page?(list_presentations_path) || current_page?(list_students_path) || current_page?(list_teachers_all_path) %>
+      <title>Datenbank</title>
+    <% elsif current_page?(mailer_path) %>
+      <title>Mailer</title>
+    <% elsif current_page?(settings_path) %>
+      <title>Einstellungen</title>
+    <% elsif current_page?(admins_path) %>
+      <title>Administratoren</title>
+    <% elsif current_page?(reset_path) %>
+      <title>Zurücksetzen</title>
+    <% elsif current_page?(list_teachers_view_path) || current_page?(list_students_view_path) || current_page?(list_presentations_view_path) %>
+      <title>Infos</title>
+    <% end %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 

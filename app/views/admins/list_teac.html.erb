@@ -27,7 +27,7 @@
                 Aktionen
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <%= link_to "Anschauen", list_teachers_view_path(:id => teac.id), class: "btn btn-secondary dropdown-item" %>
+                <%= link_to "Infos", list_teachers_view_path(:id => teac.id), class: "btn btn-secondary dropdown-item" %>
                 <%= link_to "Bearbeiten", update_teacher_path(:id => teac.id), class: "btn btn-primary dropdown-item" %>
                 <% unless Pref.first.log_data %>
                   <div class="dropdown-divider"></div>

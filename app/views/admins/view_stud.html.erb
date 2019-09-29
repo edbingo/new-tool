@@ -52,7 +52,7 @@
         <% end %>
         <hr>
         <% if @student.rec && !@student.register %>
-          <%= link_to "Mahnmail versenden", '#', class: "btn btn-primary mb-3" %>
+          <%= link_to "Mahnmail versenden", list_students_view_send_punish_path(:id => @student.id), class: "btn btn-primary mb-3" %>
         <% elsif !@student.rec %>
           <%= link_to "Anmeldedaten versenden", list_students_view_send_login_path(:id => @student.id), class: "btn btn-primary mb-3" %>
         <% end %>

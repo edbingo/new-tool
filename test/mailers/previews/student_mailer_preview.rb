@@ -16,7 +16,7 @@ class StudentMailerPreview < ActionMailer::Preview
     end
 
     def list_mail
-      @teacher = Teacher.find_by_number(20)
+      @teacher = Teacher.find_by_number(274)
       StudentMailer.list_mail(@teacher)
     end
 

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'teacher/list', to: 'teacher#view'
 
   get 'list/students/view/send/login', to: 'admins#send_login_single'
+  get 'list/students/view/send/punish', to: 'admins#punishmail_single'
 
   get 'process', to: 'admins#processor'
 

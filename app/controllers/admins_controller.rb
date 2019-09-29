@@ -202,6 +202,17 @@ class AdminsController < ApplicationController
     redirect_to mailer_path
   end
 
+  def punishmail_single
+    s = Student.find_by_id(params[:id])
+    p = Pref.first
+    StudentMailer.mahn_mail(s)
+    s.mahn_count += 1
+    s.save
+    p.mahn_count += 1
+    p.save
+    redirect_to list_students_view_path(:id => s.id)
+  end
+
   def finalmail
     t = Teacher.all
     t.each do |teac|
