@@ -18,24 +18,10 @@ The SQLite database is stored at ~/db/production.sqlite3
 Compatible CSV files can be found at ~/CSV/
 
 ## INSTALL
-This project includes a bash install script designed to be run on debian 9. Only applicable for the BKS.
+This project includes a bash install script designed to be run on debian 9. Only applicable for the BKS. If the project folder has been deleted, only the usersetup script needs to be executed.
 
-Things you may want to cover:
+### install.sh
+install.sh prepares the system for hosting and installs all dependencies. Also performs all setup related procedures.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### usersetup.sh
+usersetup.sh bundles all required gems and initiates the database, as well as making feedback less verbose.
