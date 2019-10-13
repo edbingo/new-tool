@@ -32,7 +32,10 @@
           </div>
         </div>
           Datum
-          <%= date_field_tag 'pres_date', Pref.first.pres_date, class: "form-control" %>
+          <%= date_field_tag 'pres_date', Pref.first.pres_date, class: "form-control mb-3" %>
+          Typ der Präsentationen
+          <%= select_tag 'pres_type',  raw("<option>Gymnasium</option><option>FMS</option>"), class: "form-control" %>
+
         </div>
       </div>
       <div class="modal-footer">

@@ -3,21 +3,37 @@
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
-  <body>
+  <% if Pref.first.pres_type == 0 %>
+    <body>
+      <p><i>An alle Schülerinnen und Schüler der fünften Gymnasialklassen</i></p>
+      <p><b>MA<%= Time.new.year - 2000 %> - Elektronische Anmeldung für den Besuch von <%= Pref.first.req %> Präsentationen</b><br />
+      <b><%= Date.parse(Pref.first.pres_date).strftime("%d/%m/%Y") %></b></p>
 
-    <p><i>An alle Schülerinnen und Schüler der fünften Gymnasialklassen</i></p>
-    <p><b>MA<%= Time.new.year - 2000 %> - Elektronische Anmeldung für den Besuch von <%= Pref.first.req %> Präsentationen</b><br>
-    <b><%= Date.parse(Pref.first.pres_date).strftime("%d/%m/%Y") %></b></p>
-
-    <p>Liebe/r <%= @student.vorname %> <%= @student.name %></p>
-    <p>Ab jetzt können Sie sich mit den unten notierten Anmeldedaten für den Besuch der mündlichen Präsentationen anmelden.</p>
-    <p>
-      Ihre Anmeldedaten: <br>
-      ID: <b><%= @student.number %></b> <br />
-      Passwort: <b><%= @student.code %></b>
-    </p>
-    <p>
-      Melden Sie sich bei dieser Addresse an: <a href="https://athene.bks-campus.ch">athene.bks-campus.ch</a>.
-    </p>
-  </body>
+      <p>Liebe/r <%= @student.vorname %> <%= @student.name %></p>
+      <p>Ab jetzt können Sie sich mit den unten notierten Anmeldedaten für den Besuch der mündlichen Präsentationen anmelden.</p>
+      <p>
+        Ihre Anmeldedaten: <br>
+        ID: <b><%= @student.number %></b> <br />
+        Passwort: <b><%= @student.code %></b>
+      </p>
+      <p>
+        Melden Sie sich bei dieser Addresse an: <a href="https://athene.bks-campus.ch">athene.bks-campus.ch</a>.
+      </p>
+    </body>
+  <% elsif Pref.first.pres_type == 1 %>
+    <body>
+      <p><i>An alle Schülerinnen und Schüler der fünften FMS Klassen</i></p>
+      <p><b>FMS<%= Time.new.year - 2000 %> - Elektronische Anmeldung für den Besuch von <%= Pref.first.req %> Präsentationen</b></p>
+      <p>Liebe/r <%= @student.vorname %> <%= @student.name %></p>
+      <p>Ab jetzt können Sie sich mit den unten notierten Anmeldedaten für den Besuch der mündlichen Präsentationen anmelden.</p>
+      <p>
+        Ihre Anmeldedaten: <br>
+        ID: <b><%= @student.number %></b> <br />
+        Passwort: <b><%= @student.code %></b>
+      </p>
+      <p>
+        Melden Sie sich bei dieser Addresse an: <a href="https://athene.bks-campus.ch">athene.bks-campus.ch</a>.
+      </p>
+    </body>
+  <% end %>
 </html>

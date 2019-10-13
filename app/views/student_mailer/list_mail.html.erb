@@ -4,8 +4,16 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <p><i>An alle Betreuer und Betreuerinnen der MA<%= Time.new.year - 2000 %>.</i></p>
+    <% if Pref.first.pres_type == 0 %>
+      <p><i>An alle Betreuer und Betreuerinnen der MA<%= Time.new.year - 2000 %>.</i></p>
+      <b>Mündliche Maturapräsentationen</b>
+    <% elsif Pref.first.pres_type == 1 %>
+      <p><i>An alle Betreuer und Betreuerinnen der FMS<%= Time.new.year - 2000 %>.</i></p>
+      <b>Mündliche FMS Präsentationen</b>
+    <% end %>
     <p>Liebe Betreuerperson</p>
     <p>Unter folgender Webaddresse sind die Schülerinnen und Schüler der 5. Klassen,
       die sich zum Besuch einer Präsentation der folgenden Selbstständigen Arbeiten verpflichtet haben.</p>
-      <a href="https://athene.bks-campus.ch/teacher/list?id=<%= @teacher.number %>">athene.bks-campus.ch</a>
+    <a href="https://athene.bks-campus.ch/teacher/list?id=<%= @teacher.number %>">athene.bks-campus.ch</a>
+  </body>
+</html>

@@ -19,6 +19,8 @@
   <tbody>
     <% @students.each do |stud| %>
       <% if !stud.rec && Pref.first.log_data %>
+        <tr class="table-info">
+      <% elsif !stud.register %>
         <tr class="table-warning">
       <% else %>
         <tr>

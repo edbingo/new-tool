@@ -105,12 +105,23 @@ class AdminsController < ApplicationController
     f = params[:free]
     t = params[:time].to_i * 60
     d = params[:pres_date]
-    if Student.all.count * r.to_i > Presentation.all.count * f.to_i
-      flash[:error] = "Error 2: Diese Kombination ist ungültig."
-      redirect_to upload_settings_path
+    p = params[:pres_type]
+    if p == "Gymnasium"
+      p = 0
+    elsif p == "FMS"
+      p = 1
+    end
+    unless d == ""
+      if Student.all.count * r.to_i > Presentation.all.count * f.to_i
+        flash[:error] = "Error 2: Diese Kombination ist ungültig."
+        redirect_to upload_settings_path
+      else
+        Pref.create(time: t, req: r, free: f, login: false, log_data: false, mahn_count: 0, pres_date: d, pres_type: p)
+        redirect_to process_path
+      end
     else
-      Pref.create(time: t, req: r, free: f, login: false, log_data: false, mahn_count: 0, pres_date: d)
-      redirect_to process_path
+      flash[:error] = "Datum kann nicht leer sein"
+      redirect_to upload_settings_path
     end
   end
 
@@ -238,10 +249,19 @@ class AdminsController < ApplicationController
 
   # Preferences
   def update_set
-    Pref.first.update_attribute("time", params[:time].to_i * 60)
-    Pref.first.update_attribute("req", params[:req])
-    Pref.first.update_attribute("free", params[:free])
-    Pref.first.update_attribute("pres_date", params[:pres_date])
+    pref = Pref.first
+    pref.time = params[:time].to_i * 60
+    pref.req = params[:req]
+    pref.free = params[:free]
+    pref.pres_date = params[:pres_date]
+    p = params[:pres_type]
+    if p == "Gymnasium"
+      p = 0
+    else
+      p = 1
+    end
+    pref.pres_type = p
+    pref.save
     redirect_to settings_path
   end
 

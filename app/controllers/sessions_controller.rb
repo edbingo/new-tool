@@ -31,6 +31,9 @@ class SessionsController < ApplicationController
       session[:admin_id] = admin.id
       redirect_to dashboard_path
       flash["success"] = "Anmeldung als Admin erfolgreich"
+    elsif admin && !admin.authenticate(params[:password])
+      redirect_to login_path
+      flash["error"] = "Bitte kontrollieren Sie Ihre Eingabe"
     elsif !prefs.login
       redirect_to login_path
       flash["alert"] = "Anmeldungen sind deaktiviert. Bitte versuchen Sie später nochmals."

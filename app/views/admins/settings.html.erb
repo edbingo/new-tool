@@ -42,6 +42,15 @@
               <td>Datum</td>
               <td><%= Date.parse(Pref.first.pres_date).strftime("%d/%m/%Y") %></td>
             </tr>
+            <tr>
+              <td>Präsentationen Typ</td>
+              <% if Pref.first.pres_type == 0 %>
+                <% type = "Gymnasium" %>
+              <% elsif Pref.first.pres_type == 1 %>
+                <% type = "FMS" %>
+              <% end %>
+              <td><%= type %></td>
+            </tr>
           </tbody>
         </table>
         <% if Student.all.where(rec: true).count == 0 %>

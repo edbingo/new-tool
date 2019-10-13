@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_01_31_133221) do
     t.integer "req"
     t.integer "free"
     t.integer "mahn_count"
+    t.integer "pres_type"
     t.string "pres_date"
     t.boolean "login"
     t.boolean "log_data"

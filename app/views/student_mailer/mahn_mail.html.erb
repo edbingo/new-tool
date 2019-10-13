@@ -1,7 +1,18 @@
-Guten Tag <%= @student.vorname %> <%= @student.name %>, <br />
-Sie haben sich noch nicht für die Maturavorträge angemeldet.<br />
-Das ist Ihre <%= @student.mahn_rec %>. Warnung. <br />
+<% if Pref.first.pres_type == 0 %>
+  <p><b>MA<%= Time.new.year - 2000 %> - Mahnung wegen nicht erfüllte Anmeldung</b></p>
+  <p>Liebe/r <%= @student.vorname %> <%= @student.name %>, </p>
+  <p>Sie haben sich noch nicht für die Maturavorträge angemeldet.</p>
+<% elsif Pref.first.pres_type == 1 %>
+  <p><b>FMS<%= Time.new.year - 2000 %> - Mahnung wegen nicht erfüllte Anmeldung</b></p>
+  <p>Liebe/r <%= @student.vorname %> <%= @student.name %>, </p>
+  <p>Sie haben sich noch nicht für die FMS Vorträge angemeldet.</p>
+<% end %>
+
+<p>Das ist Ihre <strong><%= @student.mahn_rec %>. Warnung.</strong></p>
 Bitte registrieren Sie sich sobald wie möglich.<br />
-Benutzername: <%= @student.number %><br />
-Passwort: <%= @student.code %><br />
-Sie können sich unter <a href="https://athene.bks-campus.ch">athene.bks-campus.ch</a> anmelden.
+<p>
+  Ihre Anmeldedaten: <br>
+  ID: <b><%= @student.number %></b> <br />
+  Passwort: <b><%= @student.code %></b>
+</p>
+Melden Sie sich bei dieser Addresse an: <a href="https://athene.bks-campus.ch">athene.bks-campus.ch</a>.

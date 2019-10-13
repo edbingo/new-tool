@@ -1,5 +1,9 @@
 Hallo <%= @student.vorname %> <%= @student.name %><br />
-Sie haben sich für folgende Präsentationen der Maturaarbeiten MA<%= Time.new.year - 2000 %>, <%= Date.parse(Pref.first.pres_date).strftime("%d/%m/%Y") %> angemeldet:<br /><br />
+<% if Pref.first.pres_type == 0 %>
+  Sie haben sich für folgende Präsentationen der Maturaarbeiten MA<%= Time.new.year - 2000 %>, <%= Date.parse(Pref.first.pres_date).strftime("%d/%m/%Y") %> angemeldet:<br /><br />
+<% elsif Pref.first.pres_type == 1 %>
+  Sie haben sich für folgende Präsentationen der FMS Arbeiten FMS<%= Time.new.year - 2000 %>, <%= Date.parse(Pref.first.pres_date).strftime("%d/%m/%Y") %> angemeldet:<br /><br />
+<% end %>
 <table class="table bordered" style="color: #212529; border-collapse: collapse;">
   <thead>
     <tr>
@@ -34,4 +38,4 @@ Sie haben sich für folgende Präsentationen der Maturaarbeiten MA<%= Time.new.y
 </table>
 
 <br/><br/>
-Bei Fragen melden Sie sich bitte bei Prorektorin Cristina Maranta (cristina.maranta@bks.gr.ch). Bitte erscheinen Sie unbedingt pünktlich zu den Präsentationen.
+Bei Fragen melden Sie sich bitte bei Prorektorin Cristina Maranta (<a href="mailto:cristina.maranta@bks.gr.ch?subject=Fragen Anmeldetool">cristina.maranta@bks.gr.ch</a>). Bitte erscheinen Sie unbedingt pünktlich zu den Präsentationen.
