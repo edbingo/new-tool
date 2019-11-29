@@ -12,7 +12,7 @@
       <th>Mail</th>
       <th>Nummer</th>
       <th>Passwort</th>
-      <th>Registriert?</th>
+      <th>Status</th>
       <th>Aktionen</th>
     </tr>
   </thead>
@@ -20,7 +20,7 @@
     <% @students.each do |stud| %>
       <% if !stud.rec && Pref.first.log_data %>
         <tr class="table-info">
-      <% elsif !stud.register %>
+      <% elsif !stud.register && Pref.first.log_data %>
         <tr class="table-warning">
       <% else %>
         <tr>
@@ -31,9 +31,9 @@
         <td><%= stud.number %></td>
         <td><%= stud.code %></td>
         <% if stud.register %>
-          <td>Ja</td>
+          <td><%= show_svg('check.svg') %></td>
         <% else %>
-          <td>Nein</td>
+          <td><%= show_svg('close.svg') %></td>
         <% end %>
         <td>
           <div class="dropdown">
