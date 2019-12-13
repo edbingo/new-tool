@@ -14,6 +14,9 @@
           <p class="card-text">Anmeldungen sind nicht aktiviert</p>
           <%= link_to "Jetzt Aktivieren", settings_activate_path, class: "btn btn-success" %>
         <% end %>
+        <hr>
+        <h5 class="card-title">SQLite Datenbank herunterladen</h5>
+        <%= link_to "Jetzt herunterladen", settings_downloadsqlite_path, class: 'btn btn-primary' %>
       </div>
     </div>
   </div>

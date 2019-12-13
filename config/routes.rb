@@ -93,6 +93,7 @@ Rails.application.routes.draw do
   post 'upload/settings', to: 'admins#prefs_upd'
 
   get 'upload/help', to: 'admins#upload_help'
+  get 'settings/downloadsqlite', to: 'admins#download'
 
   get 'reset', to: 'admins#reset'
   get 'confirm', to: 'admins#clear'

@@ -532,6 +532,24 @@ class AdminsController < ApplicationController
     redirect_to root_path
   end
 
+  def download
+    time = Time.now.strftime("%d/%m/%Y_%H%M%S")
+    if Rails.env == 'development'
+      send_file(
+        "#{Rails.root}/db/development.sqlite3",
+        filename: "dev_#{time}.sqlite3",
+        type: "application/x-sqlite3"
+      )
+    end
+    if Rails.env == 'production'
+      send_file(
+        "#{Rails.root}/db/production.sqlite3",
+        filename: "prod_#{time}.sqlite3",
+        type: "application/x-sqlite3"
+      )
+    end
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
