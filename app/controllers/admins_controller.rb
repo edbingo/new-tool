@@ -227,7 +227,7 @@ class AdminsController < ApplicationController
   def finalmail
     t = Teacher.all
     t.each do |teac|
-      if Presentation.where(betreuer: teac.number).count > 0
+      if Presentation.where(betreuer: teac.number).count > 0 && teac.rec == false
         StudentMailer.list_mail(teac)
         teac.rec = true
         teac.save
