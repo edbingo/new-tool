@@ -32,7 +32,7 @@
             <td><%= pres.zimmer %></td>
             <td><%= Time.at(pres.von.to_f).utc.strftime("%H:%M") %></td>
             <td><%= Time.at(pres.bis.to_f).utc.strftime("%H:%M") %></td>
-            <td><%= pres.frei %></td>
+            <td><%= Pref.first.free - pres.visit.count %></td>
           </tr>
         <% end %>
       </tbody>

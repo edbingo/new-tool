@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'signup', to: 'admins#new', as: 'signup'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
+  get 'success', to: 'select#success'
+
   get 'admin/login', to: 'sessions#new'
   post 'admin/login', to: 'sessions#create'
 

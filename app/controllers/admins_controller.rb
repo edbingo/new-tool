@@ -135,7 +135,6 @@ class AdminsController < ApplicationController
       s.save
     end
     Presentation.all.each do |row|
-      row.frei = Pref.first.free
       row.von = "#{Time.parse(row.von).seconds_since_midnight}"
       row.bis = "#{Time.parse(row.bis).seconds_since_midnight}"
       row.visit = []
